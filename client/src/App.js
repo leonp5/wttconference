@@ -1,22 +1,16 @@
 import React from 'react';
+import { ThemeProvider } from 'emotion-theming';
+
+import GlobalStyles from './GlobalStyles';
+import { theme } from './themes/theme';
+import AppBar from './components/AppBar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <AppBar />
+    </ThemeProvider>
   );
 }
 
