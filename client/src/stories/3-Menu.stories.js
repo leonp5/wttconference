@@ -1,12 +1,10 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import { withKnobs } from "@storybook/addon-knobs";
 
 import MobileMenu from "../components/MobileMenu";
 
 export default {
-  title: "Menu",
-  decorators: [withKnobs]
+  title: "Menu"
 };
 
 export function SideMenu() {

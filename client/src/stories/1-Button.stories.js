@@ -1,13 +1,13 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import { withKnobs, text } from "@storybook/addon-knobs";
+import { text } from "@storybook/addon-knobs";
 
 import SubmitButton from "../components/Button";
 import MenuButton from "../components/MenuButton";
+import BurgerButton from "../components/BurgerButton";
 
 export default {
-  title: "Button",
-  decorators: [withKnobs]
+  title: "Button"
 };
 
 export function StandardButton() {
@@ -21,4 +21,8 @@ export function StandardButton() {
 
 export function SideMenuButton() {
   return <MenuButton onClick={action("clicked")} text={text("Button Label", "Home")}></MenuButton>;
+}
+
+export function Burger() {
+  return <BurgerButton onClick={action("clicked")}></BurgerButton>;
 }
