@@ -2,19 +2,25 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
-import Button from '../components/Button';
+import SubmitButton from '../components/Button';
+import MenuButton from '../components/MenuButton';
 
 export default {
   title: 'Button',
   decorators: [withKnobs]
 };
 
-export function Text() {
+export function StandardButton() {
   return (
-    <Button onClick={action('clicked')} buttontext={text('Button Label', 'Anmelden')}></Button>
+    <SubmitButton
+      onClick={action('clicked')}
+      buttontext={text('Button Label', 'Anmelden')}
+    ></SubmitButton>
   );
 }
 
-export function Menu() {
-  return <Button onClick={action('clicked')}></Button>;
+export function SideMenuButton() {
+  return (
+    <MenuButton onClick={action('clicked')} buttontext={text('Button Label', 'Home')}></MenuButton>
+  );
 }
