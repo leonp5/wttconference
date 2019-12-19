@@ -13,8 +13,8 @@ const Button = styled.button`
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.6);
 `;
 
-function SubmitButton({ text }) {
-  return <Button>{text}</Button>;
+function SubmitButton({ text, onClick }) {
+  return <Button onClick={onClick}>{text}</Button>;
 }
 
 export default SubmitButton;
