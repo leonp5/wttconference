@@ -1,7 +1,9 @@
 import React from 'react';
 import { Global, css } from '@emotion/core';
+import { useTheme } from 'emotion-theming';
 
 function GlobalStyles() {
+  const theme = useTheme();
   return (
     <Global
       styles={css`
@@ -13,7 +15,7 @@ function GlobalStyles() {
         body {
           font-size: 16px;
           margin: 0;
-          background: black;
+          background: ${theme.colors.background};
         }
       `}
     />
