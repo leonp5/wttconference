@@ -1,17 +1,24 @@
-import React from 'react';
-import { action } from '@storybook/addon-actions';
-import { Button } from '@storybook/react/demo';
+import React from "react";
+import { action } from "@storybook/addon-actions";
+import { withKnobs, text } from "@storybook/addon-knobs";
+
+import SubmitButton from "../components/Button";
+import MenuButton from "../components/MenuButton";
 
 export default {
-  title: 'Button',
+  title: "Button",
+  decorators: [withKnobs]
 };
 
-export const text = () => <Button onClick={action('clicked')}>Hello Button</Button>;
+export function StandardButton() {
+  return (
+    <SubmitButton
+      onClick={action("clicked")}
+      text={text("Button Label", "Abschicken")}
+    ></SubmitButton>
+  );
+}
 
-export const emoji = () => (
-  <Button onClick={action('clicked')}>
-    <span role="img" aria-label="so cool">
-      😀 😎 👍 💯
-    </span>
-  </Button>
-);
+export function SideMenuButton() {
+  return <MenuButton onClick={action("clicked")} text={text("Button Label", "Home")}></MenuButton>;
+}
