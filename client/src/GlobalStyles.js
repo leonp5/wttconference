@@ -1,6 +1,6 @@
-import React from 'react';
-import { Global, css } from '@emotion/core';
-import { useTheme } from 'emotion-theming';
+import React from "react";
+import { Global, css } from "@emotion/core";
+import { useTheme } from "emotion-theming";
 
 function GlobalStyles() {
   const theme = useTheme();
@@ -13,6 +13,8 @@ function GlobalStyles() {
           box-sizing: border-box;
         }
         body {
+          display: flex;
+          justify-content: center;
           font-size: 16px;
           margin: 0;
           background: ${theme.colors.background};
