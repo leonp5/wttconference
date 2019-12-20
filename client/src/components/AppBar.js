@@ -20,7 +20,7 @@ const Container = styled.div`
 // `;
 
 function AppBar() {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   return (
     <>
       <Container>
