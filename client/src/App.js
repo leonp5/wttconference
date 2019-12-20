@@ -4,14 +4,14 @@ import { ThemeProvider } from "emotion-theming";
 import GlobalStyles from "./GlobalStyles";
 import { theme } from "./themes/theme";
 import AppBar from "./components/AppBar";
-import AttendeForm from "./components/AttendeeForm";
+import AttendeeRegistration from "./pages/registration";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <AppBar />
-      <AttendeForm />
+      <AttendeeRegistration />
     </ThemeProvider>
   );
 }

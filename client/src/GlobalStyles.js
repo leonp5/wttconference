@@ -15,7 +15,7 @@ function GlobalStyles() {
         body {
           display: flex;
           justify-content: center;
-          font-size: 16px;
+          align-items: center;
           margin: 0;
           background: ${theme.colors.background};
         }
