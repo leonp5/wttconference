@@ -9,8 +9,16 @@ const InputField = styled.input`
   padding: 10px;
 `;
 
-function Input({ placeholder }) {
-  return <InputField type="text" placeholder={placeholder}></InputField>;
+function Input(props) {
+  return (
+    <InputField
+      type="text"
+      name={props.name}
+      placeholder={props.placeholder}
+      value={props.value}
+      onChange={props.onChange}
+    ></InputField>
+  );
 }
 
 export default Input;

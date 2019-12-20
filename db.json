@@ -1,5 +1,92 @@
 {
-  "posts": [{ "id": 1, "title": "json-server", "author": "typicode" }],
-  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
-  "profile": { "name": "typicode" }
+  "attendees": [
+    {
+      "name": "Test Name",
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "address": "addresse",
+      "id": 5
+    },
+    {
+      "state": {
+        "name": "",
+        "": "das"
+      },
+      "id": 6
+    },
+    {
+      "state": {
+        "name": "",
+        "": "Wie gehts"
+      },
+      "id": 7
+    },
+    {
+      "state": {
+        "name": "NAme",
+        "address": "",
+        "": "Testweg"
+      },
+      "id": 8
+    },
+    {
+      "state": {
+        "name": "User",
+        "address": "Weg"
+      },
+      "id": 9
+    },
+    {
+      "state": {
+        "name": "Max Muster",
+        "address": "Musterweg 1",
+        "location": "",
+        "email": "",
+        "phone": "",
+        "workshop1": "",
+        "workshop2": "",
+        "workshop3": "",
+        "else": ""
+      },
+      "id": 10
+    },
+    {
+      "state": {
+        "name": "Max Muster",
+        "address": "Musterweg 1",
+        "location": "12345, Musterhausen",
+        "email": "muster@mail.de",
+        "phone": "123456",
+        "workshop1": "bla",
+        "workshop2": "blub",
+        "workshop3": "blo",
+        "else": "dasdas"
+      },
+      "id": 11
+    },
+    {
+      "state": {
+        "name": "",
+        "address": "",
+        "location": "",
+        "email": "",
+        "phone": "",
+        "workshop1": "",
+        "workshop2": "",
+        "workshop3": "",
+        "else": ""
+      },
+      "id": 12
+    }
+  ]
 }

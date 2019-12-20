@@ -1,11 +1,11 @@
 import React from "react";
 
-import Form from "../components/Form";
+import AttendeeForm from "../components/AttendeeForm";
 
 export default {
   title: "Form"
 };
 
 export function BasicForm() {
-  return <Form></Form>;
+  return <AttendeeForm></AttendeeForm>;
 }
