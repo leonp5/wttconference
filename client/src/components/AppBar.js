@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "@emotion/styled";
+
+import useOnClickOutside from "../hooks/useOnClickOutside";
 import BurgerButton from "./BurgerButton";
 import MobileMenu from "./MobileMenu";
 
@@ -21,9 +23,11 @@ const Container = styled.div`
 
 function AppBar() {
   const [open, setOpen] = React.useState(false);
+  const node = useRef();
+  useOnClickOutside(node, () => setOpen(false));
   return (
     <>
-      <Container>
+      <Container ref={node}>
         <BurgerButton open={open} setOpen={setOpen} />
         <MobileMenu open={open} setOpen={setOpen} />
       </Container>
