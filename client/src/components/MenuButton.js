@@ -9,7 +9,7 @@ const Button = styled.button`
   border: none;
   :hover {
     background: ${props => props.theme.colors.secondary};
-    color: ${props => props.theme.colors.actioncolor};
+    color: ${props => props.theme.colors.primary};
   }
 `;
 

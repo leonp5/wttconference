@@ -6,7 +6,7 @@ const StyledBurger = styled.button`
   flex-direction: column;
   justify-content: space-around;
   position: absolute;
-  top: 5%;
+  top: 1.2rem;
   right: 2rem;
   width: 2rem;
   height: 2rem;
@@ -28,12 +28,25 @@ const StyledBurger = styled.button`
     transition: all 0.3s linear;
     position: relative;
     transform-origin: 1px;
+
+    :first-child {
+      transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};
+    }
+
+    :nth-child(2) {
+      opacity: ${({ open }) => (open ? "0" : "1")};
+      transform: ${({ open }) => (open ? "translateX(20px)" : "translateX(0)")};
+    }
+
+    :nth-child(3) {
+      transform: ${({ open }) => (open ? "rotate(-45deg)" : "rotate(0)")};
+    }
   }
 `;
 
-function BurgerButton() {
+function BurgerButton({ open, setOpen }) {
   return (
-    <StyledBurger>
+    <StyledBurger open={open} onClick={() => setOpen(!open)}>
       <div />
       <div />
       <div />
