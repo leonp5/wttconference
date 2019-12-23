@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 import Form from "../components/Form";
 import Input from "../components/Input";
 import Button from "../components/Button";
+import Heading from "../components/Heading";
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -14,11 +15,6 @@ const ContentWrapper = styled.div`
 `;
 
 const Container = styled.div``;
-
-const Heading = styled.h2`
-  margin: 0;
-  padding: 15px 0px 15px 0px;
-`;
 
 function AttendeeRegistration() {
   const [state, setState] = React.useState({
