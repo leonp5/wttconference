@@ -56,7 +56,17 @@ function Registration() {
         else: attendee.else
       })
     });
-    setAttendee("");
+    setAttendee({
+      name: "",
+      address: "",
+      location: "",
+      email: "",
+      phone: "",
+      workshop1: "",
+      workshop2: "",
+      workshop3: "",
+      else: ""
+    });
   }
 
   return (
@@ -64,15 +74,46 @@ function Registration() {
       <Container>
         <Heading>Anmeldung</Heading>
         <Form onSubmit={handleSubmit}>
-          <Input autoFocus name="name" onChange={onChange} placeholder="Name, Vorname" />
-          <Input name="address" onChange={onChange} placeholder="Adresse" />
-          <Input name="location" onChange={onChange} placeholder="Ort, PLZ" />
-          <Input name="email" onChange={onChange} placeholder="Email" />
-          <Input name="phone" onChange={onChange} placeholder="Telefon" />
-          <Input name="workshop1" onChange={onChange} placeholder="Workshop 1 (Theorie)" />
-          <Input name="workshop2" onChange={onChange} placeholder="Workshop 2 (Theorie)" />
-          <Input name="workshop3" onChange={onChange} placeholder="Workshop 3 (Praktisch)" />
-          <Input name="else" onChange={onChange} placeholder="Sonstiges" />
+          <Input
+            value={attendee.name}
+            autoFocus
+            name="name"
+            onChange={onChange}
+            placeholder="Name, Vorname"
+          />
+          <Input
+            value={attendee.address}
+            name="address"
+            onChange={onChange}
+            placeholder="Adresse"
+          />
+          <Input
+            value={attendee.location}
+            name="location"
+            onChange={onChange}
+            placeholder="Ort, PLZ"
+          />
+          <Input value={attendee.email} name="email" onChange={onChange} placeholder="Email" />
+          <Input value={attendee.phone} name="phone" onChange={onChange} placeholder="Telefon" />
+          <Input
+            value={attendee.workshop1}
+            name="workshop1"
+            onChange={onChange}
+            placeholder="Workshop 1 (Theorie)"
+          />
+          <Input
+            value={attendee.workshop2}
+            name="workshop2"
+            onChange={onChange}
+            placeholder="Workshop 2 (Theorie)"
+          />
+          <Input
+            value={attendee.workshop3}
+            name="workshop3"
+            onChange={onChange}
+            placeholder="Workshop 3 (Praktisch)"
+          />
+          <Input value={attendee.else} name="else" onChange={onChange} placeholder="Sonstiges" />
           <Button>Anmelden</Button>
         </Form>
       </Container>
