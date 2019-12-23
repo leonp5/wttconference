@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "@emotion/styled";
 
 const InputField = styled.input`
@@ -9,8 +8,4 @@ const InputField = styled.input`
   padding: 10px;
 `;
 
-function Input({ placeholder }) {
-  return <InputField type="text" placeholder={placeholder}></InputField>;
-}
-
-export default Input;
+export default InputField;

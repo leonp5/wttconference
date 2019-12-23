@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import styled from "@emotion/styled";
 
 import useOnClickOutside from "../hooks/useOnClickOutside";
@@ -8,6 +8,8 @@ import MobileMenu from "./MobileMenu";
 const Container = styled.div`
   display: flex;
   align-items: center;
+  position: fixed;
+  top: 0;
   height: 70px;
   width: 100vw;
   background: ${props => props.theme.colors.primary};
@@ -23,15 +25,13 @@ const Container = styled.div`
 
 function AppBar() {
   const [open, setOpen] = React.useState(false);
-  const node = useRef();
+  const node = React.useRef();
   useOnClickOutside(node, () => setOpen(false));
   return (
-    <>
-      <Container ref={node}>
-        <BurgerButton open={open} setOpen={setOpen} />
-        <MobileMenu open={open} setOpen={setOpen} />
-      </Container>
-    </>
+    <Container ref={node}>
+      <BurgerButton open={open} setOpen={setOpen} />
+      <MobileMenu open={open} setOpen={setOpen} />
+    </Container>
   );
 }
 

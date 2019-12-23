@@ -6,7 +6,7 @@ const StyledMenu = styled.nav`
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  position: absolute;
+  position: fixed;
   height: 250px;
   padding: 2rem;
   top: 1.8rem;
