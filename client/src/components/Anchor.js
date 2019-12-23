@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-const FooterLink = styled.a`
+const Anchor = styled.a`
   color: ${props => props.theme.colors.secondary};
   transition: color 0.3s linear;
   &:hover {
@@ -10,4 +10,4 @@ const FooterLink = styled.a`
   }
 `;
 
-export default FooterLink;
+export default Anchor;

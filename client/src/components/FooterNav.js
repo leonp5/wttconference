@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import FooterLink from "./FooterLink";
+import Anchor from "./Anchor";
 
 const Footer = styled.footer`
   display: flex;
@@ -17,12 +17,12 @@ const Wrapper = styled.div`
   justify-content: space-around;
 `;
 
-const BottomLinks = styled(FooterLink)`
+const BottomLinks = styled(Anchor)`
   font-size: 1.1rem;
   padding: 10px;
 `;
 
-const Bottom = styled(FooterLink)`
+const Bottom = styled(Anchor)`
   font-size: 0.9rem;
 `;
 
