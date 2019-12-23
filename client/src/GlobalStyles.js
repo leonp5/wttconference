@@ -13,9 +13,6 @@ function GlobalStyles() {
           box-sizing: border-box;
         }
         body {
-          display: flex;
-          justify-content: center;
-          align-items: center;
           margin: 0;
           background: ${theme.colors.background};
         }
