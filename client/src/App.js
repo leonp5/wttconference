@@ -6,9 +6,11 @@ import GlobalStyles from "./GlobalStyles";
 import { theme } from "./themes/theme";
 import AttendeeRegistration from "./pages/Registration";
 import AppBar from "./components/AppBar";
+import FooterNav from "./components/FooterNav";
 
-const Container = styled.div`
+const Main = styled.div`
   margin-top: 70px;
+  width: 100vw;
 `;
 
 function App() {
@@ -16,9 +18,10 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <AppBar />
-      <Container>
+      <Main>
         <AttendeeRegistration />
-      </Container>
+      </Main>
+      <FooterNav />
     </ThemeProvider>
   );
 }

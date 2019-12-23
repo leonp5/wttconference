@@ -9,7 +9,7 @@ import Heading from "../components/Heading";
 const ContentWrapper = styled.div`
   display: flex;
   justify-content: center;
-  width: 95vw;
+  width: 95%;
   height: 100vh;
   background: ${props => props.theme.colors.secondary};
 `;
