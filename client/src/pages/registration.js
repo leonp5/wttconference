@@ -1,8 +1,24 @@
 import React from "react";
+import styled from "@emotion/styled";
 
 import Form from "../components/Form";
 import Input from "../components/Input";
 import Button from "../components/Button";
+
+const ContentWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 95vw;
+  height: 100vh;
+  background: ${props => props.theme.colors.secondary};
+`;
+
+const Container = styled.div``;
+
+const Heading = styled.h2`
+  margin: 0;
+  padding: 15px 0px 15px 0px;
+`;
 
 function AttendeeRegistration() {
   const [state, setState] = React.useState({
@@ -39,20 +55,23 @@ function AttendeeRegistration() {
   }
 
   return (
-    <>
-      <Form onSubmit={handleSubmit}>
-        <Input name="name" onChange={onChange} placeholder="Name, Vorname"></Input>
-        <Input name="address" onChange={onChange} placeholder="Adresse"></Input>
-        <Input name="location" onChange={onChange} placeholder="Ort, PLZ"></Input>
-        <Input name="email" onChange={onChange} placeholder="Email"></Input>
-        <Input name="phone" onChange={onChange} placeholder="Telefon"></Input>
-        <Input name="workshop1" onChange={onChange} placeholder="Workshop 1 (Theorie)"></Input>
-        <Input name="workshop2" onChange={onChange} placeholder="Workshop 2 (Theorie)"></Input>
-        <Input name="workshop3" onChange={onChange} placeholder="Workshop 3 (Praktisch)"></Input>
-        <Input name="else" onChange={onChange} placeholder="Sonstiges"></Input>
-        <Button>Anmelden</Button>
-      </Form>
-    </>
+    <ContentWrapper>
+      <Container>
+        <Heading>Anmeldung</Heading>
+        <Form onSubmit={handleSubmit}>
+          <Input autoFocus name="name" onChange={onChange} placeholder="Name, Vorname"></Input>
+          <Input name="address" onChange={onChange} placeholder="Adresse"></Input>
+          <Input name="location" onChange={onChange} placeholder="Ort, PLZ"></Input>
+          <Input name="email" onChange={onChange} placeholder="Email"></Input>
+          <Input name="phone" onChange={onChange} placeholder="Telefon"></Input>
+          <Input name="workshop1" onChange={onChange} placeholder="Workshop 1 (Theorie)"></Input>
+          <Input name="workshop2" onChange={onChange} placeholder="Workshop 2 (Theorie)"></Input>
+          <Input name="workshop3" onChange={onChange} placeholder="Workshop 3 (Praktisch)"></Input>
+          <Input name="else" onChange={onChange} placeholder="Sonstiges"></Input>
+          <Button>Anmelden</Button>
+        </Form>
+      </Container>
+    </ContentWrapper>
   );
 }
 

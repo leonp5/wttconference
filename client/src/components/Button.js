@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 
 const Button = styled.button`
+  display: flex;
+  justify-content: center;
   width: 80px;
   background: ${props => props.theme.colors.actioncolor};
   color: ${props => props.theme.colors.secondary};

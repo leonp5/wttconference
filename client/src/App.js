@@ -3,8 +3,8 @@ import { ThemeProvider } from "emotion-theming";
 
 import GlobalStyles from "./GlobalStyles";
 import { theme } from "./themes/theme";
-import AppBar from "./components/AppBar";
 import AttendeeRegistration from "./pages/registration";
+import AppBar from "./components/AppBar";
 
 function App() {
   return (
