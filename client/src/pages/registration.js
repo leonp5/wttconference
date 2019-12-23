@@ -16,8 +16,8 @@ const ContentWrapper = styled.div`
 
 const Container = styled.div``;
 
-function AttendeeRegistration() {
-  const [state, setState] = React.useState({
+function Registration() {
+  const [attendee, setAttendee] = React.useState({
     name: "",
     address: "",
     location: "",
@@ -31,8 +31,8 @@ function AttendeeRegistration() {
 
   function onChange(event) {
     const value = event.target.value;
-    setState({
-      ...state,
+    setAttendee({
+      ...attendee,
       [event.target.name]: value
     });
   }
@@ -45,9 +45,18 @@ function AttendeeRegistration() {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        state
+        name: attendee.name,
+        address: attendee.address,
+        location: attendee.location,
+        email: attendee.email,
+        phone: attendee.phone,
+        workshop1: attendee.workshop1,
+        workshop2: attendee.workshop2,
+        workshop3: attendee.workshop3,
+        else: attendee.else
       })
     });
+    setAttendee("");
   }
 
   return (
@@ -55,15 +64,15 @@ function AttendeeRegistration() {
       <Container>
         <Heading>Anmeldung</Heading>
         <Form onSubmit={handleSubmit}>
-          <Input autoFocus name="name" onChange={onChange} placeholder="Name, Vorname"></Input>
-          <Input name="address" onChange={onChange} placeholder="Adresse"></Input>
-          <Input name="location" onChange={onChange} placeholder="Ort, PLZ"></Input>
-          <Input name="email" onChange={onChange} placeholder="Email"></Input>
-          <Input name="phone" onChange={onChange} placeholder="Telefon"></Input>
-          <Input name="workshop1" onChange={onChange} placeholder="Workshop 1 (Theorie)"></Input>
-          <Input name="workshop2" onChange={onChange} placeholder="Workshop 2 (Theorie)"></Input>
-          <Input name="workshop3" onChange={onChange} placeholder="Workshop 3 (Praktisch)"></Input>
-          <Input name="else" onChange={onChange} placeholder="Sonstiges"></Input>
+          <Input autoFocus name="name" onChange={onChange} placeholder="Name, Vorname" />
+          <Input name="address" onChange={onChange} placeholder="Adresse" />
+          <Input name="location" onChange={onChange} placeholder="Ort, PLZ" />
+          <Input name="email" onChange={onChange} placeholder="Email" />
+          <Input name="phone" onChange={onChange} placeholder="Telefon" />
+          <Input name="workshop1" onChange={onChange} placeholder="Workshop 1 (Theorie)" />
+          <Input name="workshop2" onChange={onChange} placeholder="Workshop 2 (Theorie)" />
+          <Input name="workshop3" onChange={onChange} placeholder="Workshop 3 (Praktisch)" />
+          <Input name="else" onChange={onChange} placeholder="Sonstiges" />
           <Button>Anmelden</Button>
         </Form>
       </Container>
@@ -71,4 +80,4 @@ function AttendeeRegistration() {
   );
 }
 
-export default AttendeeRegistration;
+export default Registration;

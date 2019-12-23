@@ -1,190 +1,21 @@
 {
   "attendees": [
     {
-      "name": "Test Name",
-      "id": 1
+      "name": "Name",
+      "address": "Adresse",
+      "id": 36
     },
     {
-      "id": 2
-    },
-    {
-      "id": 3
-    },
-    {
-      "id": 4
-    },
-    {
-      "address": "addresse",
-      "id": 5
-    },
-    {
-      "state": {
-        "name": "",
-        "": "das"
-      },
-      "id": 6
-    },
-    {
-      "state": {
-        "name": "",
-        "": "Wie gehts"
-      },
-      "id": 7
-    },
-    {
-      "state": {
-        "name": "NAme",
-        "address": "",
-        "": "Testweg"
-      },
-      "id": 8
-    },
-    {
-      "state": {
-        "name": "User",
-        "address": "Weg"
-      },
-      "id": 9
-    },
-    {
-      "state": {
-        "name": "Max Muster",
-        "address": "Musterweg 1",
-        "location": "",
-        "email": "",
-        "phone": "",
-        "workshop1": "",
-        "workshop2": "",
-        "workshop3": "",
-        "else": ""
-      },
-      "id": 10
-    },
-    {
-      "state": {
-        "name": "Max Muster",
-        "address": "Musterweg 1",
-        "location": "12345, Musterhausen",
-        "email": "muster@mail.de",
-        "phone": "123456",
-        "workshop1": "bla",
-        "workshop2": "blub",
-        "workshop3": "blo",
-        "else": "dasdas"
-      },
-      "id": 11
-    },
-    {
-      "state": {
-        "name": "",
-        "address": "",
-        "location": "",
-        "email": "",
-        "phone": "",
-        "workshop1": "",
-        "workshop2": "",
-        "workshop3": "",
-        "else": ""
-      },
-      "id": 12
-    },
-    {
-      "state": {
-        "name": "Lalelu",
-        "address": "",
-        "location": "",
-        "email": "",
-        "phone": "",
-        "workshop1": "",
-        "workshop2": "",
-        "workshop3": "",
-        "else": ""
-      },
-      "id": 13
-    },
-    {
-      "state": {
-        "name": "",
-        "address": "",
-        "location": "",
-        "email": "",
-        "phone": "",
-        "workshop1": "",
-        "workshop2": "das",
-        "workshop3": "",
-        "else": ""
-      },
-      "id": 14
-    },
-    {
-      "state": {
-        "name": "super",
-        "address": "",
-        "location": "",
-        "email": "",
-        "phone": "",
-        "workshop1": "",
-        "workshop2": "",
-        "workshop3": "",
-        "else": ""
-      },
-      "id": 15
-    },
-    {
-      "state": {
-        "name": "super",
-        "address": "",
-        "location": "",
-        "email": "",
-        "phone": "",
-        "workshop1": "löpt",
-        "workshop2": "",
-        "workshop3": "",
-        "else": ""
-      },
-      "id": 16
-    },
-    {
-      "state": {
-        "name": "Hallo",
-        "address": "",
-        "location": "",
-        "email": "",
-        "phone": "",
-        "workshop1": "",
-        "workshop2": "",
-        "workshop3": "",
-        "else": ""
-      },
-      "id": 17
-    },
-    {
-      "state": {
-        "name": "",
-        "address": "Adresse",
-        "location": "",
-        "email": "",
-        "phone": "",
-        "workshop1": "",
-        "workshop2": "",
-        "workshop3": "",
-        "else": ""
-      },
-      "id": 18
-    },
-    {
-      "state": {
-        "name": "Hallo",
-        "address": "",
-        "location": "",
-        "email": "",
-        "phone": "",
-        "workshop1": "",
-        "workshop2": "",
-        "workshop3": "",
-        "else": ""
-      },
-      "id": 19
+      "name": "",
+      "address": "",
+      "location": "Cologne",
+      "email": "Mailme",
+      "phone": "",
+      "workshop1": "",
+      "workshop2": "",
+      "workshop3": "Workshop",
+      "else": "",
+      "id": 37
     }
   ]
 }

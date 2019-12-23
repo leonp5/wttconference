@@ -4,7 +4,7 @@ import { ThemeProvider } from "emotion-theming";
 
 import GlobalStyles from "./GlobalStyles";
 import { theme } from "./themes/theme";
-import AttendeeRegistration from "./pages/registration";
+import AttendeeRegistration from "./pages/Registration";
 import AppBar from "./components/AppBar";
 
 const Container = styled.div`
