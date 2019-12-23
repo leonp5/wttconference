@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "@emotion/styled";
 
 const Button = styled.button`
@@ -15,8 +14,4 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-function SubmitButton(props) {
-  return <Button onClick={props.onClick}>{props.children}</Button>;
-}
-
-export default SubmitButton;
+export default Button;

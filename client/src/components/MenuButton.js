@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "@emotion/styled";
 
-const Button = styled.button`
+const MenuButton = styled.button`
   height: 30px;
   width: 100%;
   background: transparent;
@@ -12,9 +11,5 @@ const Button = styled.button`
     color: ${props => props.theme.colors.primary};
   }
 `;
-
-function MenuButton({ text }) {
-  return <Button>{text}</Button>;
-}
 
 export default MenuButton;
