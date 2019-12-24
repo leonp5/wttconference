@@ -26,12 +26,12 @@ const MenuAnchor = styled(Anchor)`
 function MobileMenu({ open }) {
   return (
     <StyledMenu open={open}>
-      <MenuAnchor>Home</MenuAnchor>
-      <MenuAnchor>Programm</MenuAnchor>
-      <MenuAnchor>Workshops</MenuAnchor>
-      <MenuAnchor>Anmeldung</MenuAnchor>
-      <MenuAnchor>Mitfahren</MenuAnchor>
-      <MenuAnchor>Über uns</MenuAnchor>
+      <MenuAnchor href="/">Home</MenuAnchor>
+      <MenuAnchor href="/program">Programm</MenuAnchor>
+      <MenuAnchor href="/workshops">Workshops</MenuAnchor>
+      <MenuAnchor href="registration">Anmeldung</MenuAnchor>
+      <MenuAnchor href="/lift">Mitfahren</MenuAnchor>
+      <MenuAnchor href="/about">Über uns</MenuAnchor>
     </StyledMenu>
   );
 }
