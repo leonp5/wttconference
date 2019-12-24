@@ -23,14 +23,16 @@ const Container = styled.div`
 //   }
 // `;
 
-function AppBar() {
+function AppBar({ children }) {
   const [open, setOpen] = React.useState(false);
   const node = React.useRef();
   useOnClickOutside(node, () => setOpen(false));
   return (
     <Container ref={node}>
       <BurgerButton open={open} setOpen={setOpen} />
-      <MobileMenu open={open} setOpen={setOpen} />
+      <MobileMenu open={open} setOpen={setOpen}>
+        {children}
+      </MobileMenu>
     </Container>
   );
 }

@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import Anchor from "./Anchor";
-
 const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
@@ -18,22 +16,8 @@ const StyledMenu = styled.nav`
   background: ${props => props.theme.colors.primary};
 `;
 
-const MenuAnchor = styled(Anchor)`
-  font-size: 1.5rem;
-  text-decoration: none;
-  margin: 5px;
-`;
-function MobileMenu({ open }) {
-  return (
-    <StyledMenu open={open}>
-      <MenuAnchor>Home</MenuAnchor>
-      <MenuAnchor>Programm</MenuAnchor>
-      <MenuAnchor>Workshops</MenuAnchor>
-      <MenuAnchor>Anmeldung</MenuAnchor>
-      <MenuAnchor>Mitfahren</MenuAnchor>
-      <MenuAnchor>Über uns</MenuAnchor>
-    </StyledMenu>
-  );
+function MobileMenu({ open, children }) {
+  return <StyledMenu open={open}>{children}</StyledMenu>;
 }
 
 export default MobileMenu;
