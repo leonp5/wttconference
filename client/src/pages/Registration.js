@@ -5,6 +5,8 @@ import Form from "../components/Form";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import Heading from "../components/Heading";
+import Toggle from "../hooks/Toggle";
+import PopUpContent from "../components/PopUp/PopUpContent";
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -39,7 +41,7 @@ function Registration() {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    await fetch("http://localhost:8080/attendees", {
+    await fetch("http://localhost:8000/attendees", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -114,7 +116,16 @@ function Registration() {
             placeholder="Workshop 3 (Praktisch)"
           />
           <Input value={attendee.else} name="else" onChange={onChange} placeholder="Sonstiges" />
-          <Button>Anmelden</Button>
+
+          <Toggle
+            toggle={show => <Button onClick={show}>Anmelden</Button>}
+            content={hide => (
+              <PopUpContent>
+                <p>Vielen Dank für deine Anmeldung</p>
+                <Button onClick={hide}>Close</Button>
+              </PopUpContent>
+            )}
+          />
         </Form>
       </Container>
     </ContentWrapper>

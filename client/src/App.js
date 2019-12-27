@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 import { ThemeProvider } from "emotion-theming";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-// import "./assets/fonts/fonts.css";
 import GlobalStyles from "./GlobalStyles";
 import { theme } from "./themes/theme";
 import AttendeeRegistration from "./pages/Registration";
