@@ -7,6 +7,7 @@ import Button from "../components/Button";
 import Heading from "../components/Heading";
 import Toggle from "../hooks/Toggle";
 import PopUpContent from "../components/PopUp/PopUpContent";
+import PopUpBackground from "../components/PopUp/PopUpBackground";
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -120,10 +121,12 @@ function Registration() {
           <Toggle
             toggle={show => <Button onClick={show}>Anmelden</Button>}
             content={hide => (
-              <PopUpContent>
-                <p>Vielen Dank für deine Anmeldung</p>
-                <Button onClick={hide}>Close</Button>
-              </PopUpContent>
+              <PopUpBackground>
+                <PopUpContent>
+                  <p>Vielen Dank für deine Anmeldung</p>
+                  <Button onClick={hide}>Close</Button>
+                </PopUpContent>
+              </PopUpBackground>
             )}
           />
         </Form>
