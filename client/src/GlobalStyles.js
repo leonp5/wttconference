@@ -12,6 +12,7 @@ function GlobalStyles() {
         *:after {
           box-sizing: border-box;
         }
+
         body {
           margin: 0;
           background: ${theme.colors.background};
