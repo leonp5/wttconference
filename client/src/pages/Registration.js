@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
 
 import Form from "../components/Form";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import Heading from "../components/Heading";
-import Toggle from "../hooks/Toggle";
+import Toggle from "../components/Toggle";
 import PopUpContent from "../components/PopUp/PopUpContent";
 import PopUpBackground from "../components/PopUp/PopUpBackground";
 
@@ -18,6 +19,17 @@ const ContentWrapper = styled.div`
 `;
 
 const Container = styled.div``;
+
+const NavLink = styled(Link)`
+  color: ${props => props.theme.colors.actioncolor};
+  transition: color 0.3s linear;
+  text-decoration: none;
+  &:hover {
+    background: ${props => props.theme.colors.actioncolor};
+    color: ${props => props.theme.colors.secondary};
+    cursor: pointer;
+  }
+`;
 
 function Registration() {
   const [attendee, setAttendee] = React.useState({
@@ -124,7 +136,9 @@ function Registration() {
               <PopUpBackground>
                 <PopUpContent>
                   <p>Vielen Dank für deine Anmeldung</p>
-                  <Button onClick={hide}>Close</Button>
+                  <NavLink to="/" onClick={hide}>
+                    Hier gehts zur Startseite
+                  </NavLink>
                 </PopUpContent>
               </PopUpBackground>
             )}
