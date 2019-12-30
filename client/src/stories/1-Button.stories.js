@@ -2,8 +2,7 @@ import React from "react";
 import { action } from "@storybook/addon-actions";
 import { text } from "@storybook/addon-knobs";
 
-import SubmitButton from "../components/Button";
-import MenuButton from "../components/MenuButton";
+import Button from "../components/Button";
 import BurgerButton from "../components/BurgerButton";
 
 export default {
@@ -11,16 +10,7 @@ export default {
 };
 
 export function StandardButton() {
-  return (
-    <SubmitButton
-      onClick={action("clicked")}
-      text={text("Button Label", "Abschicken")}
-    ></SubmitButton>
-  );
-}
-
-export function SideMenuButton() {
-  return <MenuButton onClick={action("clicked")} text={text("Button Label", "Home")}></MenuButton>;
+  return <Button onClick={action("clicked")}>{text("Button Label", "Abschicken")}</Button>;
 }
 
 export function Burger() {
