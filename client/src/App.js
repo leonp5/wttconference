@@ -1,35 +1,25 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { ThemeProvider } from "emotion-theming";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import GlobalStyles from "./GlobalStyles";
 import { theme } from "./themes/theme";
-import AttendeeRegistration from "./pages/Registration";
 import AppBar from "./components/AppBar";
 import FooterNav from "./components/FooterNav";
+import NavLink from "./components/NavLink";
+import Registration from "./pages/Registration";
 import Program from "./pages/Program";
 import Home from "./pages/Home";
 import Workshops from "./pages/Workshops";
-import Lift from "./pages/Lift";
 import About from "./pages/About";
+import Impressum from "./pages/Impressum";
+import Privacy from "./pages/Privacy";
+import Attendees from "./pages/Attendees";
 
 const Main = styled.div`
   margin-top: 70px;
   width: 100vw;
-`;
-
-const NavLink = styled(Link)`
-  color: ${props => props.theme.colors.secondary};
-  transition: color 0.3s linear;
-  font-size: 1.5rem;
-  text-decoration: none;
-  margin: 5px;
-  &:hover {
-    background: ${props => props.theme.colors.secondary};
-    color: ${props => props.theme.colors.primary};
-    cursor: pointer;
-  }
 `;
 
 function App() {
@@ -42,7 +32,6 @@ function App() {
           <NavLink to="/program">Programm</NavLink>
           <NavLink to="/workshops">Workshops</NavLink>
           <NavLink to="/registration">Anmelden</NavLink>
-          <NavLink to="/lift">Mitfahren</NavLink>
           <NavLink to="/about">Über uns</NavLink>
         </AppBar>
         <Switch>
@@ -57,13 +46,19 @@ function App() {
               <Workshops />
             </Route>
             <Route path="/registration">
-              <AttendeeRegistration />
-            </Route>
-            <Route path="/lift">
-              <Lift />
+              <Registration />
             </Route>
             <Route path="/about">
               <About />
+            </Route>
+            <Route path="/impressum">
+              <Impressum />
+            </Route>
+            <Route path="/privacy">
+              <Privacy />
+            </Route>
+            <Route path="/attendees">
+              <Attendees />
             </Route>
           </Main>
         </Switch>
