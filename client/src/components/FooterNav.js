@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import Anchor from "./Anchor";
+import NavLink from "./NavLink";
 
 const Footer = styled.footer`
   display: flex;
@@ -17,23 +17,26 @@ const Wrapper = styled.div`
   justify-content: space-around;
 `;
 
-const BottomLinks = styled(Anchor)`
+const Anchor = styled(NavLink)`
   font-size: 1.1rem;
   padding: 10px;
+  margin: 0;
 `;
-
-const Bottom = styled(Anchor)`
-  font-size: 0.9rem;
+const BottomLink = styled(NavLink)`
+  color: ${props => props.theme.colors.secondary};
+  font-size: 0.8rem;
+  padding: 6px;
+  margin: 0;
 `;
 
 function FooterNav() {
   return (
     <Footer>
       <Wrapper>
-        <BottomLinks>Impressum</BottomLinks>
-        <BottomLinks>Datenschutz</BottomLinks>
+        <Anchor to="/impressum">Impressum</Anchor>
+        <Anchor to="/Privacy">Datenschutz</Anchor>
       </Wrapper>
-      <Bottom>Orga-Login</Bottom>
+      <BottomLink to="/attendees">Orga-Login</BottomLink>
     </Footer>
   );
 }
