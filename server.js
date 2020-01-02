@@ -2,24 +2,27 @@ const dotenv = require("dotenv");
 dotenv.config();
 const express = require("express");
 
-const { initDb, getCollection } = require("./lib/database");
-
-const url = process.env.MONGO_URL;
-
-const dbName = "wttconference";
+const { initDb } = require("./lib/database");
+const router = require("./lib/routes");
 
 const app = express();
-const port = 5060;
 
-app.get("/", async (request, response) => {
-  const attendees = await getCollection("attendees").findOne();
-  response.json(attendees);
+app.use(express.json({ extended: false }));
+
+app.get("/", (request, response) => {
+  response.send();
 });
 
-initDb(url, dbName).then(() => {
+app.post("/", (request, response) => {
+  response.end();
+});
+
+initDb(process.env.MONGO_URL, process.env.DB_Name).then(() => {
   console.log("Database steht");
 });
 
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+app.use("/api", router);
+
+app.listen(process.env.PORT, () => {
+  console.log(`Server running on http://localhost:${process.env.PORT}`);
 });
