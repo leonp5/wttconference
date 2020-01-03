@@ -1,24 +1,21 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-const Row = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
+const TableDetail = styled.td``;
 
 function Attendee(props) {
   return (
-    <Row>
-      <p>{props.name}</p>
-      <p>{props.adress}</p>
-      <p>{props.location}</p>
-      <p>{props.email}</p>
-      <p>{props.phone}</p>
-      <p>{props.workshop1}</p>
-      <p>{props.workshop2}</p>
-      <p>{props.workshop3}</p>
-      <p>{props.else}</p>
-    </Row>
+    <>
+      <TableDetail>{props.name}</TableDetail>
+      <TableDetail>{props.adress}</TableDetail>
+      <TableDetail>{props.location}</TableDetail>
+      <TableDetail>{props.email}</TableDetail>
+      <TableDetail>{props.phone}</TableDetail>
+      <TableDetail>{props.workshop1}</TableDetail>
+      <TableDetail>{props.workshop2}</TableDetail>
+      <TableDetail>{props.workshop3}</TableDetail>
+      <TableDetail>{props.else}</TableDetail>
+    </>
   );
 }
 
