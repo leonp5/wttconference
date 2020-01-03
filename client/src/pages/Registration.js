@@ -52,7 +52,7 @@ function Registration() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    saveAttendee({ ...attendee });
+    saveAttendee(attendee);
     setAttendee({
       name: "",
       address: "",

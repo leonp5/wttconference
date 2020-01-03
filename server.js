@@ -14,7 +14,7 @@ app.get("/", (request, response) => {
 });
 
 app.post("/", (request, response) => {
-  response.end();
+  response.send();
 });
 
 initDb(process.env.MONGO_URL, process.env.DB_Name).then(() => {
