@@ -5,21 +5,19 @@ import Form from "../components/Form";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import Heading from "../components/Heading";
-import Toggle from "../components/Toggle";
 import PopUpContent from "../components/PopUp/PopUpContent";
 import PopUpBackground from "../components/PopUp/PopUpBackground";
 import NavLink from "../components/NavLink";
+import ContentWrapper from "../components/ContentWrapper";
+
 import { saveAttendee } from "../api/attendees";
+import Toggle from "../components/Toggle";
 
-const ContentWrapper = styled.div`
+const Container = styled.div`
   display: flex;
-  justify-content: center;
-  width: 95%;
-  height: 100vh;
-  background: ${props => props.theme.colors.secondary};
+  flex-direction: column;
+  align-items: baseline;
 `;
-
-const Container = styled.div``;
 
 const Link = styled(NavLink)`
   color: ${props => props.theme.colors.actioncolor};
