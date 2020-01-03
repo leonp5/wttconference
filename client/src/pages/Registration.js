@@ -9,6 +9,7 @@ import Toggle from "../components/Toggle";
 import PopUpContent from "../components/PopUp/PopUpContent";
 import PopUpBackground from "../components/PopUp/PopUpBackground";
 import NavLink from "../components/NavLink";
+import { saveAttendee } from "../api/attendees";
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -49,25 +50,9 @@ function Registration() {
     });
   }
 
-  async function handleSubmit(event) {
+  function handleSubmit(event) {
     event.preventDefault();
-    await fetch("http://localhost:8000/attendees", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        name: attendee.name,
-        address: attendee.address,
-        location: attendee.location,
-        email: attendee.email,
-        phone: attendee.phone,
-        workshop1: attendee.workshop1,
-        workshop2: attendee.workshop2,
-        workshop3: attendee.workshop3,
-        else: attendee.else
-      })
-    });
+    saveAttendee(attendee);
     setAttendee({
       name: "",
       address: "",
