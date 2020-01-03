@@ -11,7 +11,7 @@ import NavLink from "../components/NavLink";
 import ContentWrapper from "../components/ContentWrapper";
 
 import { saveAttendee } from "../api/attendees";
-import Toggle from "../components/Toggle";
+import Toggle from "../components/PopUp/Toggle";
 
 const Container = styled.div`
   display: flex;
