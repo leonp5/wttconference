@@ -2,8 +2,8 @@ import styled from "@emotion/styled";
 
 export const Table = styled.table``;
 
-export const StyledTH = styled.th``;
+export const TableHeader = styled.th``;
 
-export const StyledTR = styled.tr``;
+export const TableRow = styled.tr``;
 
-export const StyledTD = styled.td``;
+export const TableData = styled.td``;

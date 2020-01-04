@@ -1,20 +1,33 @@
 import React from "react";
-import { Table, StyledTH, StyledTR, StyledTD } from "./Table";
+import { Table, TableRow, TableData, TableHeader } from "./Table";
 
-AttendeeTable.TH = function TH({ children, props }) {
-  return <StyledTH {...props}>{children}</StyledTH>;
+AttendeeTable.TH = function TH({ children, ...props }) {
+  return <TableHeader {...props}>{children}</TableHeader>;
 };
 
 AttendeeTable.TR = function TR(props) {
-  return <StyledTR {...props} />;
+  return <TableRow {...props} />;
 };
 
-AttendeeTable.TD = function TD(props) {
-  return <StyledTD {...props} />;
+AttendeeTable.TD = function TD({ children, ...props }) {
+  return <TableData {...props}>{children}</TableData>;
 };
 
-function AttendeeTable(props) {
-  return <Table {...props} />;
+function AttendeeTable({ children, props }) {
+  const Rows = props.data.map((el, _id) => (
+    <AttendeeTable.TR key={_id}>
+      {Object.values(el).map((el, _id) => (
+        <AttendeeTable.TD key={_id}>{el}</AttendeeTable.TD>
+      ))}
+    </AttendeeTable.TR>
+  ));
+
+  return (
+    <Table {...props}>
+      {Rows}
+      {children}
+    </Table>
+  );
 }
 
 export default AttendeeTable;
