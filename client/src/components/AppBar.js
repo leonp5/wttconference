@@ -30,8 +30,8 @@ function AppBar({ children }) {
 
   return (
     <Container ref={node}>
-      <BurgerButton open={open} setOpen={setOpen} />
-      <MobileMenu open={open} setOpen={setOpen}>
+      <BurgerButton open={open} onChange={open => setOpen(open)} />
+      <MobileMenu open={open} onChange={open => setOpen(open)}>
         {children}
       </MobileMenu>
     </Container>

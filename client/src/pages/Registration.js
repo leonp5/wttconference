@@ -9,9 +9,8 @@ import PopUpContent from "../components/PopUp/PopUpContent";
 import PopUpBackground from "../components/PopUp/PopUpBackground";
 import NavLink from "../components/NavLink";
 import ContentWrapper from "../components/ContentWrapper";
-
+import TogglePopUp from "../components/PopUp/TogglePopUp";
 import { saveAttendee } from "../api/attendees";
-import Toggle from "../components/PopUp/Toggle";
 
 const Container = styled.div`
   display: flex;
@@ -27,7 +26,7 @@ const Link = styled(NavLink)`
   }
 `;
 
-function Registration() {
+export default function Registration() {
   const [attendee, setAttendee] = React.useState({
     name: "",
     address: "",
@@ -110,7 +109,7 @@ function Registration() {
           />
           <Input value={attendee.else} name="else" onChange={onChange} placeholder="Sonstiges" />
 
-          <Toggle
+          <TogglePopUp
             toggle={show => <Button onClick={show}>Anmelden</Button>}
             content={hide => (
               <PopUpBackground>
@@ -128,5 +127,3 @@ function Registration() {
     </ContentWrapper>
   );
 }
-
-export default Registration;
