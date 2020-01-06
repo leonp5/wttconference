@@ -1,31 +1,37 @@
 import React from "react";
 import { Table, TableRow, TableData, TableHeader } from "./Table";
 
-AttendeeTable.TH = function TH({ children, ...props }) {
-  return <TableHeader {...props}>{children}</TableHeader>;
-};
+function AttendeeTable({ children, ...props }) {
+  const ContentTH = [
+    "Name",
+    "Adresse",
+    "Wohnort",
+    "Email",
+    "Telefon",
+    "Workshop1",
+    "Workshop2",
+    "Workshop3",
+    "Sonstiges"
+  ];
 
-AttendeeTable.TR = function TR(props) {
-  return <TableRow {...props} />;
-};
-
-AttendeeTable.TD = function TD({ children, ...props }) {
-  return <TableData {...props}>{children}</TableData>;
-};
-
-function AttendeeTable({ children, props }) {
-  const Rows = props.data.map((el, _id) => (
-    <AttendeeTable.TR key={_id}>
-      {Object.values(el).map((el, _id) => (
-        <AttendeeTable.TD key={_id}>{el}</AttendeeTable.TD>
+  const Rows = props.attendees.map((attendee, index) => (
+    <TableRow key={index}>
+      {Object.values(attendee).map((attendeeData, index) => (
+        <TableData key={index}>{attendeeData}</TableData>
       ))}
-    </AttendeeTable.TR>
+    </TableRow>
   ));
 
   return (
     <Table {...props}>
-      {Rows}
-      {children}
+      <thead>
+        <TableRow>
+          {ContentTH.map((TableHeadings, key) => (
+            <TableHeader key={key}>{TableHeadings}</TableHeader>
+          ))}
+        </TableRow>
+      </thead>
+      <tbody>{Rows}</tbody>
     </Table>
   );
 }

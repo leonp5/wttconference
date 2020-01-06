@@ -1,27 +1,23 @@
 import React from "react";
 
 import Heading from "../components/Heading";
-import { getAttendees } from "../api/attendees";
 import ContentWrapper from "../components/ContentWrapper";
 import AttendeeTable from "../components/Table/AttendeeTable";
+import useFetch from "../hooks/useFetch";
 
-function Attendees() {
-  const [attendees, setAttendees] = React.useState([]);
+export default function Attendees() {
+  const attendees = useFetch("/api/attendees");
+  console.log(attendees);
 
-  React.useEffect(() => {
-    async function fetchData() {
-      const result = await getAttendees();
-      setAttendees(result);
-    }
-    fetchData();
-  }, []);
+  attendees.map(attendee => {
+    delete attendee._id;
+  });
 
   return (
     <ContentWrapper>
       <Heading>Teilnehmer</Heading>
-      <AttendeeTable data={attendees} />
+
+      <AttendeeTable attendees={attendees} />
     </ContentWrapper>
   );
 }
-
-export default Attendees;
