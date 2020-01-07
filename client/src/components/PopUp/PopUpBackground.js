@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-const PopUpBackground = styled.div`
+export const PopUpBackground = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,5 +12,3 @@ const PopUpBackground = styled.div`
   bottom: 0;
   background: ${props => props.theme.colors.transparentBackground};
 `;
-
-export default PopUpBackground;

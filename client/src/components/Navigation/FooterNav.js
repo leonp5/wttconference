@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import NavLink from "./NavLink";
+import { NavLink } from "./NavLink";
 
 const Footer = styled.footer`
   display: flex;
@@ -13,7 +13,7 @@ const Footer = styled.footer`
   box-shadow: 0px -3px 5px 0px rgba(0, 0, 0, 0.3);
 `;
 
-const Wrapper = styled.div`
+const AnchorWrapper = styled.div`
   width: 100vw;
   display: flex;
   justify-content: space-around;
@@ -31,16 +31,14 @@ const BottomLink = styled(NavLink)`
   margin: 0;
 `;
 
-function FooterNav() {
+export default function FooterNav() {
   return (
     <Footer>
-      <Wrapper>
+      <AnchorWrapper>
         <Anchor to="/impressum">Impressum</Anchor>
         <Anchor to="/Privacy">Datenschutz</Anchor>
-      </Wrapper>
+      </AnchorWrapper>
       <BottomLink to="/attendees">Orga-Login</BottomLink>
     </Footer>
   );
 }
-
-export default FooterNav;

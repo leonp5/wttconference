@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 
-const NavLink = styled(Link)`
+export const NavLink = styled(Link)`
   color: ${props => props.theme.colors.secondary};
   transition: color 0.3s linear;
   font-size: 1.5rem;
@@ -13,5 +13,3 @@ const NavLink = styled(Link)`
     cursor: pointer;
   }
 `;
-
-export default NavLink;

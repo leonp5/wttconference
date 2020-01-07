@@ -1,7 +1,7 @@
 import React from "react";
 
-import Heading from "../components/Heading";
-import ContentWrapper from "../components/ContentWrapper";
+import { Heading } from "../components/Heading";
+import { ContentWrapper } from "../components/ContentWrapper";
 
 function Program() {
   return (

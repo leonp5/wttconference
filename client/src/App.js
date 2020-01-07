@@ -5,9 +5,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import GlobalStyles from "./GlobalStyles";
 import { theme } from "./themes/theme";
-import AppBar from "./components/AppBar";
-import FooterNav from "./components/FooterNav";
-import NavLink from "./components/NavLink";
+import AppBar from "./components/Navigation/AppBar";
+import FooterNav from "./components/Navigation/FooterNav";
+import { NavLink } from "./components/Navigation/NavLink";
 import Registration from "./pages/Registration";
 import Program from "./pages/Program";
 import Home from "./pages/Home";

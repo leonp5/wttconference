@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import Form from "../components/Form";
-import Input from "../components/Input";
-import Button from "../components/Buttons/Button";
-import Heading from "../components/Heading";
-import PopUpContent from "../components/PopUp/PopUpContent";
-import PopUpBackground from "../components/PopUp/PopUpBackground";
-import NavLink from "../components/NavLink";
-import ContentWrapper from "../components/ContentWrapper";
+import { Form } from "../components/Form";
+import { InputField } from "../components/InputField";
+import { Button } from "../components/Buttons/Button";
+import { Heading } from "../components/Heading";
+import { PopUpContent } from "../components/PopUp/PopUpContent";
+import { PopUpBackground } from "../components/PopUp/PopUpBackground";
 import TogglePopUp from "../components/PopUp/TogglePopUp";
+import { NavLink } from "../components/Navigation/NavLink";
+import { ContentWrapper } from "../components/ContentWrapper";
 import { saveAttendee } from "../api/attendees";
 
 const Container = styled.div`
@@ -68,46 +68,65 @@ export default function Registration() {
       <Container>
         <Heading>Anmeldung</Heading>
         <Form onSubmit={handleSubmit}>
-          <Input
+          <InputField
+            required
             value={attendee.name}
             autoFocus
             name="name"
             onChange={onChange}
-            placeholder="Name, Vorname"
+            placeholder="Vorname, Name*"
           />
-          <Input
+          <InputField
+            required
             value={attendee.address}
             name="address"
             onChange={onChange}
-            placeholder="Adresse"
+            placeholder="Adresse*"
           />
-          <Input
+          <InputField
+            required
             value={attendee.location}
             name="location"
             onChange={onChange}
-            placeholder="Ort, PLZ"
+            placeholder="Ort, PLZ*"
           />
-          <Input value={attendee.email} name="email" onChange={onChange} placeholder="Email" />
-          <Input value={attendee.phone} name="phone" onChange={onChange} placeholder="Telefon" />
-          <Input
+          <InputField
+            required
+            value={attendee.email}
+            name="email"
+            onChange={onChange}
+            placeholder="Email*"
+          />
+          <InputField
+            value={attendee.phone}
+            name="phone"
+            onChange={onChange}
+            placeholder="Telefon"
+          />
+          <InputField
             value={attendee.workshop1}
-            name="workshop1"
+            name="highschool"
             onChange={onChange}
-            placeholder="Workshop 1 (Theorie)"
+            placeholder="Hochschule"
           />
-          <Input
+          <InputField
             value={attendee.workshop2}
-            name="workshop2"
+            name="gender"
             onChange={onChange}
-            placeholder="Workshop 2 (Theorie)"
+            placeholder="Geschlecht (männlich, weiblich, divers)"
           />
-          <Input
+          <InputField
             value={attendee.workshop3}
-            name="workshop3"
+            name="nutrition"
             onChange={onChange}
-            placeholder="Workshop 3 (Praktisch)"
+            placeholder="Essen (vegetarisch, vegan, Lebensmittelunverträglichkeiten"
           />
-          <Input value={attendee.else} name="else" onChange={onChange} placeholder="Sonstiges" />
+          <InputField
+            value={attendee.else}
+            name="else"
+            onChange={onChange}
+            placeholder="Sonstiges"
+          />
 
           <TogglePopUp
             toggle={show => <Button onClick={show}>Anmelden</Button>}

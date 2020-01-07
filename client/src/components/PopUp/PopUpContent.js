@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-const PopUp = styled.div`
+export const PopUpContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,5 +9,3 @@ const PopUp = styled.div`
   padding: 40px;
   background: ${props => props.theme.colors.secondary};
 `;
-
-export default PopUp;
