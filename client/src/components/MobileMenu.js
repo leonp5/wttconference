@@ -16,9 +16,9 @@ const StyledMenu = styled.nav`
   background: ${props => props.theme.colors.primary};
 `;
 
-function MobileMenu({ open, setOpen, children }) {
+function MobileMenu({ open, onChange, children }) {
   return (
-    <StyledMenu open={open} onClick={() => setOpen(!open)}>
+    <StyledMenu open={open} onClick={() => onChange(!open)}>
       {children}
     </StyledMenu>
   );

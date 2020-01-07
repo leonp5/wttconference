@@ -5,21 +5,18 @@ import Form from "../components/Form";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import Heading from "../components/Heading";
-import Toggle from "../components/Toggle";
 import PopUpContent from "../components/PopUp/PopUpContent";
 import PopUpBackground from "../components/PopUp/PopUpBackground";
 import NavLink from "../components/NavLink";
+import ContentWrapper from "../components/ContentWrapper";
+import TogglePopUp from "../components/PopUp/TogglePopUp";
 import { saveAttendee } from "../api/attendees";
 
-const ContentWrapper = styled.div`
+const Container = styled.div`
   display: flex;
-  justify-content: center;
-  width: 95%;
-  height: 100vh;
-  background: ${props => props.theme.colors.secondary};
+  flex-direction: column;
+  align-items: baseline;
 `;
-
-const Container = styled.div``;
 
 const Link = styled(NavLink)`
   color: ${props => props.theme.colors.actioncolor};
@@ -29,7 +26,7 @@ const Link = styled(NavLink)`
   }
 `;
 
-function Registration() {
+export default function Registration() {
   const [attendee, setAttendee] = React.useState({
     name: "",
     address: "",
@@ -112,7 +109,7 @@ function Registration() {
           />
           <Input value={attendee.else} name="else" onChange={onChange} placeholder="Sonstiges" />
 
-          <Toggle
+          <TogglePopUp
             toggle={show => <Button onClick={show}>Anmelden</Button>}
             content={hide => (
               <PopUpBackground>
@@ -130,5 +127,3 @@ function Registration() {
     </ContentWrapper>
   );
 }
-
-export default Registration;
