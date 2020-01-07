@@ -6,6 +6,8 @@ const Footer = styled.footer`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: fixed;
+  bottom: 0;
   height: 80px;
   background: ${props => props.theme.colors.primary};
   box-shadow: 0px -3px 5px 0px rgba(0, 0, 0, 0.3);

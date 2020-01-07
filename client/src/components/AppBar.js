@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 
 import useOnClickOutside from "../hooks/useOnClickOutside";
-import BurgerButton from "./BurgerButton";
+import BurgerButton from "./Buttons/BurgerButton";
 import MobileMenu from "./MobileMenu";
 
 const Container = styled.div`

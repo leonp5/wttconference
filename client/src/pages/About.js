@@ -1,9 +1,14 @@
 import React from "react";
 
 import Heading from "../components/Heading";
+import ContentWrapper from "../components/ContentWrapper";
 
 function About() {
-  return <Heading>Über uns</Heading>;
+  return (
+    <ContentWrapper>
+      <Heading>Über uns</Heading>
+    </ContentWrapper>
+  );
 }
 
 export default About;
