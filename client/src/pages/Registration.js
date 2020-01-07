@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 import Form from "../components/Form";
 import Input from "../components/Input";
-import Button from "../components/Button";
+import Button from "../components/Buttons/Button";
 import Heading from "../components/Heading";
 import Toggle from "../components/Toggle";
 import PopUpContent from "../components/PopUp/PopUpContent";

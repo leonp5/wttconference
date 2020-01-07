@@ -18,8 +18,12 @@ import Privacy from "./pages/Privacy";
 import Attendees from "./pages/Attendees";
 
 const Main = styled.div`
+  display: flex;
+  justify-content: center;
   margin-top: 70px;
+  margin-bottom: 80px;
   width: 100vw;
+  height: 100vh;
 `;
 
 function App() {
