@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "12.x"
+  },
   "scripts": {
     "build-client": "cd client && npm run build",
     "build-storybook": "cd client && npm run build-storybook",

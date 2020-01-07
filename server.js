@@ -9,15 +9,11 @@ const app = express();
 
 app.use(express.json({ extended: false }));
 
-app.get("/", (request, response) => {
-  response.send();
-});
-
-app.post("/", (request, response) => {
+app.get("/", async (request, response) => {
   response.end();
 });
 
-initDb(process.env.MONGO_URL, process.env.DB_Name).then(() => {
+initDb(process.env.MONGO_URL, process.env.DB_NAME).then(() => {
   console.log("Database steht");
 });
 

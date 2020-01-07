@@ -44,9 +44,9 @@ const StyledBurger = styled.button`
   }
 `;
 
-function BurgerButton({ open, setOpen }) {
+function BurgerButton({ open, onChange }) {
   return (
-    <StyledBurger open={open} onClick={() => setOpen(!open)}>
+    <StyledBurger open={open} onClick={() => onChange(!open)}>
       <div />
       <div />
       <div />
