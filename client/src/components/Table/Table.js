@@ -7,7 +7,6 @@ import styled from "@emotion/styled";
 export const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
-  overflow: auto;
 `;
 
 export const TableHeader = styled.th`
