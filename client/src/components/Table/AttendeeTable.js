@@ -1,7 +1,8 @@
 import React from "react";
-import { Table, TableRow, TableData, TableHeader } from "./Table";
 
-function AttendeeTable({ children, ...props }) {
+import { Table, TableRow, TableData, TableHeaderRow, TableHeader } from "./Table";
+
+function AttendeeTable({ ...props }) {
   const ContentTH = [
     "Name",
     "Adresse",
@@ -23,13 +24,13 @@ function AttendeeTable({ children, ...props }) {
   ));
 
   return (
-    <Table {...props}>
+    <Table>
       <thead>
-        <TableRow>
-          {ContentTH.map((TableHeadings, key) => (
-            <TableHeader key={key}>{TableHeadings}</TableHeader>
+        <TableHeaderRow>
+          {ContentTH.map((TableHeadings, index) => (
+            <TableHeader key={index}>{TableHeadings}</TableHeader>
           ))}
-        </TableRow>
+        </TableHeaderRow>
       </thead>
       <tbody>{Rows}</tbody>
     </Table>

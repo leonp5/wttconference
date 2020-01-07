@@ -1,13 +1,34 @@
 import styled from "@emotion/styled";
 
-export const Table = styled.table``;
+// const breakpoints = [420];
 
-export const TableHeader = styled.th`
-  color: ${props => props.theme.colors.font};
+// const mq = breakpoints.map(bp => `@media (max-width: ${bp}px)`);
+
+export const Table = styled.table`
+  width: 100%;
+  border-collapse: collapse;
+  overflow: auto;
 `;
 
-export const TableRow = styled.tr``;
+export const TableHeader = styled.th`
+  padding: 5px;
+  border-bottom: 1px solid ${props => props.theme.colors.tertiary};
+  letter-spacing: 1px;
+`;
+
+export const TableHeaderRow = styled.tr``;
+
+export const TableRow = styled.tr`
+  :nth-of-type(odd) {
+    background: ${props => props.theme.colors.backgroundLight};
+  }
+  &:hover {
+    background: ${props => props.theme.colors.transparentBackgroundLight};
+  }
+`;
 
 export const TableData = styled.td`
   color: ${props => props.theme.colors.font};
+  padding: 5px;
+  letter-spacing: 1px;
 `;
