@@ -8,6 +8,16 @@ export function saveAttendee(attendee) {
   });
 }
 
+export function notifyAttendee(attendee) {
+  return fetch(`/api/email`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(attendee)
+  });
+}
+
 export async function getAttendees() {
   return fetch(`api/attendees/`, {
     method: "GET"
