@@ -5,6 +5,6 @@ export const ContentWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 95%;
-  height: 100vh;
+  height: 100%;
   background: ${props => props.theme.colors.secondary};
 `;

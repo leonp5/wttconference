@@ -7,7 +7,6 @@ export const Table = styled.table`
   width: 100%;
   max-width: 1200px;
   border-collapse: collapse;
-
   ${MediaQuery[0]} {
     display: block;
   }
@@ -20,7 +19,6 @@ export const TableHeader = styled.th`
   text-align: left;
   overflow: hidden;
   text-overflow: ellipsis;
-
   ${MediaQuery[0]} {
     display: block;
   }
@@ -36,7 +34,7 @@ export const TableHeaderRow = styled.tr`
 
 export const TableRow = styled.tr`
   :nth-of-type(odd) {
-    background: red;
+    background: ${props => props.theme.colors.backgroundLight};
   }
   &:hover {
     background: ${props => props.theme.colors.transparentBackgroundLight};
@@ -56,6 +54,7 @@ export const TableData = styled.td`
 
   ${MediaQuery[0]} {
     width: 95vw;
+    height: 28px;
     display: block;
     position: relative;
     padding-left: 50%;
