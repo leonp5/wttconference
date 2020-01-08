@@ -8,6 +8,7 @@ const router = require("./lib/routes");
 const app = express();
 
 app.use(express.json({ extended: false }));
+app.use(express.urlencoded({ extended: false }));
 
 app.get("/", async (request, response) => {
   response.end();

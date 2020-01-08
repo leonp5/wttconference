@@ -10,7 +10,7 @@ import { PopUpBackground } from "../components/PopUp/PopUpBackground";
 import TogglePopUp from "../components/PopUp/TogglePopUp";
 import { NavLink } from "../components/Navigation/NavLink";
 import { ContentWrapper } from "../components/ContentWrapper";
-import { saveAttendee } from "../api/attendees";
+import { saveAttendee, notifyAttendee } from "../api/attendees";
 
 const Container = styled.div`
   display: flex;
@@ -33,9 +33,9 @@ export default function Registration() {
     location: "",
     email: "",
     phone: "",
-    workshop1: "",
-    workshop2: "",
-    workshop3: "",
+    highschool: "",
+    gender: "",
+    nutrition: "",
     else: ""
   });
 
@@ -50,15 +50,16 @@ export default function Registration() {
   function handleSubmit(event) {
     event.preventDefault();
     saveAttendee(attendee);
+    notifyAttendee(attendee);
     setAttendee({
       name: "",
       address: "",
       location: "",
       email: "",
       phone: "",
-      workshop1: "",
-      workshop2: "",
-      workshop3: "",
+      highschool: "",
+      gender: "",
+      nutrition: "",
       else: ""
     });
   }
@@ -104,19 +105,19 @@ export default function Registration() {
             placeholder="Telefon"
           />
           <InputField
-            value={attendee.workshop1}
+            value={attendee.highschool}
             name="highschool"
             onChange={onChange}
             placeholder="Hochschule"
           />
           <InputField
-            value={attendee.workshop2}
+            value={attendee.gender}
             name="gender"
             onChange={onChange}
             placeholder="Geschlecht (männlich, weiblich, divers)"
           />
           <InputField
-            value={attendee.workshop3}
+            value={attendee.nutrition}
             name="nutrition"
             onChange={onChange}
             placeholder="Essen (vegetarisch, vegan, Lebensmittelunverträglichkeiten"
