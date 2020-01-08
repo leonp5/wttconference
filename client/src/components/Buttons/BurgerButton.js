@@ -44,7 +44,7 @@ const StyledBurger = styled.button`
   }
 `;
 
-function BurgerButton({ open, onChange }) {
+export default function BurgerButton({ open, onChange }) {
   return (
     <StyledBurger open={open} onClick={() => onChange(!open)}>
       <div />
@@ -53,5 +53,3 @@ function BurgerButton({ open, onChange }) {
     </StyledBurger>
   );
 }
-
-export default BurgerButton;

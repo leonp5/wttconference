@@ -2,16 +2,16 @@ import React from "react";
 
 import { Table, TableRow, TableData, TableHeaderRow, TableHeader } from "./Table";
 
-function AttendeeTable({ ...props }) {
+export default function AttendeeTable({ ...props }) {
   const ContentTH = [
     "Name",
     "Adresse",
     "Wohnort",
     "Email",
     "Telefon",
-    "Workshop1",
-    "Workshop2",
-    "Workshop3",
+    "Hochschule",
+    "Geschlecht",
+    "Ernährung",
     "Sonstiges"
   ];
 
@@ -36,5 +36,3 @@ function AttendeeTable({ ...props }) {
     </Table>
   );
 }
-
-export default AttendeeTable;

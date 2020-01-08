@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import useOnClickOutside from "../hooks/useOnClickOutside";
-import BurgerButton from "./Buttons/BurgerButton";
+import useOnClickOutside from "../../hooks/useOnClickOutside";
+import BurgerButton from "../Buttons/BurgerButton";
 import MobileMenu from "./MobileMenu";
 
-const Container = styled.div`
+const Header = styled.div`
   display: flex;
   align-items: center;
   position: fixed;
@@ -23,19 +23,17 @@ const Container = styled.div`
 //   }
 // `;
 
-function AppBar({ children }) {
+export default function AppBar({ children }) {
   const [open, setOpen] = React.useState(false);
   const node = React.useRef();
   useOnClickOutside(node, () => setOpen(false));
 
   return (
-    <Container ref={node}>
+    <Header ref={node}>
       <BurgerButton open={open} onChange={open => setOpen(open)} />
       <MobileMenu open={open} onChange={open => setOpen(open)}>
         {children}
       </MobileMenu>
-    </Container>
+    </Header>
   );
 }
-
-export default AppBar;

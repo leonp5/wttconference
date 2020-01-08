@@ -1,10 +1,13 @@
 import styled from "@emotion/styled";
 
-const Heading = styled.h2`
+export const Heading = styled.h1`
   font-family: "Antropos";
   color: ${props => props.theme.colors.primary};
   margin: 0;
   padding: 35px 0px 15px 0px;
 `;
 
-export default Heading;
+export const Heading2 = styled.h2`
+  text-align: center;
+  padding: 5px;
+`;
