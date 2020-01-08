@@ -10,18 +10,13 @@ const Header = styled.div`
   align-items: center;
   position: fixed;
   top: 0;
+  z-index: 1;
   height: 70px;
   width: 100vw;
   background: ${props => props.theme.colors.primary};
   color: ${props => props.theme.colors.secondary};
   box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
 `;
-
-// const Mobile = styled.div`
-//   @media (min-width: 576px) {
-//     display: none;
-//   }
-// `;
 
 export default function AppBar({ children }) {
   const [open, setOpen] = React.useState(false);

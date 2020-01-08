@@ -36,7 +36,7 @@ export const TableHeaderRow = styled.tr`
 
 export const TableRow = styled.tr`
   :nth-of-type(odd) {
-    background: ${props => props.theme.colors.backgroundLight};
+    background: red;
   }
   &:hover {
     background: ${props => props.theme.colors.transparentBackgroundLight};
@@ -55,7 +55,7 @@ export const TableData = styled.td`
   text-overflow: ellipsis;
 
   ${MediaQuery[0]} {
-    width: 100vw;
+    width: 95vw;
     display: block;
     position: relative;
     padding-left: 50%;
@@ -65,8 +65,6 @@ export const TableData = styled.td`
       position: absolute;
       top: 6px;
       left: 6px;
-      width: 45%;
-      padding-right: 10px;
     }
     :nth-of-type(1):before {
       content: "Name";
