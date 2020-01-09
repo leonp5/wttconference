@@ -6,7 +6,7 @@ export const Main = styled.div`
   align-items: center;
   flex-grow: 1;
   overflow: auto;
-  width: 90%;
+  width: 100%;
   height: 100%;
   background: ${props => props.theme.colors.secondary};
 `;

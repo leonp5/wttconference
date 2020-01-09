@@ -13,12 +13,15 @@ function GlobalStyles() {
           box-sizing: border-box;
         }
         @font-face {
-          font-family: "Antropos";
-          src: url("/fonts/Antropos.eot");
-          src: url("/fonts/Antropos.eot?#iefix") format("embedded-opentype"),
-            url("/fonts/Antropos.otf") format("opentype"), url("/fonts/Antropos.svg") format("svg"),
-            url("/fonts/Antropos.ttf") format("truetype"),
-            url("/fonts/Antropos.woff") format("woff"), url("/fonts/Antropos.woff2") format("woff2");
+          font-family: "Baar Philos";
+          src: url("/fonts/BaarPhilosBold.eot");
+          src: url("/fonts/BaarPhilosBold.eot?#iefix") format("embedded-opentype"),
+            url("/fonts/BaarPhilosBold.woff2") format("woff2"),
+            url("/fonts/BaarPhilosBold.woff") format("woff"),
+            url("/fonts/BaarPhilosBold.ttf") format("truetype"),
+            url("/fonts/BaarPhilosBold.svg#BaarPhilosBold") format("svg");
+          font-weight: bold;
+          font-style: normal;
         }
 
         body {
