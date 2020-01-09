@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "@emotion/styled";
 import { ThemeProvider } from "emotion-theming";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
