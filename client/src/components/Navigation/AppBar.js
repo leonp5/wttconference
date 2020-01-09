@@ -6,13 +6,12 @@ import BurgerButton from "../Buttons/BurgerButton";
 import MobileMenu from "./MobileMenu";
 
 const Header = styled.div`
+  flex-grow: 0;
   display: flex;
   align-items: center;
-  position: fixed;
-  top: 0;
   z-index: 1;
   height: 70px;
-  width: 100vw;
+  width: 100%;
   background: ${props => props.theme.colors.primary};
   color: ${props => props.theme.colors.secondary};
   box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);

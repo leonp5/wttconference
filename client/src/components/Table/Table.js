@@ -7,9 +7,6 @@ export const Table = styled.table`
   width: 100%;
   max-width: 1200px;
   border-collapse: collapse;
-  ${MediaQuery[0]} {
-    display: block;
-  }
 `;
 
 export const TableHeader = styled.th`
@@ -26,7 +23,6 @@ export const TableHeader = styled.th`
 
 export const TableHeaderRow = styled.tr`
   ${MediaQuery[0]} {
-    display: block;
     position: absolute;
     z-index: -1000;
   }
@@ -35,6 +31,9 @@ export const TableHeaderRow = styled.tr`
 export const TableRow = styled.tr`
   :nth-of-type(odd) {
     background: ${props => props.theme.colors.backgroundLight};
+  }
+  :nth-of-type(even) {
+    background: ${props => props.theme.colors.secondary};
   }
   &:hover {
     background: ${props => props.theme.colors.transparentBackgroundLight};
@@ -53,7 +52,6 @@ export const TableData = styled.td`
   text-overflow: ellipsis;
 
   ${MediaQuery[0]} {
-    width: 95vw;
     height: 28px;
     display: block;
     position: relative;

@@ -6,8 +6,9 @@ export const theme = {
     backgroundLight: "#f2f2f2",
     primary: "#6E0101",
     secondary: "#FFFFFF",
+    tertiary: "#000000",
     actioncolor: "#5027D8",
-    font: "#4B4949",
-    tertiary: "#000000"
+    disabled: "#8e6bff",
+    font: "#4B4949"
   }
 };

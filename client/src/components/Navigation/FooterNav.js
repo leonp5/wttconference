@@ -3,18 +3,18 @@ import styled from "@emotion/styled";
 import { NavLink } from "./NavLink";
 
 const Footer = styled.footer`
+  flex-grow: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: fixed;
-  bottom: 0;
   height: 80px;
+  width: 100%;
   background: ${props => props.theme.colors.primary};
   box-shadow: 0px -3px 5px 0px rgba(0, 0, 0, 0.3);
 `;
 
 const AnchorWrapper = styled.div`
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: space-around;
 `;
