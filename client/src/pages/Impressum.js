@@ -1,9 +1,12 @@
 import React from "react";
 
 import { Heading } from "../components/Heading";
+import { ContentWrapper } from "../components/Container/ContentWrapper";
 
-function Impressum() {
-  return <Heading>Impressum</Heading>;
+export default function Impressum() {
+  return (
+    <ContentWrapper>
+      <Heading>Impressum</Heading>
+    </ContentWrapper>
+  );
 }
-
-export default Impressum;

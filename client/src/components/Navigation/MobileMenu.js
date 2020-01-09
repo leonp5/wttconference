@@ -7,9 +7,10 @@ const StyledMenu = styled.nav`
   align-items: center;
   justify-content: space-around;
   position: fixed;
+  z-index: 1;
   height: 250px;
   padding: 2rem;
-  top: 1.8rem;
+  top: 1.5rem;
   right: 0;
   transition: transform 0.3s ease-in-out;
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};

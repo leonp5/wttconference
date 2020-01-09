@@ -9,7 +9,7 @@ import { PopUpContent } from "../components/PopUp/PopUpContent";
 import { PopUpBackground } from "../components/PopUp/PopUpBackground";
 import TogglePopUp from "../components/PopUp/TogglePopUp";
 import { NavLink } from "../components/Navigation/NavLink";
-import { ContentWrapper } from "../components/ContentWrapper";
+import { ContentWrapper } from "../components/Container/ContentWrapper";
 import { saveAttendee, notifyAttendee } from "../api/attendees";
 
 const Container = styled.div`
@@ -93,12 +93,14 @@ export default function Registration() {
           />
           <InputField
             required
+            type="email"
             value={attendee.email}
             name="email"
             onChange={onChange}
             placeholder="Email*"
           />
           <InputField
+            type="number"
             value={attendee.phone}
             name="phone"
             onChange={onChange}
@@ -130,7 +132,14 @@ export default function Registration() {
           />
 
           <TogglePopUp
-            toggle={show => <Button onClick={show}>Anmelden</Button>}
+            toggle={show => (
+              <Button
+                disabled={(!attendee.name, !attendee.address, !attendee.location, !attendee.email)}
+                onClick={show}
+              >
+                Anmelden
+              </Button>
+            )}
             content={hide => (
               <PopUpBackground>
                 <PopUpContent>

@@ -1,9 +1,12 @@
 import React from "react";
 
 import { Heading } from "../components/Heading";
+import { ContentWrapper } from "../components/Container/ContentWrapper";
 
-function Privacy() {
-  return <Heading>Datenschutz</Heading>;
+export default function Privacy() {
+  return (
+    <ContentWrapper>
+      <Heading>Datenschutz</Heading>
+    </ContentWrapper>
+  );
 }
-
-export default Privacy;
