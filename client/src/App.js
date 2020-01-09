@@ -23,7 +23,7 @@ const Main = styled.div`
   margin-top: 70px;
   margin-bottom: 80px;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
 `;
 
 function App() {
