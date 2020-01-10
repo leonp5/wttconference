@@ -2,7 +2,7 @@ import React from "react";
 
 import { Heading } from "../components/Heading";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
-import AttendeeTable from "../components/Table/AttendeeTable";
+import AttendeeTable from "../components/Table/AttendeeTable/AttendeeTable";
 import useFetch from "../hooks/useFetch";
 
 export default function Attendees() {

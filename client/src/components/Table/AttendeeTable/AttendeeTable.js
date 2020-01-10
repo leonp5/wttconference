@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Table, TableRow, TableData, TableHeaderRow, TableHeader } from "./Table";
+import { Table, TableRow, TableData, TableHeaderRow, TableHeader } from "./TableComponents";
 
 export default function AttendeeTable({ ...props }) {
   const ContentTH = [
