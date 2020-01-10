@@ -27,6 +27,7 @@ function GlobalStyles() {
         body {
           margin: 0;
           background: ${theme.colors.background};
+          font-family: "Roboto", sans-serif;
         }
       `}
     />
