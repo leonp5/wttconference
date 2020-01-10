@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "@emotion/styled";
 
+import { Heading } from "../components/Text";
 import { Form } from "../components/Form";
 import { InputField } from "../components/InputField";
 import { Button } from "../components/Buttons/Button";
-import { Heading } from "../components/Heading";
 import { PopUpContent } from "../components/PopUp/PopUpContent";
 import { PopUpBackground } from "../components/PopUp/PopUpBackground";
 import TogglePopUp from "../components/PopUp/TogglePopUp";

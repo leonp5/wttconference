@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import { Heading, Heading2 } from "../components/Heading";
+import { Heading, Heading2, Text } from "../components/Text";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
 import { Image } from "../components/Image";
 
@@ -18,11 +18,6 @@ const ImageText = styled(Heading2)`
   margin-right: auto;
   left: 0;
   right: 0;
-`;
-
-const Text = styled.p`
-  padding: 10px;
-  font-size: 1.1rem;
 `;
 
 function Home() {

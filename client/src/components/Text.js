@@ -12,3 +12,8 @@ export const Heading2 = styled.h2`
   text-align: center;
   padding: 5px;
 `;
+
+export const Text = styled.p`
+  padding: 10px;
+  font-size: 1.1rem;
+`;
