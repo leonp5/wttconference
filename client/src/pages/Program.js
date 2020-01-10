@@ -17,14 +17,14 @@ function Program() {
       <Table>
         <Column>
           <TableHeading>Freitag, 26.06</TableHeading>
-          <Time>17-18 Uhr</Time>
+          <Time>17 - 18 Uhr</Time>
           <Content> Anmeldung im Foyer</Content>
-          <Time>18-19 Uhr</Time>
+          <Time>18 - 19 Uhr</Time>
           <Content>
             Eröffnung mit Impuls. Vorstellung unserer Initiative und des Programms fürs Wochenende.
             Spaziergang zu zweit kurzer Austausch, Kennenlernen „fremder“ Personen
           </Content>
-          <Time>19:30-21 Uhr</Time>
+          <Time>19:30 - 21 Uhr</Time>
           <Content> Abendessen</Content>
           <Time>21 Uhr</Time>
           <Content>
@@ -37,11 +37,11 @@ function Program() {
           <Content> Frühstück</Content>
           <Time></Time>
           <Content> Gemeinsamer Beginn (Singen, Impuls)</Content>
-          <Time>10:15-12:15 Uhr</Time>
+          <Time>10:15 - 12:15 Uhr</Time>
           <Content>Workshops </Content>
-          <Time>12:30-14:30 Uhr</Time>
+          <Time>12:30 - 14:30 Uhr</Time>
           <Content>Mittagessen - Mittagspause </Content>
-          <Time>14:30-14:45 Uhr</Time>
+          <Time>14:30 - 14:45 Uhr</Time>
           <Content>Get together, gemeinsamer Start in den Nachmittag </Content>
           <Time>15 Uhr</Time>
           <Content> Offene Workshops - Initiativzeit</Content>
@@ -54,15 +54,15 @@ function Program() {
         </Column>
         <Column>
           <TableHeading>Sonntag, 28.06</TableHeading>
-          <Time>8:30-9:30 Uhr</Time>
+          <Time>8:30 - 9:30 Uhr</Time>
           <Content>Frühstück</Content>
-          <Time>9:45-10:00 Uhr</Time>
+          <Time>9:45 - 10:00 Uhr</Time>
           <Content>Gemeinsamer Beginn</Content>
-          <Time>10-12 Uhr</Time>
+          <Time>10 - 12 Uhr</Time>
           <Content>Plenum, Verabschiedung</Content>
-          <Time>12-12:30 Uhr</Time>
+          <Time>12 - 12:30 Uhr</Time>
           <Content>Arbeitsräume aufräumen</Content>
-          <Time>13-14 Uhr</Time>
+          <Time>13 - 14 Uhr</Time>
           <Content>Mittagspause</Content>
           <Time>14 Uhr</Time>
           <Content>Abreise</Content>

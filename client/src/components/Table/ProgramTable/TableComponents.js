@@ -14,6 +14,7 @@ export const Column = styled.div`
   word-wrap: break-word;
   margin: 40px;
   max-width: 200px;
+  line-height: 1.7;
 `;
 
 export const TableHeading = styled.h3`
