@@ -3,13 +3,13 @@ import styled from "@emotion/styled";
 
 import { Heading, Heading2, Text } from "../components/Text";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
-import { Image } from "../components/Image";
-
-const ImageContainer = styled.div``;
+import { HomeTopImage } from "../components/Image";
 
 const RelativeContainer = styled.div`
   position: relative;
 `;
+
+const ImageContainer = styled.div``;
 
 const ImageText = styled(Heading2)`
   position: absolute;
@@ -25,7 +25,7 @@ function Home() {
     <ContentWrapper>
       <RelativeContainer>
         <ImageContainer>
-          <Image src="/images/home_large.jpg" alt="image" />
+          <HomeTopImage src="/images/home_large.jpg" alt="image" />
         </ImageContainer>
         <ImageText>
           Tagung für angehende Pädagog*innen <br />

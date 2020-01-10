@@ -14,6 +14,6 @@ export const Heading2 = styled.h2`
 `;
 
 export const Text = styled.p`
-  padding: 10px;
+  padding: 15px;
   font-size: 1.1rem;
 `;

@@ -1,8 +1,16 @@
 import styled from "@emotion/styled";
 
-export const Image = styled.img`
+import { MediaQuery } from "./MediaQueries";
+
+export const HomeTopImage = styled.img`
   height: 300px;
   width: 100%;
   object-fit: cover;
   object-position: top center;
+`;
+
+export const ContactImage = styled.img`
+  /* ${MediaQuery[0]} {
+    width: 100%;
+  } */
 `;
