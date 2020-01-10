@@ -6,7 +6,7 @@ import GlobalStyles from "./GlobalStyles";
 import { theme } from "./themes/theme";
 import AppBar from "./components/Navigation/AppBar";
 import FooterNav from "./components/Navigation/FooterNav";
-import { NavLink } from "./components/Navigation/NavLink";
+import { MobileLink } from "./components/Navigation/NavLink";
 import Registration from "./pages/Registration";
 import Program from "./pages/Program";
 import Home from "./pages/Home";
@@ -26,12 +26,12 @@ function App() {
         <Router>
           <GlobalStyles />
           <AppBar>
-            <NavLink to="/">Start</NavLink>
-            <NavLink to="/anmelden">Anmelden</NavLink>
-            <NavLink to="/tagungsbeitrag">Tagungsbeitrag</NavLink>
-            <NavLink to="/workshops">Workshops</NavLink>
-            <NavLink to="/programm">Tagungsprogramm</NavLink>
-            <NavLink to="/contact">Kontakt/Tagungsbüro</NavLink>
+            <MobileLink to="/">Start</MobileLink>
+            <MobileLink to="/anmelden">Anmelden</MobileLink>
+            <MobileLink to="/tagungsbeitrag">Tagungsbeitrag</MobileLink>
+            <MobileLink to="/workshops">Workshops</MobileLink>
+            <MobileLink to="/programm">Tagungsprogramm</MobileLink>
+            <MobileLink to="/contact">Kontakt/Tagungsbüro</MobileLink>
           </AppBar>
           <Switch>
             <Main>

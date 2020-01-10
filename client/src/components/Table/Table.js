@@ -30,13 +30,13 @@ export const TableHeaderRow = styled.tr`
 
 export const TableRow = styled.tr`
   :nth-of-type(odd) {
-    background: ${props => props.theme.colors.backgroundLight};
+    background: ${props => props.theme.colors.transparentBackgroundLight};
   }
   :nth-of-type(even) {
     background: ${props => props.theme.colors.secondary};
   }
   &:hover {
-    background: ${props => props.theme.colors.transparentBackgroundLight};
+    background: ${props => props.theme.colors.hover};
   }
 
   ${MediaQuery[0]} {

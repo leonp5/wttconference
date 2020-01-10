@@ -42,6 +42,7 @@ function Home() {
       <Text>
         Willkommen auf der Tagungsseite! <br />
         Hier findest du alle Informationen zur Tagung, zum Programm und hier kannst dich anmelden.
+        <br />
         Diese Tagung wird von Studierenden für Studierende aller Lehrerseminare/Hochschulen der
         Anthroposophie und Waldorfpädagogik in Deutschland organisiert. <br />
         Idee und Ziel dieser Tagung ist es uns gegenseitig kennenzulernen und zu vernetzen.
