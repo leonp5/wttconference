@@ -3,12 +3,10 @@ import React from "react";
 import { Heading } from "../components/Heading";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
 
-function About() {
+export default function Contact() {
   return (
     <ContentWrapper>
-      <Heading>Über uns</Heading>
+      <Heading>Tagungsbeitrag</Heading>
     </ContentWrapper>
   );
 }
-
-export default About;

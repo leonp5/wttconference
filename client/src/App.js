@@ -6,47 +6,52 @@ import GlobalStyles from "./GlobalStyles";
 import { theme } from "./themes/theme";
 import AppBar from "./components/Navigation/AppBar";
 import FooterNav from "./components/Navigation/FooterNav";
-import { NavLink } from "./components/Navigation/NavLink";
+import { MobileLink } from "./components/Navigation/NavLink";
 import Registration from "./pages/Registration";
 import Program from "./pages/Program";
 import Home from "./pages/Home";
 import Workshops from "./pages/Workshops";
-import About from "./pages/About";
+import Contact from "./pages/Contact";
 import Impressum from "./pages/Impressum";
 import Privacy from "./pages/Privacy";
 import Attendees from "./pages/Attendees";
+import ConferenceFee from "./pages/ConferenceFee";
 import { Main } from "./components/Container/Main";
-import { WholeContent } from "./components/Container/WholeContent";
+import { PageContainer } from "./components/Container/PageContainer";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <WholeContent>
+      <PageContainer>
         <Router>
           <GlobalStyles />
           <AppBar>
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/program">Programm</NavLink>
-            <NavLink to="/workshops">Workshops</NavLink>
-            <NavLink to="/registration">Anmelden</NavLink>
-            <NavLink to="/about">Über uns</NavLink>
+            <MobileLink to="/">Start</MobileLink>
+            <MobileLink to="/anmelden">Anmelden</MobileLink>
+            <MobileLink to="/tagungsbeitrag">Tagungsbeitrag</MobileLink>
+            <MobileLink to="/workshops">Workshops</MobileLink>
+            <MobileLink to="/programm">Tagungsprogramm</MobileLink>
+            <MobileLink to="/contact">Kontakt/Tagungsbüro</MobileLink>
           </AppBar>
           <Switch>
             <Main>
               <Route exact path="/">
                 <Home />
               </Route>
-              <Route path="/program">
+              <Route path="/anmelden">
+                <Registration />
+              </Route>
+              <Route path="/tagungsbeitrag">
+                <ConferenceFee />
+              </Route>
+              <Route path="/programm">
                 <Program />
               </Route>
               <Route path="/workshops">
                 <Workshops />
               </Route>
-              <Route path="/registration">
-                <Registration />
-              </Route>
-              <Route path="/about">
-                <About />
+              <Route path="/contact">
+                <Contact />
               </Route>
               <Route path="/impressum">
                 <Impressum />
@@ -61,7 +66,7 @@ function App() {
           </Switch>
           <FooterNav />
         </Router>
-      </WholeContent>
+      </PageContainer>
     </ThemeProvider>
   );
 }

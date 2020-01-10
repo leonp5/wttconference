@@ -14,7 +14,7 @@ const Header = styled.div`
   width: 100%;
   background: ${props => props.theme.colors.primary};
   color: ${props => props.theme.colors.secondary};
-  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+  /* box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5); */
 `;
 
 export default function AppBar({ children }) {

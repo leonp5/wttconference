@@ -3,7 +3,7 @@ export const theme = {
     background: "#EDEDED",
     transparentBackground: "rgba(0,0,0, 0.6)",
     transparentBackgroundLight: "rgba(199, 199, 199, 0.5)",
-    backgroundLight: "#f2f2f2",
+    hover: "rgba(176, 176, 176, 0.5)",
     primary: "#6E0101",
     secondary: "#FFFFFF",
     tertiary: "#000000",
