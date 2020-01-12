@@ -3,10 +3,11 @@ import styled from "@emotion/styled";
 import { MediaQuery } from "./MediaQueries";
 
 export const HomeTopImage = styled.img`
-  height: 300px;
+  width: 100%;
+  /* height: 300px;
   width: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: top center; */
 `;
 
 export const ContactImage = styled.img`
