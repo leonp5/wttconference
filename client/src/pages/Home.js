@@ -9,6 +9,7 @@ const ImageContainer = styled.div``;
 
 const RelativeContainer = styled.div`
   position: relative;
+  width: 100%;
 `;
 
 const ImageText = styled(Heading2)`
