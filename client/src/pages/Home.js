@@ -25,8 +25,7 @@ const ImageText = styled(Heading2)`
 function Home() {
   return (
     <ContentWrapper>
-      <HomeTopImage src="/images/home_text_400.jpg" />
-      {/* <RelativeContainer>
+      <RelativeContainer>
         <ImageContainer>
           <HomeTopImage src="/images/home_large.jpg" alt="image" />
         </ImageContainer>
@@ -35,7 +34,7 @@ function Home() {
           <br /> 26.-28. Juni 2020 <br /> <br />
           Im Institut für Waldorfpädagogik in Mannheim
         </ImageText>
-      </RelativeContainer> */}
+      </RelativeContainer>
       <Heading>Willkommen!</Heading>
       <Text>
         Willkommen auf der Tagungsseite! <br />

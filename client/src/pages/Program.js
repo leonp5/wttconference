@@ -8,7 +8,7 @@ import {
   TableHeading,
   Time,
   Content
-} from "../components/Table/ProgramTable/TableComponents";
+} from "../components/Tables/ProgramTable/TableComponents";
 
 function Program() {
   return (
