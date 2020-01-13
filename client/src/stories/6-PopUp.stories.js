@@ -1,8 +1,8 @@
 import React from "react";
 import { text } from "@storybook/addon-knobs";
 
-import PopUpBackground from "../components/PopUp/PopUpBackground";
-import PopUpContent from "../components/PopUp/PopUpContent";
+import { PopUpBackground } from "../components/PopUp/PopUpBackground";
+import { PopUpContent } from "../components/PopUp/PopUpContent";
 
 export default {
   title: "PopUp"

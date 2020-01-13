@@ -7,6 +7,7 @@ import { HomeTopImage } from "../components/Image";
 
 const RelativeContainer = styled.div`
   position: relative;
+  width: 100%;
 `;
 
 const ImageContainer = styled.div``;

@@ -1,7 +1,7 @@
 import React from "react";
 import { text } from "@storybook/addon-knobs";
 
-import AppBar from "../components/AppBar";
+import AppBar from "../components/Navigation/AppBar";
 
 export default {
   title: "AppBar"
