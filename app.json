@@ -1,0 +1,25 @@
+{
+  "name": "wttconference",
+  "scripts": {},
+  "env": {
+    "MONGO_URL": {
+      "required": true
+    },
+    "DB_NAME": {
+      "required": true
+    }
+  },
+
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "heroku/node.js"
+    }
+  ],
+  "stack": "heroku-18"
+}
