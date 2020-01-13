@@ -10,7 +10,7 @@ export default function Contact() {
       <ContentWrapper>
         <Heading>Kontakt</Heading>
       </ContentWrapper>
-      <ContactImage src="/images/orga_team_320.jpg" media="(max-width: 639px)" />
+      <ContactImage src="/images/orga_team_320.jpg" />
     </>
   );
 }

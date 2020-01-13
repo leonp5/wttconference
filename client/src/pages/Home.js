@@ -8,6 +8,7 @@ import { MediaQuery } from "../components/MediaQueries";
 
 const RelativeContainer = styled.div`
   position: relative;
+  width: 100%;
 `;
 
 const ImageContainer = styled.div``;

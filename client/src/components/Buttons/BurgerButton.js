@@ -6,15 +6,15 @@ const StyledBurger = styled.button`
   flex-direction: column;
   justify-content: space-around;
   position: absolute;
-  top: 0.9rem;
-  right: 1.2rem;
-  width: 2rem;
-  height: 2rem;
+  top: 12px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
   background: transparent;
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 10;
+  z-index: 2;
 
   :focus {
     outline: none;
