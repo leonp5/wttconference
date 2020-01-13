@@ -6,9 +6,9 @@ const path = require("path");
 const { initDb } = require("./lib/database");
 const router = require("./lib/routes");
 
-const PORT = process.env.PORT || 8080;
-
 const app = express();
+
+const PORT = process.env.PORT || 8080;
 
 app.use(express.json({ extended: false }));
 app.use(express.urlencoded({ extended: false }));
@@ -21,6 +21,8 @@ initDb(process.env.MONGO_URL, process.env.DB_NAME).then(() => {
   console.log("Database steht");
 });
 
+app.use("/api", router);
+
 // Serve any static files
 app.use(express.static(path.join(__dirname, "client/build")));
 
@@ -29,8 +31,6 @@ app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "client/build", "index.html"));
 });
 
-app.use("/api", router);
-
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${process.env.PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });
