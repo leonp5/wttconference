@@ -8,7 +8,7 @@ export const theme = {
     secondary: "#FFFFFF",
     tertiary: "#000000",
     actioncolor: "#C32E2C",
-    disabled: "#dc6765",
+    disabled: "#e58c8b",
     font: "#4B4949"
   }
 };

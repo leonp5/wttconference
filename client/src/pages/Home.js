@@ -3,8 +3,7 @@ import styled from "@emotion/styled";
 
 import { Heading, Heading2, Text } from "../components/Text";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
-import { HomeTopImage } from "../components/Image";
-import { MediaQuery } from "../components/MediaQueries";
+import { HomeTopImage } from "../components/Images";
 
 const RelativeContainer = styled.div`
   position: relative;

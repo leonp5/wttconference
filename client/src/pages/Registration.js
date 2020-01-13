@@ -10,7 +10,8 @@ import { PopUpBackground } from "../components/PopUp/PopUpBackground";
 import TogglePopUp from "../components/PopUp/TogglePopUp";
 import { NavLink } from "../components/Navigation/NavLink";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
-import { saveAttendee, notifyAttendee } from "../api/attendees";
+import { saveAttendee } from "../api/attendees";
+import { notifyAttendee } from "../api/sendMails";
 
 const Container = styled.div`
   display: flex;
@@ -70,7 +71,6 @@ export default function Registration() {
         <Heading>Anmeldung</Heading>
         <Form onSubmit={handleSubmit}>
           <InputField
-            required
             value={attendee.name}
             autoFocus
             name="name"
@@ -78,21 +78,18 @@ export default function Registration() {
             placeholder="Vorname, Name*"
           />
           <InputField
-            required
             value={attendee.address}
             name="address"
             onChange={onChange}
             placeholder="Adresse*"
           />
           <InputField
-            required
             value={attendee.location}
             name="location"
             onChange={onChange}
             placeholder="Ort, PLZ*"
           />
           <InputField
-            required
             type="email"
             value={attendee.email}
             name="email"
