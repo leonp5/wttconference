@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import PropTypes from "prop-types";
 
 import useOnClickOutside from "../../hooks/useOnClickOutside";
 import BurgerButton from "../Buttons/BurgerButton";
@@ -31,3 +32,7 @@ export default function AppBar({ children }) {
     </Header>
   );
 }
+
+AppBar.propTypes = {
+  children: PropTypes.array
+};

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export default function TogglePopUp(props) {
   const [isShown, setIsShown] = React.useState(false);
@@ -12,3 +13,8 @@ export default function TogglePopUp(props) {
     </>
   );
 }
+
+TogglePopUp.propTypes = {
+  toggle: PropTypes.func,
+  content: PropTypes.func
+};

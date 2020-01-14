@@ -38,7 +38,8 @@ function Home() {
         <Heading>Willkommen!</Heading>
         <Text>
           Willkommen auf der Tagungsseite! <br />
-          Hier findest du alle Informationen zur Tagung, zum Programm und hier kannst dich anmelden.
+          Hier findest du alle Informationen zur Tagung, zum Programm und hier kannst du dich
+          anmelden.
           <br />
           Diese Tagung wird von Studierenden für Studierende aller Lehrerseminare/Hochschulen der
           Anthroposophie und Waldorfpädagogik in Deutschland organisiert. <br />
