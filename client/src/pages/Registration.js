@@ -21,9 +21,9 @@ const Container = styled.div`
 `;
 
 const Link = styled(NavLink)`
-  color: ${props => props.theme.colors.actioncolor};
+  color: ${props => props.theme.colors.color};
   &:hover {
-    background: ${props => props.theme.colors.actioncolor};
+    background: ${props => props.theme.colors.color};
     color: ${props => props.theme.colors.secondary};
   }
 `;
@@ -45,7 +45,7 @@ export default function Registration() {
     else: ""
   });
 
-  function onChange(event) {
+  function handleChange(event) {
     const value = event.target.value;
     setAttendee({
       ...attendee,
@@ -79,57 +79,57 @@ export default function Registration() {
             value={attendee.name}
             autoFocus
             name="name"
-            onChange={onChange}
+            onChange={handleChange}
             placeholder="Vorname, Name*"
           />
           <BasicInput
             value={attendee.address}
             name="address"
-            onChange={onChange}
+            onChange={handleChange}
             placeholder="Adresse*"
           />
           <BasicInput
             value={attendee.location}
             name="location"
-            onChange={onChange}
+            onChange={handleChange}
             placeholder="Ort, PLZ*"
           />
           <BasicInput
             type="email"
             value={attendee.email}
             name="email"
-            onChange={onChange}
+            onChange={handleChange}
             placeholder="Email*"
           />
           <BasicInput
             type="number"
             value={attendee.phone}
             name="phone"
-            onChange={onChange}
+            onChange={handleChange}
             placeholder="Telefon"
           />
           <BasicInput
             value={attendee.highschool}
             name="highschool"
-            onChange={onChange}
+            onChange={handleChange}
             placeholder="Hochschule"
           />
           <BasicInput
             value={attendee.gender}
             name="gender"
-            onChange={onChange}
+            onChange={handleChange}
             placeholder="Geschlecht (männlich, weiblich, divers)"
           />
           <BasicInput
             value={attendee.nutrition}
             name="nutrition"
-            onChange={onChange}
+            onChange={handleChange}
             placeholder="Essen (vegetarisch, vegan, Lebensmittelunverträglichkeiten"
           />
           <TextField
             value={attendee.else}
             name="else"
-            onChange={onChange}
+            onChange={handleChange}
             placeholder="Deine Nachricht, Anmerkung, etc."
           />
 

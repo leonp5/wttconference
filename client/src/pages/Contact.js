@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import { Heading, Text } from "../components/Text";
+import { Heading, Text, Heading3 } from "../components/Text";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
 import { ContactImage } from "../components/Images";
 import { Form } from "../components/Form";
@@ -17,7 +17,7 @@ const PageText = styled(Text)`
 `;
 
 const Input = styled(BasicInput)`
-  margin-top: 10px;
+  margin-top: 0;
   margin-bottom: 10px;
 `;
 
@@ -33,7 +33,7 @@ export default function Contact() {
     message: ""
   });
 
-  function onChange(event) {
+  function handleChange(event) {
     const value = event.target.value;
     setRequest({
       ...request,
@@ -51,22 +51,23 @@ export default function Contact() {
     <ContentWrapper>
       <Heading>Kontakt</Heading>
       <ContactImage src="/images/orga_team_320.jpg" />
+      <PageText>Komme bei sämtlichen Fragen gerne auf uns zu!</PageText>
+      <Heading3>Ansprechpartnerinnen:</Heading3>
+      <PageText>Katharina Wiesand und Carolin Kreinfeldt</PageText>
       <PageText>
-        Komme bei sämtlichen Fragen gerne auf uns zu! <br />
-        <br />
-        <b>Ansprechpartnerinnen:</b> <br /> Katharina Wiesand und Carolin Kreinfeldt
-        <br /> <b>E-Mail: </b> <a href="mailto:info@beispiel.de">info@beispiel.de</a> <br />
-        Oder schreib uns direkt über das Kontaktformular:
+        E-Mail: <a href="mailto:info@beispiel.de">info@beispiel.de</a>{" "}
       </PageText>
-      <ContactForm>
+      <PageText>Oder schreib uns direkt über das Kontaktformular:</PageText>
+
+      <ContactForm onSubmit={handleSubmit}>
         <Label>Name:</Label>
-        <Input autoFocus value={request.name} name="name" onChange={onChange} />
+        <Input autoFocus value={request.name} name="name" onChange={handleChange} />
         <Label>Emailadresse:</Label>
-        <Input value={request.email} name="email" onChange={onChange} />
+        <Input value={request.email} name="email" onChange={handleChange} />
         <Label>Betreff:</Label>
-        <Input value={request.subject} name="subject" onChange={onChange} />
+        <Input value={request.subject} name="subject" onChange={handleChange} />
         <Label>Deine Nachricht:</Label>
-        <TextArea value={request.message} name="message" onChange={onChange}></TextArea>
+        <TextArea value={request.message} name="message" onChange={handleChange}></TextArea>
       </ContactForm>
       <Button
         onClick={handleSubmit}

@@ -7,11 +7,6 @@ import useFetch from "../hooks/useFetch";
 
 export default function Attendees() {
   const attendees = useFetch("/api/attendees");
-  console.log(attendees);
-
-  attendees.map(attendee => {
-    delete attendee._id;
-  });
 
   return (
     <ContentWrapper>
