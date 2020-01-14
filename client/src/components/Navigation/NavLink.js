@@ -14,6 +14,15 @@ export const NavLink = styled(Link)`
   }
 `;
 
+export const InlineLink = styled(NavLink)`
+  font-size: 1.1rem;
+  color: ${props => props.theme.colors.action};
+  &:hover {
+    background: ${props => props.theme.colors.action};
+    color: ${props => props.theme.colors.secondary};
+  }
+`;
+
 export const MobileLink = styled(NavLink)`
   padding-left: 10px;
   padding-right: 10px;

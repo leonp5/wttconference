@@ -9,13 +9,17 @@ export const Heading = styled.h1`
 
 export const Heading2 = styled.h2`
   font-family: "Baar Philos";
+  color: ${props => props.theme.colors.tertiary};
   text-align: center;
   padding: 5px;
 `;
 
-export const Heading3 = styled.h3``;
+export const Heading3 = styled.h3`
+  color: ${props => props.theme.colors.tertiary};
+`;
 
 export const Text = styled.p`
   padding: 15px;
   font-size: 1.1rem;
+  line-height: 2rem;
 `;
