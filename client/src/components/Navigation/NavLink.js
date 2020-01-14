@@ -23,6 +23,14 @@ export const MobileLink = styled(NavLink)`
   }
 `;
 
+export const PopUpLink = styled(NavLink)`
+  color: ${props => props.theme.colors.action};
+  &:hover {
+    background: ${props => props.theme.colors.action};
+    color: ${props => props.theme.colors.secondary};
+  }
+`;
+
 export const FooterLink = styled(NavLink)`
   font-size: 1.1rem;
   padding: 7px;

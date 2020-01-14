@@ -10,6 +10,10 @@ import { Label } from "../components/Label";
 import { TextArea } from "../components/InputFields";
 import { Button } from "../components/Buttons/Button";
 import { sendRequest } from "../api/sendMails";
+import TogglePopUp from "../components/PopUp/TogglePopUp";
+import { PopUpBackground } from "../components/PopUp/PopUpBackground";
+import { PopUpContent } from "../components/PopUp/PopUpContent";
+import { PopUpLink } from "../components/Navigation/NavLink";
 
 const PageText = styled(Text)`
   text-align: center;
@@ -74,13 +78,28 @@ export default function Contact() {
         <Input value={request.subject} name="subject" onChange={handleChange} />
         <Label>Deine Nachricht:</Label>
         <TextArea value={request.message} name="message" onChange={handleChange} />
-        <CenterButton>
-          <Button
-            disabled={!request.name || !request.email || !request.subject || !request.message}
-          >
-            Abschicken
-          </Button>
-        </CenterButton>
+        <TogglePopUp
+          toggle={show => (
+            <CenterButton>
+              <Button
+                disabled={!request.name || !request.email || !request.subject || !request.message}
+                onClick={show}
+              >
+                Abschicken
+              </Button>
+            </CenterButton>
+          )}
+          content={hide => (
+            <PopUpBackground>
+              <PopUpContent>
+                <p>Vielen Dank für deine Nachricht!</p>
+                <PopUpLink to="/" onClick={hide}>
+                  Hier gehts zur Startseite
+                </PopUpLink>
+              </PopUpContent>
+            </PopUpBackground>
+          )}
+        />
       </ContactForm>
     </ContentWrapper>
   );
