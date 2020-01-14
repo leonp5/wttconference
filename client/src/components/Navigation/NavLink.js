@@ -17,6 +17,7 @@ export const NavLink = styled(Link)`
 export const MobileLink = styled(NavLink)`
   padding-left: 10px;
   padding-right: 10px;
+  font-size: 1.9rem;
   &:hover {
     width: 100%;
   }

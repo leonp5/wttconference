@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Heading } from "../components/Heading";
+import { Heading } from "../components/Text";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
 import {
   Table,
@@ -8,7 +8,7 @@ import {
   TableHeading,
   Time,
   Content
-} from "../components/Table/ProgramTable/TableComponents";
+} from "../components/Tables/ProgramTable/TableComponents";
 
 function Program() {
   return (
