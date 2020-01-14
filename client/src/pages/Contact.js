@@ -25,6 +25,12 @@ const ContactForm = styled(Form)`
   align-items: start;
 `;
 
+const CenterButton = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+`;
+
 export default function Contact() {
   const [request, setRequest] = React.useState({
     name: "",
@@ -67,14 +73,15 @@ export default function Contact() {
         <Label>Betreff:</Label>
         <Input value={request.subject} name="subject" onChange={handleChange} />
         <Label>Deine Nachricht:</Label>
-        <TextArea value={request.message} name="message" onChange={handleChange}></TextArea>
+        <TextArea value={request.message} name="message" onChange={handleChange} />
+        <CenterButton>
+          <Button
+            disabled={!request.name || !request.email || !request.subject || !request.message}
+          >
+            Abschicken
+          </Button>
+        </CenterButton>
       </ContactForm>
-      <Button
-        onClick={handleSubmit}
-        disabled={!request.name || !request.email || !request.subject || !request.message}
-      >
-        Abschicken
-      </Button>
     </ContentWrapper>
   );
 }
