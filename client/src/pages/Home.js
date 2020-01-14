@@ -10,8 +10,6 @@ const RelativeContainer = styled.div`
   width: 100%;
 `;
 
-const ImageContainer = styled.div``;
-
 const ImageText = styled(Heading2)`
   position: absolute;
   top: 3rem;
@@ -25,9 +23,7 @@ function Home() {
   return (
     <ContentWrapper>
       <RelativeContainer>
-        <ImageContainer>
-          <HomeTopImage src="/images/home_large.jpg" alt="image" />
-        </ImageContainer>
+        <HomeTopImage src="/images/home_large.jpg" alt="image" />
         <ImageText>
           Tagung für angehende Pädagog*innen <br />
           <br /> 26.-28. Juni 2020 <br /> <br />

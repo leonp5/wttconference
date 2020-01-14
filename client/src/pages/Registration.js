@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 import { Heading } from "../components/Text";
 import { Form } from "../components/Form";
-import { InputField } from "../components/InputField";
+import { BasicInput } from "../components/InputFields";
 import { Button } from "../components/Buttons/Button";
 import { PopUpContent } from "../components/PopUp/PopUpContent";
 import { PopUpBackground } from "../components/PopUp/PopUpBackground";
@@ -12,6 +12,7 @@ import { NavLink } from "../components/Navigation/NavLink";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
 import { saveAttendee } from "../api/attendees";
 import { notifyAttendee } from "../api/sendMails";
+import { TextArea } from "../components/InputFields";
 
 const Container = styled.div`
   display: flex;
@@ -20,11 +21,15 @@ const Container = styled.div`
 `;
 
 const Link = styled(NavLink)`
-  color: ${props => props.theme.colors.actioncolor};
+  color: ${props => props.theme.colors.color};
   &:hover {
-    background: ${props => props.theme.colors.actioncolor};
+    background: ${props => props.theme.colors.color};
     color: ${props => props.theme.colors.secondary};
   }
+`;
+
+const TextField = styled(TextArea)`
+  margin-top: 15px;
 `;
 
 export default function Registration() {
@@ -40,7 +45,7 @@ export default function Registration() {
     else: ""
   });
 
-  function onChange(event) {
+  function handleChange(event) {
     const value = event.target.value;
     setAttendee({
       ...attendee,
@@ -70,68 +75,70 @@ export default function Registration() {
       <Container>
         <Heading>Anmeldung</Heading>
         <Form onSubmit={handleSubmit}>
-          <InputField
+          <BasicInput
             value={attendee.name}
             autoFocus
             name="name"
-            onChange={onChange}
+            onChange={handleChange}
             placeholder="Vorname, Name*"
           />
-          <InputField
+          <BasicInput
             value={attendee.address}
             name="address"
-            onChange={onChange}
+            onChange={handleChange}
             placeholder="Adresse*"
           />
-          <InputField
+          <BasicInput
             value={attendee.location}
             name="location"
-            onChange={onChange}
+            onChange={handleChange}
             placeholder="Ort, PLZ*"
           />
-          <InputField
+          <BasicInput
             type="email"
             value={attendee.email}
             name="email"
-            onChange={onChange}
+            onChange={handleChange}
             placeholder="Email*"
           />
-          <InputField
+          <BasicInput
             type="number"
             value={attendee.phone}
             name="phone"
-            onChange={onChange}
+            onChange={handleChange}
             placeholder="Telefon"
           />
-          <InputField
+          <BasicInput
             value={attendee.highschool}
             name="highschool"
-            onChange={onChange}
+            onChange={handleChange}
             placeholder="Hochschule"
           />
-          <InputField
+          <BasicInput
             value={attendee.gender}
             name="gender"
-            onChange={onChange}
+            onChange={handleChange}
             placeholder="Geschlecht (männlich, weiblich, divers)"
           />
-          <InputField
+          <BasicInput
             value={attendee.nutrition}
             name="nutrition"
-            onChange={onChange}
+            onChange={handleChange}
             placeholder="Essen (vegetarisch, vegan, Lebensmittelunverträglichkeiten"
           />
-          <InputField
+          <TextField
             value={attendee.else}
             name="else"
-            onChange={onChange}
-            placeholder="Sonstiges"
+            onChange={handleChange}
+            placeholder="Deine Nachricht, Anmerkung, etc."
           />
 
           <TogglePopUp
             toggle={show => (
               <Button
-                disabled={(!attendee.name, !attendee.address, !attendee.location, !attendee.email)}
+                disabled={
+                  !attendee.name || !attendee.address || !attendee.location || !attendee.email
+                }
                 onClick={show}
               >
                 Anmelden

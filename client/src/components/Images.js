@@ -11,6 +11,7 @@ export const HomeTopImage = styled.img`
 
 export const ContactImage = styled.img`
   /* ${MediaQuery[0]} {
-    width: 100%;
-  } */
+    display: block;
+  }
+  display: none; */
 `;

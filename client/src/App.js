@@ -27,24 +27,26 @@ function App() {
           <GlobalStyles />
           <AppBar>
             <MobileLink to="/">Start</MobileLink>
-            <MobileLink to="/anmelden">Anmelden</MobileLink>
-            <MobileLink to="/tagungsbeitrag">Tagungsbeitrag</MobileLink>
+            <MobileLink to="/registration">Anmelden</MobileLink>
+            <MobileLink to="/conferencefee">Tagungsbeitrag</MobileLink>
             <MobileLink to="/workshops">Workshops</MobileLink>
-            <MobileLink to="/programm">Tagungsprogramm</MobileLink>
+            <MobileLink to="/program">Tagungsprogramm</MobileLink>
             <MobileLink to="/contact">Kontakt/Tagungsbüro</MobileLink>
+            <MobileLink to="/impressum">Impressum</MobileLink>
+            <MobileLink to="/Privacy">Datenschutz</MobileLink>
           </AppBar>
           <Switch>
             <Main>
               <Route exact path="/">
                 <Home />
               </Route>
-              <Route path="/anmelden">
+              <Route path="/registration">
                 <Registration />
               </Route>
-              <Route path="/tagungsbeitrag">
+              <Route path="/conferencefee">
                 <ConferenceFee />
               </Route>
-              <Route path="/programm">
+              <Route path="/program">
                 <Program />
               </Route>
               <Route path="/workshops">
