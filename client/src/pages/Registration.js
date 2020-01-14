@@ -8,7 +8,7 @@ import { Button } from "../components/Buttons/Button";
 import { PopUpContent } from "../components/PopUp/PopUpContent";
 import { PopUpBackground } from "../components/PopUp/PopUpBackground";
 import TogglePopUp from "../components/PopUp/TogglePopUp";
-import { NavLink } from "../components/Navigation/NavLink";
+import { PopUpLink } from "../components/Navigation/NavLink";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
 import { saveAttendee } from "../api/attendees";
 import { notifyAttendee } from "../api/sendMails";
@@ -18,14 +18,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: baseline;
-`;
-
-const Link = styled(NavLink)`
-  color: ${props => props.theme.colors.color};
-  &:hover {
-    background: ${props => props.theme.colors.color};
-    color: ${props => props.theme.colors.secondary};
-  }
 `;
 
 const TextField = styled(TextArea)`
@@ -147,10 +139,10 @@ export default function Registration() {
             content={hide => (
               <PopUpBackground>
                 <PopUpContent>
-                  <p>Vielen Dank für deine Anmeldung</p>
-                  <Link to="/" onClick={hide}>
+                  <p>Vielen Dank für deine Anmeldung!</p>
+                  <PopUpLink to="/" onClick={hide}>
                     Hier gehts zur Startseite
-                  </Link>
+                  </PopUpLink>
                 </PopUpContent>
               </PopUpBackground>
             )}
