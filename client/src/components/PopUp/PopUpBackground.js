@@ -11,4 +11,15 @@ export const PopUpBackground = styled.div`
   right: 0;
   bottom: 0;
   background: ${props => props.theme.colors.transparentBackground};
+
+  animation: fadein 1.5s;
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { Table, TableRow, TableData, TableHeaderRow, TableHeader } from "./TableComponents";
 
@@ -36,3 +37,7 @@ export default function AttendeeTable({ ...props }) {
     </Table>
   );
 }
+
+AttendeeTable.propTypes = {
+  attendees: PropTypes.array
+};
