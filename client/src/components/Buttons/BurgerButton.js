@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import PropTypes from "prop-types";
 
 const StyledBurger = styled.button`
   display: flex;
@@ -53,3 +54,8 @@ export default function BurgerButton({ open, onChange }) {
     </StyledBurger>
   );
 }
+
+BurgerButton.propTypes = {
+  open: PropTypes.bool,
+  onChange: PropTypes.func
+};

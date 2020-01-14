@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import PropTypes from "prop-types";
 
 const StyledMenu = styled.nav`
   display: flex;
@@ -24,3 +25,9 @@ export default function MobileMenu({ open, onChange, children }) {
     </StyledMenu>
   );
 }
+
+MobileMenu.propTypes = {
+  open: PropTypes.bool,
+  onChange: PropTypes.func,
+  children: PropTypes.array
+};

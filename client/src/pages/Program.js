@@ -2,13 +2,7 @@ import React from "react";
 
 import { Heading } from "../components/Text";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
-import {
-  Table,
-  Column,
-  TableHeading,
-  Time,
-  Content
-} from "../components/Tables/ProgramTable/TableComponents";
+import { Table, Column, TableHeading, Time, Content } from "../components/Tables/ProgramTable";
 
 function Program() {
   return (
