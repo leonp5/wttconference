@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 
 import { Heading, Text, Heading3 } from "../components/Text";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
+import { InlineLink } from "../components/Navigation/NavLink";
 
 const Wrapper = styled(ContentWrapper)`
   max-width: 800px;
@@ -22,9 +23,9 @@ export default function Contact() {
       <Text>
         Der Tagungsbetrag beträgt 20 Euro für Verpflegung und Unterkunft. Dieser Preis wird durch
         Spenden verschiedener Sponsoren ermöglicht, was bedeutet, dass die realen Kosten pro
-        Teilnehmer*in höher sind. Grundsätzlich soll die Teilnahme aber bei keinem*r Teilnehmer*in
-        durch den finanziellen Beitrag verwehrt bleiben. Kontaktiert daher bei finanziellen Fragen
-        bitte vertrauensvoll das Tagungsbüro (Link zum Tagungsbüro, Punkt 6.), damit wir uns auf
+        Teilnehmer*in höher sind. Grundsätzlich soll die Teilnahme aber keinem*r Teilnehmer*in durch
+        den finanziellen Beitrag verwehrt bleiben. Kontaktiert daher bei finanziellen Fragen bitte
+        vertrauensvoll das <InlineLink to="/contact">Tagungsbüro</InlineLink>, damit wir uns auf
         eine Ermäßigung einigen können.
       </Text>
       <Headline>Konto:</Headline>
