@@ -8,8 +8,8 @@ const StyledMenu = styled.nav`
   justify-content: space-around;
   position: fixed;
   z-index: 1;
-  height: 250px;
-  margin-top: 2rem;
+  height: 80%;
+  margin-top: 1.5rem;
   top: 1.5rem;
   right: 0;
   transition: transform 0.3s ease-in-out;

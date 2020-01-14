@@ -3,12 +3,11 @@ import styled from "@emotion/styled";
 
 import { Heading, Heading2, Text } from "../components/Text";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
-import { Image } from "../components/Image";
-
-const ImageContainer = styled.div``;
+import { HomeTopImage } from "../components/Images";
 
 const RelativeContainer = styled.div`
   position: relative;
+  width: 100%;
 `;
 
 const ImageText = styled(Heading2)`
@@ -24,9 +23,7 @@ function Home() {
   return (
     <ContentWrapper>
       <RelativeContainer>
-        <ImageContainer>
-          <Image src="/images/home_large.jpg" alt="image" />
-        </ImageContainer>
+        <HomeTopImage src="/images/home_large.jpg" alt="image" />
         <ImageText>
           Tagung für angehende Pädagog*innen <br />
           <br /> 26.-28. Juni 2020 <br /> <br />
