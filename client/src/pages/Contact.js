@@ -5,9 +5,9 @@ import { Heading, Text } from "../components/Text";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
 import { ContactImage } from "../components/Images";
 import { Form } from "../components/Form";
-import { InputField } from "../components/InputField";
+import { BasicInput } from "../components/InputFields";
 import { Label } from "../components/Label";
-import { TextArea } from "../components/TextArea";
+import { TextArea } from "../components/InputFields";
 import { Button } from "../components/Buttons/Button";
 import { sendRequest } from "../api/sendMails";
 
@@ -16,7 +16,7 @@ const PageText = styled(Text)`
   line-height: 2rem;
 `;
 
-const Input = styled(InputField)`
+const Input = styled(BasicInput)`
   margin-top: 10px;
   margin-bottom: 10px;
 `;
@@ -70,7 +70,7 @@ export default function Contact() {
       </ContactForm>
       <Button
         onClick={handleSubmit}
-        disabled={(!request.name, !request.email, !request.subject, !request.message)}
+        disabled={!request.name || !request.email || !request.subject || !request.message}
       >
         Abschicken
       </Button>
