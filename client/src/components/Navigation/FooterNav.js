@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
+import { FooterContainer } from "../Container/FooterContainer";
 
 const Footer = styled.footer`
   flex-grow: 0;
@@ -15,7 +16,15 @@ const Footer = styled.footer`
 `;
 
 export default function FooterNav({ children }) {
-  return <Footer>{children}</Footer>;
+  return (
+    <Footer>
+      <FooterContainer>
+        {children[0]}
+        {children[0]}
+      </FooterContainer>
+      {children[2]}
+    </Footer>
+  );
 }
 
 FooterNav.propTypes = {

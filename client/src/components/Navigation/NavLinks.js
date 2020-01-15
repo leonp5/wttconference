@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 
+import { mq } from "../MediaQueries";
+
 export const NavLink = styled(Link)`
   color: ${props => props.theme.colors.secondary};
   transition: color 0.3s linear;
@@ -23,13 +25,18 @@ export const InlineLink = styled(NavLink)`
   }
 `;
 
-export const MobileLink = styled(NavLink)`
-  padding-left: 10px;
-  padding-right: 10px;
-  font-size: 1.9rem;
-  &:hover {
-    width: 100%;
+export const MenuLink = styled(NavLink)`
+  ${mq[0]} {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1.9rem;
+    &:hover {
+      width: 100%;
+    }
   }
+  font-size: 1.2rem;
+  padding: 8px;
+  outline: transparent;
 `;
 
 export const PopUpLink = styled(NavLink)`

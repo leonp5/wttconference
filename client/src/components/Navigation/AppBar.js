@@ -5,10 +5,12 @@ import PropTypes from "prop-types";
 import useOnClickOutside from "../../hooks/useOnClickOutside";
 import BurgerButton from "../Buttons/BurgerButton";
 import MobileMenu from "./MobileMenu";
+import { HeaderContainer } from "../Container/HeaderContainer";
 
 const Header = styled.div`
   flex-grow: 0;
   display: flex;
+  justify-content: center;
   align-items: center;
   z-index: 1;
   height: 70px;
@@ -29,6 +31,14 @@ export default function AppBar({ children }) {
       <MobileMenu open={open} onChange={open => setOpen(open)}>
         {children}
       </MobileMenu>
+      <HeaderContainer>
+        {children[0]}
+        {children[0]}
+        {children[2]}
+        {children[3]}
+        {children[4]}
+        {children[5]}
+      </HeaderContainer>
     </Header>
   );
 }

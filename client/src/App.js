@@ -6,7 +6,7 @@ import GlobalStyles from "./GlobalStyles";
 import { theme } from "./themes/theme";
 import AppBar from "./components/Navigation/AppBar";
 import FooterNav from "./components/Navigation/FooterNav";
-import { MobileLink, BottomLink } from "./components/Navigation/NavLink";
+import { MenuLink, BottomLink, FooterLink } from "./components/Navigation/NavLinks";
 import Registration from "./pages/Registration";
 import Program from "./pages/Program";
 import Home from "./pages/Home";
@@ -26,14 +26,14 @@ function App() {
         <Router>
           <GlobalStyles />
           <AppBar>
-            <MobileLink to="/">Start</MobileLink>
-            <MobileLink to="/registration">Anmelden</MobileLink>
-            <MobileLink to="/conferencefee">Tagungsbeitrag</MobileLink>
-            <MobileLink to="/workshops">Workshops</MobileLink>
-            <MobileLink to="/program">Tagungsprogramm</MobileLink>
-            <MobileLink to="/contact">Kontakt/Tagungsbüro</MobileLink>
-            <MobileLink to="/impressum">Impressum</MobileLink>
-            <MobileLink to="/Privacy">Datenschutz</MobileLink>
+            <MenuLink to="/">Start</MenuLink>
+            <MenuLink to="/registration">Anmelden</MenuLink>
+            <MenuLink to="/conferencefee">Tagungsbeitrag</MenuLink>
+            <MenuLink to="/workshops">Workshops</MenuLink>
+            <MenuLink to="/program">Tagungsprogramm</MenuLink>
+            <MenuLink to="/contact">Kontakt/Tagungsbüro</MenuLink>
+            <MenuLink to="/impressum">Impressum</MenuLink>
+            <MenuLink to="/Privacy">Datenschutz</MenuLink>
           </AppBar>
           <Switch>
             <Main>
@@ -67,6 +67,8 @@ function App() {
             </Main>
           </Switch>
           <FooterNav>
+            <FooterLink to="/impressum">Impressum</FooterLink>
+            <FooterLink to="/privacy">Datenschutz</FooterLink>
             <BottomLink to="/attendees">Orga-Login</BottomLink>
           </FooterNav>
         </Router>

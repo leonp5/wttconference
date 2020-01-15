@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-import { MediaQuery } from "./MediaQueries";
+import { mq } from "./MediaQueries";
 
 export const HomeTopImage = styled.img`
   width: 100%;
@@ -10,7 +10,7 @@ export const HomeTopImage = styled.img`
 `;
 
 export const ContactImage = styled.img`
-  /* ${MediaQuery[0]} {
+  /* ${mq[0]} {
     display: block;
   }
   display: none; */
