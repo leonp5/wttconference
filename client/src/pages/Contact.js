@@ -13,7 +13,7 @@ import { sendRequest } from "../api/sendMails";
 import TogglePopUp from "../components/PopUp/TogglePopUp";
 import { PopUpBackground } from "../components/PopUp/PopUpBackground";
 import { PopUpContent } from "../components/PopUp/PopUpContent";
-import { PopUpLink } from "../components/Navigation/NavLink";
+import { PopUpLink } from "../components/Navigation/NavLinks";
 
 const PageText = styled(Text)`
   text-align: center;

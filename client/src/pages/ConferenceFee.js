@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 import { Heading, Text, Heading3 } from "../components/Text";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
-import { InlineLink } from "../components/Navigation/NavLink";
+import { InlineLink } from "../components/Navigation/NavLinks";
 
 const Wrapper = styled(ContentWrapper)`
   max-width: 800px;

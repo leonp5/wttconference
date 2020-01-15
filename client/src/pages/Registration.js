@@ -9,7 +9,7 @@ import { RadioButton } from "../components/Buttons/RadioButton";
 import { PopUpContent } from "../components/PopUp/PopUpContent";
 import { PopUpBackground } from "../components/PopUp/PopUpBackground";
 import TogglePopUp from "../components/PopUp/TogglePopUp";
-import { PopUpLink } from "../components/Navigation/NavLink";
+import { PopUpLink } from "../components/Navigation/NavLinks";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
 import { saveAttendee } from "../api/attendees";
 import { notifyAttendee } from "../api/sendMails";
