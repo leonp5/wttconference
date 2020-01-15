@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-import { MediaQuery } from "../../MediaQueries";
+import { mq } from "../../MediaQueries";
 
 export const Table = styled.table`
   table-layout: fixed;
@@ -16,13 +16,13 @@ export const TableHeader = styled.th`
   text-align: left;
   overflow: hidden;
   text-overflow: ellipsis;
-  ${MediaQuery[0]} {
+  ${mq[0]} {
     display: block;
   }
 `;
 
 export const TableHeaderRow = styled.tr`
-  ${MediaQuery[0]} {
+  ${mq[0]} {
     position: absolute;
     z-index: -1000;
   }
@@ -39,7 +39,7 @@ export const TableRow = styled.tr`
     background: ${props => props.theme.colors.hover};
   }
 
-  ${MediaQuery[0]} {
+  ${mq[0]} {
     display: block;
   }
 `;
@@ -51,7 +51,7 @@ export const TableData = styled.td`
   overflow: hidden;
   text-overflow: ellipsis;
 
-  ${MediaQuery[0]} {
+  ${mq[0]} {
     height: 28px;
     display: block;
     position: relative;
