@@ -6,7 +6,7 @@ import { ContentWrapper } from "../components/Container/ContentWrapper";
 import { ContactImage } from "../components/Images";
 import { Form } from "../components/Form";
 import { BasicInput } from "../components/InputFields";
-import { Label } from "../components/Label";
+import { Label } from "../components/Labels";
 import { TextArea } from "../components/InputFields";
 import { Button } from "../components/Buttons/Button";
 import { sendRequest } from "../api/sendMails";
@@ -17,12 +17,6 @@ import { PopUpLink } from "../components/Navigation/NavLink";
 
 const PageText = styled(Text)`
   text-align: center;
-  line-height: 2rem;
-`;
-
-const Input = styled(BasicInput)`
-  margin-top: 0;
-  margin-bottom: 10px;
 `;
 
 const ContactForm = styled(Form)`
@@ -70,21 +64,18 @@ export default function Contact() {
       <PageText>Oder schreib uns direkt über das Kontaktformular:</PageText>
 
       <ContactForm onSubmit={handleSubmit}>
-        <Label>Name:</Label>
-        <Input autoFocus value={request.name} name="name" onChange={handleChange} />
-        <Label>Emailadresse:</Label>
-        <Input value={request.email} name="email" onChange={handleChange} />
+        <Label>Name*:</Label>
+        <BasicInput autoFocus value={request.name} name="name" onChange={handleChange} />
+        <Label>Email*:</Label>
+        <BasicInput value={request.email} name="email" onChange={handleChange} />
         <Label>Betreff:</Label>
-        <Input value={request.subject} name="subject" onChange={handleChange} />
-        <Label>Deine Nachricht:</Label>
+        <BasicInput value={request.subject} name="subject" onChange={handleChange} />
+        <Label>Deine Nachricht*:</Label>
         <TextArea value={request.message} name="message" onChange={handleChange} />
         <TogglePopUp
           toggle={show => (
             <CenterButton>
-              <Button
-                disabled={!request.name || !request.email || !request.subject || !request.message}
-                onClick={show}
-              >
+              <Button disabled={!request.name || !request.email || !request.message} onClick={show}>
                 Abschicken
               </Button>
             </CenterButton>

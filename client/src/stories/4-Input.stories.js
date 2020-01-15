@@ -1,10 +1,10 @@
 import React from "react";
-import { InputField } from "../components/InputField";
+import { BasicInput } from "../components/InputFields";
 
 export default {
   title: "Input"
 };
 
 export function DefaultInput() {
-  return <InputField placeholder={"Name, Vorname"}></InputField>;
+  return <BasicInput placeholder={"Name, Vorname"}></BasicInput>;
 }

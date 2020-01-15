@@ -6,7 +6,7 @@ import GlobalStyles from "./GlobalStyles";
 import { theme } from "./themes/theme";
 import AppBar from "./components/Navigation/AppBar";
 import FooterNav from "./components/Navigation/FooterNav";
-import { MobileLink } from "./components/Navigation/NavLink";
+import { MobileLink, BottomLink } from "./components/Navigation/NavLink";
 import Registration from "./pages/Registration";
 import Program from "./pages/Program";
 import Home from "./pages/Home";
@@ -66,7 +66,9 @@ function App() {
               </Route>
             </Main>
           </Switch>
-          <FooterNav />
+          <FooterNav>
+            <BottomLink to="/attendees">Orga-Login</BottomLink>
+          </FooterNav>
         </Router>
       </PageContainer>
     </ThemeProvider>
