@@ -9,7 +9,9 @@ export default function useFetch(url) {
       const newData = await response.json();
       setData(newData);
     }
+
     fetchData();
+    // eslint-disable-next-line
   }, []);
 
   return data;

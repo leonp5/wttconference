@@ -75,17 +75,9 @@ export default function Registration() {
         <Heading>Anmeldung</Heading>
         <Form onSubmit={handleSubmit}>
           <Label>Name, Vorname*:</Label>
+
           <BasicInput value={attendee.name} autoFocus name="name" onChange={handleChange} />
-          <Label>Adresse*:</Label>
-          <BasicInput value={attendee.address} name="address" onChange={handleChange} />
-          <Label>Ort, PLZ*:</Label>
-          <BasicInput value={attendee.location} name="location" onChange={handleChange} />
-          <Label>Email*:</Label>
-          <BasicInput type="email" value={attendee.email} name="email" onChange={handleChange} />
-          <Label>Mobil:</Label>
-          <BasicInput type="number" value={attendee.phone} name="phone" onChange={handleChange} />
-          <Label>Hochschule:</Label>
-          <BasicInput value={attendee.highschool} name="highschool" onChange={handleChange} />
+
           <Label>Geschlecht:</Label>
           <RadioBox>
             <RadioWrapper>
@@ -120,6 +112,17 @@ export default function Registration() {
               <RadioLabel>divers</RadioLabel>
             </RadioWrapper>
           </RadioBox>
+          <Label>Adresse*:</Label>
+          <BasicInput value={attendee.address} name="address" onChange={handleChange} />
+          <Label>Ort, PLZ*:</Label>
+          <BasicInput value={attendee.location} name="location" onChange={handleChange} />
+          <Label>Email*:</Label>
+          <BasicInput type="email" value={attendee.email} name="email" onChange={handleChange} />
+          <Label>Mobil:</Label>
+          <BasicInput type="number" value={attendee.phone} name="phone" onChange={handleChange} />
+          <Label>Hochschule:</Label>
+          <BasicInput value={attendee.highschool} name="highschool" onChange={handleChange} />
+
           <Label>Essen:</Label>
           <BasicInput
             value={attendee.nutrition}
