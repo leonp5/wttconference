@@ -20,7 +20,7 @@ export default function FooterNav({ children }) {
     <Footer>
       <FooterContainer>
         {children[0]}
-        {children[0]}
+        {children[1]}
       </FooterContainer>
       {children[2]}
     </Footer>
