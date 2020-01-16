@@ -28,5 +28,5 @@ export default function FooterNav({ children }) {
 }
 
 FooterNav.propTypes = {
-  children: PropTypes.object
+  children: PropTypes.array
 };

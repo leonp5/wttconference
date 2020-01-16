@@ -29,9 +29,11 @@ function Home() {
       <RelativeContainer>
         <HomeTopImage src="/images/home_large.jpg" alt="image" />
         <ImageText>
+          Waldorf Heute für Morgen
+          <br />
+          <br />
           Tagung für angehende Pädagog*innen <br />
-          <br /> 26.-28. Juni 2020 <br /> <br />
-          Im Institut für Waldorfpädagogik in Mannheim
+          <br /> 26.-28. Juni 2020
         </ImageText>
       </RelativeContainer>
       <ContentWrapper>
@@ -44,9 +46,9 @@ function Home() {
             <br />
             Diese Tagung wird von Studierenden für Studierende aller Lehrerseminare/Hochschulen der
             Anthroposophie und Waldorfpädagogik in Deutschland organisiert. <br />
-            Idee und Ziel dieser Tagung ist es uns gegenseitig kennenzulernen und zu vernetzen.
+            Idee und Ziel dieser Tagung ist es, uns gegenseitig kennenzulernen und zu vernetzen.
             Weiterführend, als Lehrer*innen der Zukunft, zu wissen, wie wir die Herausforderungen im
-            Unterrichten der kommenden Generationen nehmen und wie wir uns gemeinsam daraufhin
+            Unterrichten der kommenden Generationen annehmen und wie wir uns gemeinsam daraufhin
             ausrichten können.
           </Text>
         </Wrapper>

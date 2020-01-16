@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 import { mq } from "../MediaQueries";
 
-export const HeaderContainer = styled.div`
+export const HeaderNav = styled.nav`
   display: flex;
   justify-content: space-around;
 
