@@ -11,8 +11,7 @@ export default function useFetch(url) {
     }
 
     fetchData();
-    // eslint-disable-next-line
-  }, []);
+  }, [url]);
 
   return data;
 }
