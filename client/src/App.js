@@ -18,6 +18,7 @@ import Attendees from "./pages/Attendees";
 import ConferenceFee from "./pages/ConferenceFee";
 import { Main } from "./components/Container/Main";
 import { PageContainer } from "./components/Container/PageContainer";
+import HeaderImage from "./components/Images";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           </AppBar>
           <Switch>
             <Main>
+              <HeaderImage />
               <Route exact path="/">
                 <Home />
               </Route>
