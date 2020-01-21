@@ -1,5 +1,4 @@
 import React from "react";
-import { text } from "@storybook/addon-knobs";
 
 import AppBar from "../components/Navigation/AppBar";
 
@@ -8,9 +7,5 @@ export default {
 };
 
 export function AppBarNavigation() {
-  return (
-    <AppBar>
-      <a>{text("Button Label", "Home")}</a>
-    </AppBar>
-  );
+  return <AppBar />;
 }
