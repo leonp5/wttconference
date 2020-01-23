@@ -10,8 +10,11 @@ export const Table = styled.table`
 `;
 
 export const TableHeader = styled.th`
-  padding: 5px;
+  position: sticky;
+  top: 0;
+  padding: 10px;
   border-bottom: 1px solid ${props => props.theme.colors.tertiary};
+  background: ${props => props.theme.colors.secondary};
   letter-spacing: 1px;
   text-align: left;
   overflow: hidden;

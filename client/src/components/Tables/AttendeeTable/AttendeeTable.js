@@ -16,10 +16,10 @@ export default function AttendeeTable({ ...props }) {
     "Sonstiges"
   ];
 
-  const Rows = props.attendees.map((attendee, index) => (
-    <TableRow key={index}>
-      {Object.values(attendee).map((attendeeData, index) => (
-        <TableData key={index}>{attendeeData}</TableData>
+  const Rows = props.attendees.map((attendee, name) => (
+    <TableRow key={name}>
+      {Object.values(attendee).map((attendeeData, name) => (
+        <TableData key={name}>{attendeeData}</TableData>
       ))}
     </TableRow>
   ));
@@ -28,8 +28,8 @@ export default function AttendeeTable({ ...props }) {
     <Table>
       <thead>
         <TableHeaderRow>
-          {ContentTH.map((TableHeadings, index) => (
-            <TableHeader key={index}>{TableHeadings}</TableHeader>
+          {ContentTH.map((TableHeadings, name) => (
+            <TableHeader key={name}>{TableHeadings}</TableHeader>
           ))}
         </TableHeaderRow>
       </thead>

@@ -1,22 +1,20 @@
 import styled from "@emotion/styled";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import { mq } from "../MediaQueries";
 
-export const NavLink = styled(Link)`
+export const BasicLink = styled(NavLink)`
   color: ${props => props.theme.colors.secondary};
   transition: color 0.3s linear;
   font-size: 1.5rem;
   text-decoration: none;
   text-align: center;
   &:hover {
-    background: ${props => props.theme.colors.secondary};
-    color: ${props => props.theme.colors.primary};
     cursor: pointer;
   }
 `;
 
-export const InlineLink = styled(NavLink)`
+export const InlineLink = styled(BasicLink)`
   font-size: 1.1rem;
   color: ${props => props.theme.colors.action};
   &:hover {
@@ -25,21 +23,28 @@ export const InlineLink = styled(NavLink)`
   }
 `;
 
-export const MenuLink = styled(NavLink)`
+export const MenuLink = styled(BasicLink)`
   ${mq[0]} {
     padding-left: 10px;
     padding-right: 10px;
     font-size: 1.9rem;
-    &:hover {
+    &:hover,
+    &.active {
+      background: ${props => props.theme.colors.secondary};
+      color: ${props => props.theme.colors.primary};
       width: 100%;
     }
   }
   font-size: 1.2rem;
   padding: 8px;
-  outline: transparent;
+  &:hover,
+  &.active {
+    padding: 7px;
+    border-bottom: 3px solid ${props => props.theme.colors.secondary};
+  }
 `;
 
-export const PopUpLink = styled(NavLink)`
+export const PopUpLink = styled(BasicLink)`
   color: ${props => props.theme.colors.action};
   &:hover {
     background: ${props => props.theme.colors.action};
@@ -47,12 +52,16 @@ export const PopUpLink = styled(NavLink)`
   }
 `;
 
-export const FooterLink = styled(NavLink)`
+export const FooterLink = styled(BasicLink)`
   font-size: 1.1rem;
   padding: 7px;
+  &:hover {
+    background: ${props => props.theme.colors.secondary};
+    color: ${props => props.theme.colors.primary};
+  }
 `;
 
-export const BottomLink = styled(NavLink)`
+export const BottomLink = styled(FooterLink)`
   font-size: 0.8rem;
   padding: 5px;
 `;
