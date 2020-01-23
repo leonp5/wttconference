@@ -8,10 +8,11 @@ import MobileMenu from "./MobileMenu";
 import { HeaderNav } from "./HeaderNav";
 
 const Header = styled.div`
-  flex-grow: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: sticky;
+  top: 0px;
   z-index: 1;
   height: 70px;
   width: 100%;
