@@ -3,6 +3,7 @@ import React from "react";
 import { Heading } from "../components/Text";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
 import { Table, Column, TableHeading, Time, Content } from "../components/Tables/ProgramTable";
+import { InlineLink } from "../components/Navigation/NavLinks";
 
 function Program() {
   return (
@@ -32,7 +33,9 @@ function Program() {
           <Time>9:00 - 10:00 Uhr</Time>
           <Content> Gemeinsamer Beginn (Singen, Impulsvortrag)</Content>
           <Time>10:15 - 12:15 Uhr</Time>
-          <Content>Workshops </Content>
+          <Content>
+            <InlineLink to="/workshops">Workshops</InlineLink>{" "}
+          </Content>
           <Time>12:30 - 14:30 Uhr</Time>
           <Content>Mittagessen - Mittagspause </Content>
           <Time>14:30 - 14:45 Uhr</Time>
