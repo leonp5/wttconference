@@ -2,12 +2,8 @@ import React from "react";
 import styled from "@emotion/styled";
 
 import { Heading, Text, Heading3 } from "../components/Text";
-import { ContentWrapper } from "../components/Container/ContentWrapper";
+import { TextWrapper } from "../components/Container/ContentWrapper";
 import { InlineLink } from "../components/Navigation/NavLinks";
-
-const Wrapper = styled(ContentWrapper)`
-  max-width: 800px;
-`;
 
 const Headline = styled(Heading3)`
   text-align: left;
@@ -18,7 +14,7 @@ const Headline = styled(Heading3)`
 
 export default function Contact() {
   return (
-    <Wrapper>
+    <TextWrapper>
       <Heading>Tagungsbeitrag</Heading>
       <Text>
         Der Tagungsbetrag beträgt 20 Euro für Verpflegung und Unterkunft. Dieser Preis wird durch
@@ -40,6 +36,6 @@ export default function Contact() {
         Am Exerzierplatz 21
         <br /> D-68167 Mannheim
       </Text>
-    </Wrapper>
+    </TextWrapper>
   );
 }

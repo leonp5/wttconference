@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import React from "react";
 
-import { mq } from "./MediaQueries";
 import { Heading2 } from "../components/Text";
 
 const HomeTopImage = styled.img`
@@ -29,22 +28,19 @@ const ImageText = styled(Heading2)`
 export default function HeaderImage() {
   return (
     <RelativeContainer>
-      <HomeTopImage src="/images/home_320.jpg" />
+      <HomeTopImage src="/images/home_1300.jpg" alt="waldorfheute" />
 
       <ImageText>
         WALDORF HEUTE <br /> <br /> FÜR MORGEN
-        {/* <br />
-        <br />
-        Tagung für angehende Pädagog*innen <br />
-        <br /> 26.-28. Juni 2020 */}
       </ImageText>
     </RelativeContainer>
   );
 }
 
-export const ContactImage = styled.img`
-  /* ${mq[0]} {
-    display: block;
-  }
-  display: none; */
+export const StyledPicture = styled.picture`
+  width: 100%;
+`;
+
+export const FallbackImage = styled.img`
+  width: 100%;
 `;

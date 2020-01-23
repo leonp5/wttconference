@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 import { Heading, Text, Heading3 } from "../components/Text";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
-import { ContactImage } from "../components/Images";
+import { StyledPicture, FallbackImage } from "../components/Images";
 import { Form } from "../components/Form";
 import { BasicInput } from "../components/InputFields";
 import { Label } from "../components/Labels";
@@ -54,7 +54,11 @@ export default function Contact() {
   return (
     <ContentWrapper>
       <Heading>Kontakt</Heading>
-      <ContactImage src="/images/orga_team_320.jpg" />
+      <StyledPicture>
+        <source srcSet="/images/orga_team_320.jpg" media="(max-width: 340px)" />
+        <source srcSet="/images/orga_team_640.jpg" media="(max-width: 640px)" />
+        <FallbackImage src="/images/orga_team_800.jpg" />
+      </StyledPicture>
       <PageText>Komme bei sämtlichen Fragen gerne auf uns zu!</PageText>
       <Heading3>Ansprechpartnerinnen:</Heading3>
       <PageText>Katharina Wiesand und Carolin Kreinfeldt</PageText>
@@ -65,7 +69,7 @@ export default function Contact() {
 
       <ContactForm onSubmit={handleSubmit}>
         <Label>Name*:</Label>
-        <BasicInput autoFocus value={request.name} name="name" onChange={handleChange} />
+        <BasicInput value={request.name} name="name" onChange={handleChange} />
         <Label>Email*:</Label>
         <BasicInput value={request.email} name="email" onChange={handleChange} />
         <Label>Betreff:</Label>

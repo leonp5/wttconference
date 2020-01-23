@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import { FooterContainer } from "../Container/FooterContainer";
 
 const Footer = styled.footer`
-  flex-grow: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
