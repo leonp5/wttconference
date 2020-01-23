@@ -27,10 +27,10 @@ function Program() {
         </Column>
         <Column>
           <TableHeading>Samstag, 27.06</TableHeading>
-          <Time>8:00 Uhr</Time>
+          <Time>8:00 - 9:00 Uhr</Time>
           <Content> Frühstück</Content>
-          <Time></Time>
-          <Content> Gemeinsamer Beginn (Singen, Impuls)</Content>
+          <Time>9:00 - 10:00 Uhr</Time>
+          <Content> Gemeinsamer Beginn (Singen, Impulsvortrag)</Content>
           <Time>10:15 - 12:15 Uhr</Time>
           <Content>Workshops </Content>
           <Time>12:30 - 14:30 Uhr</Time>
