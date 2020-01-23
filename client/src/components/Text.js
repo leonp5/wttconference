@@ -5,6 +5,7 @@ export const Heading = styled.h1`
   color: ${props => props.theme.colors.tertiary};
   margin: 0;
   padding: 35px 0px 15px 0px;
+  text-align: center;
 `;
 
 export const Heading2 = styled.h2`
