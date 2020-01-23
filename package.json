@@ -20,7 +20,7 @@
     "url": "git+https://github.com/leonp5/wttconference.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "leonp5",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/leonp5/wttconference/issues"
@@ -30,7 +30,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mailgun-js": "^0.22.0",
-    "mongodb": "^3.4.0"
+    "mongodb": "^3.5.2"
   },
   "devDependencies": {
     "eslint": "^6.7.2",
