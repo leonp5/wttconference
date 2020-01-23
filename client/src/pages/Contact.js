@@ -14,7 +14,6 @@ import TogglePopUp from "../components/PopUp/TogglePopUp";
 import { PopUpBackground } from "../components/PopUp/PopUpBackground";
 import { PopUpContent } from "../components/PopUp/PopUpContent";
 import { PopUpLink } from "../components/Navigation/NavLinks";
-import { mq } from "../components/MediaQueries";
 
 const PageText = styled(Text)`
   text-align: center;
