@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import React from "react";
 
-import { mq } from "./MediaQueries";
 import { Heading2 } from "../components/Text";
 
 const HomeTopImage = styled.img`
@@ -29,7 +28,7 @@ const ImageText = styled(Heading2)`
 export default function HeaderImage() {
   return (
     <RelativeContainer>
-      <HomeTopImage src="/images/home_320.jpg" />
+      <HomeTopImage src="/images/home_1300.jpg" />
 
       <ImageText>
         WALDORF HEUTE <br /> <br /> FÜR MORGEN
@@ -42,9 +41,10 @@ export default function HeaderImage() {
   );
 }
 
-export const ContactImage = styled.img`
-  /* ${mq[0]} {
-    display: block;
-  }
-  display: none; */
+export const ContactImage = styled.picture`
+  width: 100%;
+`;
+
+export const FallbackImage = styled.img`
+  width: 100%;
 `;
