@@ -28,20 +28,16 @@ const ImageText = styled(Heading2)`
 export default function HeaderImage() {
   return (
     <RelativeContainer>
-      <HomeTopImage src="/images/home_1300.jpg" />
+      <HomeTopImage src="/images/home_1300.jpg" alt="waldorfheute" />
 
       <ImageText>
         WALDORF HEUTE <br /> <br /> FÜR MORGEN
-        {/* <br />
-        <br />
-        Tagung für angehende Pädagog*innen <br />
-        <br /> 26.-28. Juni 2020 */}
       </ImageText>
     </RelativeContainer>
   );
 }
 
-export const ContactImage = styled.picture`
+export const StyledPicture = styled.picture`
   width: 100%;
 `;
 

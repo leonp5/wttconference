@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 import { Heading, Text, Heading3 } from "../components/Text";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
-import { ContactImage, FallbackImage } from "../components/Images";
+import { StyledPicture, FallbackImage } from "../components/Images";
 import { Form } from "../components/Form";
 import { BasicInput } from "../components/InputFields";
 import { Label } from "../components/Labels";
@@ -54,11 +54,11 @@ export default function Contact() {
   return (
     <ContentWrapper>
       <Heading>Kontakt</Heading>
-      <ContactImage>
+      <StyledPicture>
         <source srcSet="/images/orga_team_320.jpg" media="(max-width: 340px)" />
         <source srcSet="/images/orga_team_640.jpg" media="(max-width: 640px)" />
         <FallbackImage src="/images/orga_team_800.jpg" />
-      </ContactImage>
+      </StyledPicture>
       <PageText>Komme bei sämtlichen Fragen gerne auf uns zu!</PageText>
       <Heading3>Ansprechpartnerinnen:</Heading3>
       <PageText>Katharina Wiesand und Carolin Kreinfeldt</PageText>
