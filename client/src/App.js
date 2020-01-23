@@ -19,15 +19,19 @@ import ConferenceFee from "./pages/ConferenceFee";
 import { Main } from "./components/Container/Main";
 import { PageContainer } from "./components/Container/PageContainer";
 import HeaderImage from "./components/Images";
+// import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <PageContainer>
         <Router>
+          {/* <ScrollToTop /> */}
           <GlobalStyles />
           <AppBar>
-            <MenuLink to="/">Start</MenuLink>
+            <MenuLink to="/" exact={true}>
+              Start
+            </MenuLink>
             <MenuLink to="/registration">Anmelden</MenuLink>
             <MenuLink to="/conferencefee">Tagungsbeitrag</MenuLink>
             <MenuLink to="/workshops">Workshops</MenuLink>

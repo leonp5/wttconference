@@ -8,7 +8,7 @@ const HomeTopImage = styled.img`
   width: 100%;
   height: 300px;
   object-fit: cover;
-  object-position: top center;
+  object-position: center;
 `;
 
 const RelativeContainer = styled.div`
@@ -29,7 +29,8 @@ const ImageText = styled(Heading2)`
 export default function HeaderImage() {
   return (
     <RelativeContainer>
-      <HomeTopImage src="/images/home_large.jpg" alt="image" />
+      <HomeTopImage src="/images/home_320.jpg" />
+
       <ImageText>
         WALDORF HEUTE <br /> <br /> FÜR MORGEN
         {/* <br />
