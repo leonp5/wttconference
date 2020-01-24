@@ -17,7 +17,7 @@ function Home() {
         <Heading>Tagung für angehende Pädagog*innen</Heading>
         <Heading>26.-28. Juni 2020</Heading>
         <Text>
-          Liebe Waldorfpädagogik Studenten*innen, liebe Seminaristen*innen, <br />
+          Liebe/r Waldorfpädagogik Studenten*in, liebe/r Seminarist*in, <br />
           <br />
           Hier findest du alle Informationen zur Tagung „Waldorf heute für morgen“ und hier kannst
           du dich auch direkt <InlineLink to="/registration">anmelden</InlineLink>.

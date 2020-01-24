@@ -65,12 +65,16 @@ export default function Contact() {
         <ContentContainer>
           <FlexibleContainer>
             <Heading2>Ansprechpartnerinnen:</Heading2>
-            <PageText>Katharina Wiesand und Carolin Kreinfeldt</PageText>
-            <PageText>Komme bei sämtlichen Fragen gerne auf uns zu!</PageText>
             <PageText>
-              E-Mail: <a href="mailto:info@beispiel.de">info@beispiel.de</a>{" "}
+              Katharina Wiesand und Carolin Kreinfeldt <br /> E-Mail:{" "}
+              <a href="mailto:info@beispiel.de">info@beispiel.de</a>
             </PageText>
-            <PageText>Oder schreib uns direkt über das Kontaktformular:</PageText>
+
+            {/* <PageText>Komme bei sämtlichen Fragen gerne auf uns zu!</PageText> */}
+            <PageText>
+              Komm bei sämtlichen Fragen gerne auf uns zu oder schreib uns direkt über das
+              Kontaktformular:
+            </PageText>
 
             <ContactForm onSubmit={handleSubmit}>
               <Label>Name*:</Label>
