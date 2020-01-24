@@ -19,6 +19,13 @@ export const Heading3 = styled.h3`
   color: ${props => props.theme.colors.tertiary};
 `;
 
+export const Headline = styled(Heading3)`
+  text-align: left;
+  width: 100%;
+  padding-left: 15px;
+  margin-bottom: 0px;
+`;
+
 export const Text = styled.p`
   padding: 15px;
   font-size: 1.1rem;

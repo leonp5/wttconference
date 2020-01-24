@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 import { Heading, Text } from "../components/Text";
 import { ContentWrapper, TextWrapper } from "../components/Container/ContentWrapper";
 import { StyledPicture, FallbackImage } from "../components/Images";
+import { InlineLink } from "../components/Navigation/NavLinks";
 
 const Picture = styled(StyledPicture)`
   width: 80%;
@@ -16,16 +17,28 @@ function Home() {
         <Heading>Tagung für angehende Pädagog*innen</Heading>
         <Heading>26.-28. Juni 2020</Heading>
         <Text>
-          Willkommen auf der Tagungsseite! <br />
-          Hier findest du alle Informationen zur Tagung, zum Programm und hier kannst du dich
-          anmelden.
+          Liebe Waldorfpädagogik Studenten*innen, liebe Seminaristen*innen, <br />
           <br />
-          Diese Tagung wird von Studierenden für Studierende aller Lehrerseminare/Hochschulen der
-          Anthroposophie und Waldorfpädagogik in Deutschland organisiert. <br />
-          Idee und Ziel dieser Tagung ist es, uns gegenseitig kennenzulernen und zu vernetzen.
-          Weiterführend, als Lehrer*innen der Zukunft, zu wissen, wie wir die Herausforderungen im
-          Unterrichten der kommenden Generationen annehmen und wie wir uns gemeinsam daraufhin
-          ausrichten können.
+          Hier findest du alle Informationen zur Tagung „Waldorf heute für morgen“ und hier kannst
+          du dich auch direkt <InlineLink to="/registration">anmelden</InlineLink>.
+          <br />
+          <br />
+          <b>
+            Waldorf 100 haben wir gefeiert, doch wie geht es weiter? Was ist Waldorf heute? Und
+            Morgen? Was möchten wir aus der Vergangenheit der Waldorfbewegung mi nehmen und wo
+            bedarf es neue Ideen und Impulse?
+            <br />
+            Wie gehen wir mit den Kindern der Gegenwart und Zukunft um? Ist Waldorf noch zeitgemäß?
+          </b>
+          <br />
+          Fragen, die eine kleine Gruppe von Wittener, Stuttgarter und Mannheimer Student*innen
+          beschäftigt und Dich als Waldorfstudent*in vielleicht auch?
+          <br />
+          <br />
+          <b>Wir möchten Dich zur Tagung, zu diesen Themen einladen.</b> Die Idee und Ziel dieser
+          Tagung ist es, uns gegenseitig kennenzulernen und zu vernetzen. Weiterführend wollen wir
+          als Lehrer*innen der Zukunft, wissen, wie wir die Herausforderungen im Unterrichten
+          annehmen und wie wir uns gemeinsam daraufhin ausrichten können.
         </Text>
       </TextWrapper>
       <Picture>

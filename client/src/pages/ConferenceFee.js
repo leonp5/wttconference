@@ -1,16 +1,8 @@
 import React from "react";
-import styled from "@emotion/styled";
 
-import { Heading, Text, Heading3 } from "../components/Text";
+import { Heading, Text, Headline } from "../components/Text";
 import { TextWrapper } from "../components/Container/ContentWrapper";
 import { InlineLink } from "../components/Navigation/NavLinks";
-
-const Headline = styled(Heading3)`
-  text-align: left;
-  width: 100%;
-  padding-left: 15px;
-  margin-bottom: 0px;
-`;
 
 export default function Contact() {
   return (
@@ -29,12 +21,6 @@ export default function Contact() {
         Trägergesellschaft für geisteswissenschaftliche Bildung gemeinnützige GmbH <br />
         Sparkasse Rhein Neckar Nord <br />
         IBAN DE25 6705 0505 0030 1924 51 <br /> <b>Verwendungszweck:</b> „Studierendentagung“
-      </Text>
-      <Headline>Tagungsort:</Headline>
-      <Text>
-        Alanus Hochschule – Institut für Waldorfpädagogik, Inklusion und Interkulturalität <br />
-        Am Exerzierplatz 21
-        <br /> D-68167 Mannheim
       </Text>
     </TextWrapper>
   );

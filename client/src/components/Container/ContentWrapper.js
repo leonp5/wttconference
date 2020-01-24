@@ -10,3 +10,10 @@ export const ContentWrapper = styled.div`
 export const TextWrapper = styled(ContentWrapper)`
   max-width: 800px;
 `;
+
+export const ContentContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+`;
