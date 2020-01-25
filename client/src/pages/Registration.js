@@ -2,8 +2,8 @@ import React from "react";
 import styled from "@emotion/styled";
 
 import { Heading } from "../components/Text";
-import { Form } from "../components/Form";
-import { BasicInput } from "../components/InputFields";
+import { Form } from "../components/Form/Form";
+import { BasicInput } from "../components/Form/InputFields";
 import { Button } from "../components/Buttons/Button";
 import { RadioButton } from "../components/Buttons/RadioButton";
 import { PopUpContent } from "../components/PopUp/PopUpContent";
@@ -13,9 +13,9 @@ import { PopUpLink } from "../components/Navigation/NavLinks";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
 import { saveAttendee } from "../api/attendees";
 import { notifyAttendee } from "../api/sendMails";
-import { TextArea } from "../components/InputFields";
-import { Label } from "../components/Labels";
-import { RadioLabel } from "../components/Labels";
+import { TextArea } from "../components/Form/InputFields";
+import { Label } from "../components/Form/Labels";
+import { RadioLabel } from "../components/Form/Labels";
 import { RadioWrapper } from "../components/Container/RadioWrapper";
 
 const Container = styled.div`
