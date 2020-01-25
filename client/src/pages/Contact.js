@@ -69,8 +69,6 @@ export default function Contact() {
               Katharina Wiesand und Carolin Kreinfeldt <br /> E-Mail:{" "}
               <a href="mailto:info@beispiel.de">info@beispiel.de</a>
             </PageText>
-
-            {/* <PageText>Komme bei sämtlichen Fragen gerne auf uns zu!</PageText> */}
             <PageText>
               Komm bei sämtlichen Fragen gerne auf uns zu oder schreib uns direkt über das
               Kontaktformular:
