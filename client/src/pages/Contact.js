@@ -16,6 +16,7 @@ import { PopUpContent } from "../components/PopUp/PopUpContent";
 import { PopUpLink } from "../components/Navigation/NavLinks";
 
 import { FlexibleContainer } from "../components/Container/FlexibleContainer";
+import ContactMap from "../components/ContactMap";
 
 const PageText = styled(Text)`
   text-align: center;
@@ -115,6 +116,7 @@ export default function Contact() {
               Am Exerzierplatz 21
               <br /> D-68167 Mannheim
             </PageText>
+            <ContactMap />
           </FlexibleContainer>
         </ContentContainer>
       </ContentWrapper>
