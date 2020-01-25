@@ -5,6 +5,6 @@ export const Main = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  min-height: calc(90vh - 60px);
+  min-height: calc(90vh - 40px);
   background: ${props => props.theme.colors.secondary};
 `;

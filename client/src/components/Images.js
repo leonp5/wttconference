@@ -38,7 +38,7 @@ export default function HeaderImage() {
 }
 
 export const StyledPicture = styled.picture`
-  width: 100%;
+  max-width: 800px;
 `;
 
 export const FallbackImage = styled.img`
