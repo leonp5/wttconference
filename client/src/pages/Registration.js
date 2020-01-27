@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import { Heading, PopUpText } from "../components/Text";
+import { Heading, Heading6, PopUpText } from "../components/Text";
 import { Form } from "../components/Form/Form";
 import { BasicInput } from "../components/Form/InputFields";
 import { Button } from "../components/Buttons/Button";
@@ -17,6 +17,7 @@ import { TextArea } from "../components/Form/InputFields";
 import { Label } from "../components/Form/Labels";
 import { RadioLabel } from "../components/Form/Labels";
 import { RadioWrapper } from "../components/Container/RadioWrapper";
+import { CenterButton } from "../components/Buttons/CenterButton";
 
 const Container = styled.div`
   display: flex;
@@ -140,21 +141,23 @@ export default function Registration() {
             onChange={handleChange}
             placeholder="Deine Nachricht, Anmerkung, etc."
           />
-
+          <Heading6>* = Pflichtfeld</Heading6>
           <TogglePopUp
             toggle={show => (
-              <Button
-                disabled={
-                  !attendee.name ||
-                  !attendee.firstName ||
-                  !attendee.address ||
-                  !attendee.location ||
-                  !attendee.email
-                }
-                onClick={show}
-              >
-                Anmelden
-              </Button>
+              <CenterButton>
+                <Button
+                  disabled={
+                    !attendee.name ||
+                    !attendee.firstName ||
+                    !attendee.address ||
+                    !attendee.location ||
+                    !attendee.email
+                  }
+                  onClick={show}
+                >
+                  Anmelden
+                </Button>
+              </CenterButton>
             )}
             content={hide => (
               <PopUpBackground>

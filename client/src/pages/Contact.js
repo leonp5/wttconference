@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import { Heading, Text, Heading2 } from "../components/Text";
+import { Heading, Text, Heading2, Heading6, PopUpText } from "../components/Text";
 import { ContentWrapper, ContentContainer } from "../components/Container/ContentWrapper";
 import { StyledPicture, FallbackImage } from "../components/Images";
 import { Form } from "../components/Form/Form";
@@ -17,6 +17,7 @@ import { PopUpLink } from "../components/Navigation/NavLinks";
 
 import { FlexibleContainer } from "../components/Container/FlexibleContainer";
 import ContactMap from "../components/ContactMap";
+import { CenterButton } from "../components/Buttons/CenterButton";
 
 const PageText = styled(Text)`
   text-align: center;
@@ -24,12 +25,6 @@ const PageText = styled(Text)`
 
 const ContactForm = styled(Form)`
   align-items: start;
-`;
-
-const CenterButton = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%;
 `;
 
 export default function Contact() {
@@ -84,6 +79,7 @@ export default function Contact() {
               <BasicInput value={request.subject} name="subject" onChange={handleChange} />
               <Label>Deine Nachricht*:</Label>
               <TextArea value={request.message} name="message" onChange={handleChange} />
+              <Heading6>* = Pflichtfeld</Heading6>
               <TogglePopUp
                 toggle={show => (
                   <CenterButton>
@@ -98,7 +94,7 @@ export default function Contact() {
                 content={hide => (
                   <PopUpBackground>
                     <PopUpContent>
-                      <p>Vielen Dank für deine Nachricht!</p>
+                      <PopUpText>Vielen Dank für deine Nachricht!</PopUpText>
                       <PopUpLink to="/" onClick={hide}>
                         Hier gehts zur Startseite
                       </PopUpLink>
