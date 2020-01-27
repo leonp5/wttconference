@@ -17,3 +17,13 @@ export function sendRequest(request) {
     body: JSON.stringify(request)
   });
 }
+
+export function sendWorkshop(workshop) {
+  return fetch(`/api/workshop`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(workshop)
+  });
+}

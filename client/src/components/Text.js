@@ -19,6 +19,8 @@ export const Heading3 = styled.h3`
   color: ${props => props.theme.colors.tertiary};
 `;
 
+export const Heading6 = styled.h6``;
+
 export const Headline = styled(Heading3)`
   text-align: left;
   width: 100%;
@@ -30,4 +32,8 @@ export const Text = styled.p`
   padding: 15px;
   font-size: 1.1rem;
   line-height: 2rem;
+`;
+
+export const PopUpText = styled.p`
+  text-align: center;
 `;
