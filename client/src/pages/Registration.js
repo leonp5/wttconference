@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import { Heading } from "../components/Text";
+import { Heading, Heading6, PopUpText } from "../components/Text";
 import { Form } from "../components/Form/Form";
 import { BasicInput } from "../components/Form/InputFields";
 import { Button } from "../components/Buttons/Button";
@@ -17,13 +17,7 @@ import { TextArea } from "../components/Form/InputFields";
 import { Label } from "../components/Form/Labels";
 import { RadioLabel } from "../components/Form/Labels";
 import { RadioWrapper } from "../components/Container/RadioWrapper";
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-`;
+import { CenterButton } from "../components/Buttons/CenterButton";
 
 const RadioBox = styled.div`
   display: flex;
@@ -34,6 +28,7 @@ const RadioBox = styled.div`
 export default function Registration() {
   const [attendee, setAttendee] = React.useState({
     name: "",
+    firstName: "",
     address: "",
     location: "",
     email: "",
@@ -58,6 +53,7 @@ export default function Registration() {
     notifyAttendee(attendee);
     setAttendee({
       name: "",
+      firstName: "",
       address: "",
       location: "",
       email: "",
@@ -71,97 +67,105 @@ export default function Registration() {
 
   return (
     <ContentWrapper>
-      <Container>
-        <Heading>Anmeldung</Heading>
-        <Form onSubmit={handleSubmit}>
-          <Label>Name, Vorname*:</Label>
+      <Heading>Anmeldung</Heading>
 
-          <BasicInput value={attendee.name} autoFocus name="name" onChange={handleChange} />
+      <Form onSubmit={handleSubmit}>
+        <Label>Name*:</Label>
+        <BasicInput value={attendee.name} name="name" onChange={handleChange} />
+        <Label>Vorname*:</Label>
+        <BasicInput value={attendee.firstName} name="firstName" onChange={handleChange} />
+        <Label>Geschlecht:</Label>
+        <RadioBox>
+          <RadioWrapper>
+            <RadioButton
+              onChange={handleChange}
+              type="radio"
+              name="gender"
+              value="männlich"
+              checked={attendee.gender === "männlich"}
+            />
+            <RadioLabel>männlich</RadioLabel>
+          </RadioWrapper>
+          <RadioWrapper>
+            <RadioButton
+              onChange={handleChange}
+              type="radio"
+              name="gender"
+              value="weiblich"
+              checked={attendee.gender === "weiblich"}
+            />
+            <RadioLabel>weiblich</RadioLabel>
+          </RadioWrapper>
+          <RadioWrapper>
+            <RadioButton
+              onChange={handleChange}
+              type="radio"
+              name="gender"
+              value="divers"
+              checked={attendee.gender === "divers"}
+            />
 
-          <Label>Geschlecht:</Label>
-          <RadioBox>
-            <RadioWrapper>
-              <RadioButton
-                onChange={handleChange}
-                type="radio"
-                name="gender"
-                value="männlich"
-                checked={attendee.gender === "männlich"}
-              />
-              <RadioLabel>männlich</RadioLabel>
-            </RadioWrapper>
-            <RadioWrapper>
-              <RadioButton
-                onChange={handleChange}
-                type="radio"
-                name="gender"
-                value="weiblich"
-                checked={attendee.gender === "weiblich"}
-              />
-              <RadioLabel>weiblich</RadioLabel>
-            </RadioWrapper>
-            <RadioWrapper>
-              <RadioButton
-                onChange={handleChange}
-                type="radio"
-                name="gender"
-                value="divers"
-                checked={attendee.gender === "divers"}
-              />
+            <RadioLabel>divers</RadioLabel>
+          </RadioWrapper>
+        </RadioBox>
+        <Label>Adresse*:</Label>
+        <BasicInput value={attendee.address} name="address" onChange={handleChange} />
+        <Label>Ort, PLZ*:</Label>
+        <BasicInput value={attendee.location} name="location" onChange={handleChange} />
+        <Label>Email*:</Label>
+        <BasicInput type="email" value={attendee.email} name="email" onChange={handleChange} />
+        <Label>Mobil:</Label>
+        <BasicInput value={attendee.phone} name="phone" onChange={handleChange} />
+        <Label>Hochschule:</Label>
+        <BasicInput value={attendee.highschool} name="highschool" onChange={handleChange} />
 
-              <RadioLabel>divers</RadioLabel>
-            </RadioWrapper>
-          </RadioBox>
-          <Label>Adresse*:</Label>
-          <BasicInput value={attendee.address} name="address" onChange={handleChange} />
-          <Label>Ort, PLZ*:</Label>
-          <BasicInput value={attendee.location} name="location" onChange={handleChange} />
-          <Label>Email*:</Label>
-          <BasicInput type="email" value={attendee.email} name="email" onChange={handleChange} />
-          <Label>Mobil:</Label>
-          <BasicInput type="number" value={attendee.phone} name="phone" onChange={handleChange} />
-          <Label>Hochschule:</Label>
-          <BasicInput value={attendee.highschool} name="highschool" onChange={handleChange} />
-
-          <Label>Essen:</Label>
-          <BasicInput
-            value={attendee.nutrition}
-            name="nutrition"
-            onChange={handleChange}
-            placeholder="Essen (vegetarisch, vegan, Lebensmittelunverträglichkeiten"
-          />
-          <Label>Sonstiges:</Label>
-          <TextArea
-            value={attendee.else}
-            name="else"
-            onChange={handleChange}
-            placeholder="Deine Nachricht, Anmerkung, etc."
-          />
-
-          <TogglePopUp
-            toggle={show => (
+        <Label>Essen:</Label>
+        <BasicInput
+          value={attendee.nutrition}
+          name="nutrition"
+          onChange={handleChange}
+          placeholder="Essen (vegetarisch, vegan, Lebensmittelunverträglichkeiten"
+        />
+        <Label>Sonstiges:</Label>
+        <TextArea
+          value={attendee.else}
+          name="else"
+          onChange={handleChange}
+          placeholder="Deine Nachricht, Anmerkung, etc."
+        />
+        <Heading6>* = Pflichtfeld</Heading6>
+        <TogglePopUp
+          toggle={show => (
+            <CenterButton>
               <Button
                 disabled={
-                  !attendee.name || !attendee.address || !attendee.location || !attendee.email
+                  !attendee.name ||
+                  !attendee.firstName ||
+                  !attendee.address ||
+                  !attendee.location ||
+                  !attendee.email
                 }
                 onClick={show}
               >
                 Anmelden
               </Button>
-            )}
-            content={hide => (
-              <PopUpBackground>
-                <PopUpContent>
-                  <p>Vielen Dank für deine Anmeldung!</p>
-                  <PopUpLink to="/" onClick={hide}>
-                    Hier gehts zur Startseite
-                  </PopUpLink>
-                </PopUpContent>
-              </PopUpBackground>
-            )}
-          />
-        </Form>
-      </Container>
+            </CenterButton>
+          )}
+          content={hide => (
+            <PopUpBackground>
+              <PopUpContent>
+                <PopUpText>
+                  Vielen Dank für deine Anmeldung! <br /> Du erhälst eine Kopie deiner Anmeldung via
+                  Mail.
+                </PopUpText>
+                <PopUpLink to="/" onClick={hide}>
+                  Hier gehts zur Startseite
+                </PopUpLink>
+              </PopUpContent>
+            </PopUpBackground>
+          )}
+        />
+      </Form>
     </ContentWrapper>
   );
 }

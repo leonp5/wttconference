@@ -10,8 +10,7 @@ export const BasicInput = styled.input`
 export const TextArea = styled.textarea`
   background: ${props => props.theme.colors.background};
   border: none;
-  width: 100%;
+  width: 250px;
   height: 130px;
   padding: 10px;
-  margin-bottom: 50px;
 `;

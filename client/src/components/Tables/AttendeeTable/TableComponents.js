@@ -19,13 +19,13 @@ export const TableHeader = styled.th`
   text-align: left;
   overflow: hidden;
   text-overflow: ellipsis;
-  ${mq[0]} {
+  ${mq[1]} {
     display: block;
   }
 `;
 
 export const TableHeaderRow = styled.tr`
-  ${mq[0]} {
+  ${mq[1]} {
     position: absolute;
     z-index: -1000;
   }
@@ -42,7 +42,7 @@ export const TableRow = styled.tr`
     background: ${props => props.theme.colors.hover};
   }
 
-  ${mq[0]} {
+  ${mq[1]} {
     display: block;
   }
 `;
@@ -54,7 +54,7 @@ export const TableData = styled.td`
   overflow: hidden;
   text-overflow: ellipsis;
 
-  ${mq[0]} {
+  ${mq[1]} {
     height: 28px;
     display: block;
     position: relative;
@@ -70,27 +70,30 @@ export const TableData = styled.td`
       content: "Name";
     }
     :nth-of-type(2):before {
-      content: "Adresse";
+      content: "Vorname";
     }
     :nth-of-type(3):before {
-      content: "Wohnort";
+      content: "Adresse";
     }
     :nth-of-type(4):before {
-      content: "Email";
+      content: "Wohnort";
     }
     :nth-of-type(5):before {
-      content: "Telefon";
+      content: "Email";
     }
     :nth-of-type(6):before {
-      content: "Hochschule";
+      content: "Telefon";
     }
     :nth-of-type(7):before {
-      content: "Geschlecht";
+      content: "Hochschule";
     }
     :nth-of-type(8):before {
-      content: "Ernährung";
+      content: "Geschlecht";
     }
     :nth-of-type(9):before {
+      content: "Ernährung";
+    }
+    :nth-of-type(10):before {
       content: "Sonstiges";
     }
   }

@@ -9,6 +9,6 @@ export const theme = {
     tertiary: "#000000",
     action: "#C32E2C",
     disabled: "#e58c8b",
-    font: "#4B4949"
+    font: "#242424"
   }
 };

@@ -6,13 +6,14 @@ export const PopUpBackground = styled.div`
   align-items: center;
   justify-content: center;
   position: fixed;
+  z-index: 5;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background: ${props => props.theme.colors.transparentBackground};
 
-  animation: fadein 1.5s;
+  animation: fadein 1.1s;
 
   @keyframes fadein {
     from {
