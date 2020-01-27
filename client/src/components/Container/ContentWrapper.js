@@ -5,9 +5,13 @@ export const ContentWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   max-width: 1300px;
+  margin-bottom: 5%;
 `;
 
-export const TextWrapper = styled(ContentWrapper)`
+export const TextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 800px;
 `;
 
