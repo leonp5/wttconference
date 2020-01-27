@@ -6,6 +6,7 @@ import { Table, TableRow, TableData, TableHeaderRow, TableHeader } from "./Table
 export default function AttendeeTable({ ...props }) {
   const ContentTH = [
     "Name",
+    "Vorname",
     "Adresse",
     "Wohnort",
     "Email",

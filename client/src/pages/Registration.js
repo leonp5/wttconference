@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import { Heading } from "../components/Text";
+import { Heading, PopUpText } from "../components/Text";
 import { Form } from "../components/Form/Form";
 import { BasicInput } from "../components/Form/InputFields";
 import { Button } from "../components/Buttons/Button";
@@ -34,6 +34,7 @@ const RadioBox = styled.div`
 export default function Registration() {
   const [attendee, setAttendee] = React.useState({
     name: "",
+    firstName: "",
     address: "",
     location: "",
     email: "",
@@ -55,9 +56,10 @@ export default function Registration() {
   function handleSubmit(event) {
     event.preventDefault();
     saveAttendee(attendee);
-    notifyAttendee(attendee);
+    // notifyAttendee(attendee);
     setAttendee({
       name: "",
+      firstName: "",
       address: "",
       location: "",
       email: "",
@@ -74,10 +76,11 @@ export default function Registration() {
       <Container>
         <Heading>Anmeldung</Heading>
         <Form onSubmit={handleSubmit}>
-          <Label>Name, Vorname*:</Label>
+          <Label>Name*:</Label>
 
-          <BasicInput value={attendee.name} autoFocus name="name" onChange={handleChange} />
-
+          <BasicInput value={attendee.name} name="name" onChange={handleChange} />
+          <Label>Vorname*:</Label>
+          <BasicInput value={attendee.firstName} name="firstName" onChange={handleChange} />
           <Label>Geschlecht:</Label>
           <RadioBox>
             <RadioWrapper>
@@ -142,7 +145,11 @@ export default function Registration() {
             toggle={show => (
               <Button
                 disabled={
-                  !attendee.name || !attendee.address || !attendee.location || !attendee.email
+                  !attendee.name ||
+                  !attendee.firstName ||
+                  !attendee.address ||
+                  !attendee.location ||
+                  !attendee.email
                 }
                 onClick={show}
               >
@@ -152,7 +159,10 @@ export default function Registration() {
             content={hide => (
               <PopUpBackground>
                 <PopUpContent>
-                  <p>Vielen Dank für deine Anmeldung!</p>
+                  <PopUpText>
+                    Vielen Dank für deine Anmeldung! <br /> Du erhälst eine Kopie deiner Anmeldung
+                    via Mail.
+                  </PopUpText>
                   <PopUpLink to="/" onClick={hide}>
                     Hier gehts zur Startseite
                   </PopUpLink>
