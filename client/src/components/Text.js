@@ -37,6 +37,10 @@ export const Text = styled.p`
   color: ${props => props.theme.colors.font};
 `;
 
+export const PageText = styled(Text)`
+  text-align: center;
+`;
+
 export const PopUpText = styled.p`
   text-align: center;
   color: ${props => props.theme.colors.font};

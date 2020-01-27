@@ -9,7 +9,7 @@ export const PopUpContent = styled.div`
   padding: 40px;
   background: ${props => props.theme.colors.secondary};
 
-  animation: fadein 1.3s;
+  animation: fadein 1.1s;
 
   @keyframes fadein {
     from {

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Heading, Heading3, Heading6, Text, PopUpText } from "../components/Text";
+import { Heading, Heading3, Heading6, Text, PopUpText, PageText } from "../components/Text";
 import { TextWrapper, ContentWrapper } from "../components/Container/ContentWrapper";
 import { Form } from "../components/Form/Form";
 import { Label } from "../components/Form/Labels";
@@ -82,31 +82,35 @@ function Workshops() {
         <Label>Deine Nachricht an uns:</Label>
         <TextArea value={workshop.message} name="message" onChange={handleChange} />
         <Heading6>* = Pflichtfeld</Heading6>
-        <TogglePopUp
-          toggle={show => (
-            <CenterButton>
-              <Button
-                disabled={!workshop.name || !workshop.email || !workshop.workshopName}
-                onClick={show}
-              >
-                Abschicken
-              </Button>
-            </CenterButton>
-          )}
-          content={hide => (
-            <PopUpBackground>
-              <PopUpContent>
-                <PopUpText>
-                  Vielen Dank für dein Workshop-Angebot! <br /> Du erhälst eine Kopie via Mail.
-                </PopUpText>
-                <PopUpLink to="/" onClick={hide}>
-                  Hier gehts zur Startseite
-                </PopUpLink>
-              </PopUpContent>
-            </PopUpBackground>
-          )}
-        />
       </Form>
+      <PageText>
+        Bedenke bitte deine benötigten Materialien zu besorgen, oder informiere uns, was du
+        benötigst.
+      </PageText>
+      <TogglePopUp
+        toggle={show => (
+          <CenterButton>
+            <Button
+              disabled={!workshop.name || !workshop.email || !workshop.workshopName}
+              onClick={show}
+            >
+              Abschicken
+            </Button>
+          </CenterButton>
+        )}
+        content={hide => (
+          <PopUpBackground>
+            <PopUpContent>
+              <PopUpText>
+                Vielen Dank für dein Workshop-Angebot! <br /> Du erhälst eine Kopie via Mail.
+              </PopUpText>
+              <PopUpLink to="/" onClick={hide}>
+                Hier gehts zur Startseite
+              </PopUpLink>
+            </PopUpContent>
+          </PopUpBackground>
+        )}
+      />
     </ContentWrapper>
   );
 }

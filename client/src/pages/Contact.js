@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import { Heading, Text, Heading2, Heading6, PopUpText } from "../components/Text";
+import { Heading, PageText, Heading2, Heading6, PopUpText } from "../components/Text";
 import { ContentWrapper, ContentContainer } from "../components/Container/ContentWrapper";
 import { StyledPicture, FallbackImage } from "../components/Images";
 import { Form } from "../components/Form/Form";
@@ -18,10 +18,6 @@ import { PopUpLink } from "../components/Navigation/NavLinks";
 import { FlexibleContainer } from "../components/Container/FlexibleContainer";
 import ContactMap from "../components/ContactMap";
 import { CenterButton } from "../components/Buttons/CenterButton";
-
-const PageText = styled(Text)`
-  text-align: center;
-`;
 
 const ContactForm = styled(Form)`
   align-items: start;
