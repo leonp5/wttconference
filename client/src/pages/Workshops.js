@@ -1,10 +1,11 @@
 import React from "react";
 
 import { Heading, Text } from "../components/Text";
+import { TextWrapper } from "../components/Container/ContentWrapper";
 
 function Workshops() {
   return (
-    <>
+    <TextWrapper>
       <Heading>Workshops</Heading>
       <Text>
         Für ein vielfältiges Programm auf unserer Tagung brauchen wir Deine Mithilfe! Es wird eine
@@ -19,7 +20,7 @@ function Workshops() {
       <Text>
         <b>Ansprechpartnerinnen</b>: Sofia Abedi und Imra Henseleit
       </Text>
-    </>
+    </TextWrapper>
   );
 }
 

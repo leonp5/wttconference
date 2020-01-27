@@ -4,10 +4,10 @@ import styled from "@emotion/styled";
 import { Heading, Text, Heading2 } from "../components/Text";
 import { ContentWrapper, ContentContainer } from "../components/Container/ContentWrapper";
 import { StyledPicture, FallbackImage } from "../components/Images";
-import { Form } from "../components/Form";
-import { BasicInput } from "../components/InputFields";
-import { Label } from "../components/Labels";
-import { TextArea } from "../components/InputFields";
+import { Form } from "../components/Form/Form";
+import { BasicInput } from "../components/Form/InputFields";
+import { Label } from "../components/Form/Labels";
+import { TextArea } from "../components/Form/InputFields";
 import { Button } from "../components/Buttons/Button";
 import { sendRequest } from "../api/sendMails";
 import TogglePopUp from "../components/PopUp/TogglePopUp";
@@ -16,6 +16,7 @@ import { PopUpContent } from "../components/PopUp/PopUpContent";
 import { PopUpLink } from "../components/Navigation/NavLinks";
 
 import { FlexibleContainer } from "../components/Container/FlexibleContainer";
+import ContactMap from "../components/ContactMap";
 
 const PageText = styled(Text)`
   text-align: center;
@@ -115,6 +116,7 @@ export default function Contact() {
               Am Exerzierplatz 21
               <br /> D-68167 Mannheim
             </PageText>
+            <ContactMap />
           </FlexibleContainer>
         </ContentContainer>
       </ContentWrapper>
