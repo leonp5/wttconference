@@ -50,7 +50,7 @@ export default function Registration() {
   function handleSubmit(event) {
     event.preventDefault();
     saveAttendee(attendee);
-    // notifyAttendee(attendee);
+    notifyAttendee(attendee);
     setAttendee({
       name: "",
       firstName: "",

@@ -61,6 +61,10 @@ function Workshops() {
         <Text>
           <b>Ansprechpartnerinnen</b>: Sofia Abedi und Imra Henseleit
         </Text>
+        <PageText>
+          Bedenke bitte deine benötigten Materialien zu besorgen, oder informiere uns, was du
+          benötigst.
+        </PageText>
       </TextWrapper>
       <Heading3>Workshopanmeldung</Heading3>
 
@@ -82,35 +86,32 @@ function Workshops() {
         <Label>Deine Nachricht an uns:</Label>
         <TextArea value={workshop.message} name="message" onChange={handleChange} />
         <Heading6>* = Pflichtfeld</Heading6>
+
+        <TogglePopUp
+          toggle={show => (
+            <CenterButton>
+              <Button
+                disabled={!workshop.name || !workshop.email || !workshop.workshopName}
+                onClick={show}
+              >
+                Abschicken
+              </Button>
+            </CenterButton>
+          )}
+          content={hide => (
+            <PopUpBackground>
+              <PopUpContent>
+                <PopUpText>
+                  Vielen Dank für dein Workshop-Angebot! <br /> Du erhälst eine Kopie via Mail.
+                </PopUpText>
+                <PopUpLink to="/" onClick={hide}>
+                  Hier gehts zur Startseite
+                </PopUpLink>
+              </PopUpContent>
+            </PopUpBackground>
+          )}
+        />
       </Form>
-      <PageText>
-        Bedenke bitte deine benötigten Materialien zu besorgen, oder informiere uns, was du
-        benötigst.
-      </PageText>
-      <TogglePopUp
-        toggle={show => (
-          <CenterButton>
-            <Button
-              disabled={!workshop.name || !workshop.email || !workshop.workshopName}
-              onClick={show}
-            >
-              Abschicken
-            </Button>
-          </CenterButton>
-        )}
-        content={hide => (
-          <PopUpBackground>
-            <PopUpContent>
-              <PopUpText>
-                Vielen Dank für dein Workshop-Angebot! <br /> Du erhälst eine Kopie via Mail.
-              </PopUpText>
-              <PopUpLink to="/" onClick={hide}>
-                Hier gehts zur Startseite
-              </PopUpLink>
-            </PopUpContent>
-          </PopUpBackground>
-        )}
-      />
     </ContentWrapper>
   );
 }
