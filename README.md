@@ -29,7 +29,9 @@ It shows the conference information, makes a online registration possible and gi
    MAILGUN_DOMAIN=<mailgunDomain>
    ```
 
+
 5. Create a `.env` file in the client folder too. There you have to add your Mapbox Token (if you want to use Mapbox style). The key must start with `REACT_APP_<nameWhatyouWant>` because it is a project created with [Create React App](https://github.com/facebook/create-react-app)
+
    The .env could look like this:
 
    ```
