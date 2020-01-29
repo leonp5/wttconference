@@ -25,7 +25,7 @@ function Home() {
           <br />
           <b>
             Waldorf 100 haben wir gefeiert, doch wie geht es weiter? Was ist Waldorf heute? Und
-            Morgen? Was möchten wir aus der Vergangenheit der Waldorfbewegung mi nehmen und wo
+            Morgen? Was möchten wir aus der Vergangenheit der Waldorfbewegung mitnehmen und wo
             bedarf es neue Ideen und Impulse?
             <br />
             Wie gehen wir mit den Kindern der Gegenwart und Zukunft um? Ist Waldorf noch zeitgemäß?

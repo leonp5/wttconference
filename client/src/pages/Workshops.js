@@ -71,7 +71,7 @@ function Workshops() {
       <Form onSubmit={handleSubmit}>
         <Label>Name:*</Label>
         <BasicInput value={workshop.name} name="name" onChange={handleChange} />
-        <Label>Vorname:</Label>
+        <Label>Vorname:*</Label>
         <BasicInput value={workshop.firstName} name="firstName" onChange={handleChange} />
         <Label>Email:*</Label>
         <BasicInput value={workshop.email} name="email" onChange={handleChange} />
@@ -91,7 +91,9 @@ function Workshops() {
           toggle={show => (
             <CenterButton>
               <Button
-                disabled={!workshop.name || !workshop.email || !workshop.workshopName}
+                disabled={
+                  !workshop.name || !workshop.firstName || !workshop.email || !workshop.workshopName
+                }
                 onClick={show}
               >
                 Abschicken
