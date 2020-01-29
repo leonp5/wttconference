@@ -69,7 +69,7 @@ export default function Contact() {
         <StyledPicture>
           <source srcSet="/images/orga_team_320.jpg" media="(max-width: 340px)" />
           <source srcSet="/images/orga_team_640.jpg" media="(max-width: 640px)" />
-          <FallbackImage src="/images/orga_team_800.jpg" />
+          <FallbackImage src="/images/orga_team_800.jpg" alt="team" />
         </StyledPicture>
         <ContentContainer>
           <FlexibleContainer>

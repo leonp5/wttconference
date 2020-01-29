@@ -5,6 +5,7 @@ export const BasicInput = styled.input`
   background: ${props => props.theme.colors.background};
   border: none;
   padding: 10px;
+  box-shadow: inset 0 2px 4px 0 hsla(0, 0%, 0%, 0.08);
 `;
 
 export const TextArea = styled.textarea`
@@ -13,4 +14,5 @@ export const TextArea = styled.textarea`
   width: 250px;
   height: 130px;
   padding: 10px;
+  box-shadow: inset 0 2px 4px 0 hsla(0, 0%, 0%, 0.08);
 `;

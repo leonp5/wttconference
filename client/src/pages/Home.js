@@ -44,7 +44,7 @@ function Home() {
       <Picture>
         <source srcSet="/images/hands_320.jpg" media="(max-width: 320px)" />
         <source srcSet="/images/hands_640.jpg" media="(max-width: 640px)" />
-        <FallbackImage src="/images/hands_800.jpg" alt="come together" />
+        <FallbackImage src="/images/hands_800.jpg" alt="waldorf heute" />
       </Picture>
     </ContentWrapper>
   );
