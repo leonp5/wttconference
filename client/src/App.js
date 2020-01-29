@@ -19,14 +19,14 @@ import ConferenceFee from "./pages/ConferenceFee";
 import { Main } from "./components/Container/Main";
 import { PageContainer } from "./components/Container/PageContainer";
 import HeaderImage from "./components/Images";
-// import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <PageContainer>
         <Router>
-          {/* <ScrollToTop /> */}
+          <ScrollToTop />
           <GlobalStyles />
           <AppBar>
             <MenuLink to="/" exact={true}>
