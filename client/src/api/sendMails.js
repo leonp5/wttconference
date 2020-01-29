@@ -5,6 +5,12 @@ export function notifyAttendee(attendee) {
       "Content-Type": "application/json"
     },
     body: JSON.stringify(attendee)
+  }).then(response => {
+    if (response.status === 200) {
+      alert("Angemeldet");
+    } else if (response.status === 500) {
+      alert(" Fehler");
+    }
   });
 }
 
