@@ -8,11 +8,9 @@ import { Button } from "../components/Buttons/Button";
 import { RadioButton } from "../components/Buttons/RadioButton";
 import { PopUpContent } from "../components/PopUp/PopUpContent";
 import { PopUpBackground } from "../components/PopUp/PopUpBackground";
-import TogglePopUp from "../components/PopUp/TogglePopUp";
-import { PopUpLink } from "../components/Navigation/NavLinks";
+import { PopUpLink, SimpleLink } from "../components/Navigation/NavLinks";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
 import { saveAttendee } from "../api/attendees";
-import { notifyAttendee } from "../api/sendMails";
 import { TextArea } from "../components/Form/InputFields";
 import { Label } from "../components/Form/Labels";
 import { RadioLabel } from "../components/Form/Labels";
@@ -38,6 +36,25 @@ export default function Registration() {
     nutrition: "",
     else: ""
   });
+
+  const [success, setSuccess] = React.useState(true);
+  const [show, setShow] = React.useState(false);
+
+  function notifyAttendee(attendee) {
+    return fetch(`/api/confirmation`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(attendee)
+    })
+      .then(response => {
+        if (response.status === 500) {
+          setSuccess(false);
+        }
+      })
+      .then(setShow(true));
+  }
 
   function handleChange(event) {
     const value = event.target.value;
@@ -134,37 +151,46 @@ export default function Registration() {
           placeholder="Deine Nachricht, Anmerkung, etc."
         />
         <Heading6>* = Pflichtfeld</Heading6>
-        <TogglePopUp
-          toggle={show => (
-            <CenterButton>
-              <Button
-                disabled={
-                  !attendee.name ||
-                  !attendee.firstName ||
-                  !attendee.address ||
-                  !attendee.location ||
-                  !attendee.email
-                }
-                onClick={show}
-              >
-                Anmelden
-              </Button>
-            </CenterButton>
-          )}
-          content={hide => (
+
+        <CenterButton>
+          <Button
+            disabled={
+              !attendee.name ||
+              !attendee.firstName ||
+              !attendee.address ||
+              !attendee.location ||
+              !attendee.email
+            }
+          >
+            Anmelden
+          </Button>
+        </CenterButton>
+        {show && (
+          <>
             <PopUpBackground>
               <PopUpContent>
-                <PopUpText>
-                  Vielen Dank für deine Anmeldung! <br /> Du erhälst eine Kopie deiner Anmeldung via
-                  Mail.
-                </PopUpText>
-                <PopUpLink to="/" onClick={hide}>
-                  Hier gehts zur Startseite
-                </PopUpLink>
+                {success && (
+                  <>
+                    <PopUpText>
+                      Vielen Dank für deine Anmeldung! <br /> Du erhälst eine Kopie deiner Anmeldung
+                      via Mail.
+                    </PopUpText>
+                    <PopUpLink to="/">Hier gehts zur Startseite</PopUpLink>
+                  </>
+                )}
+                {!success && (
+                  <>
+                    <PopUpText>
+                      Das hat leider nicht geklappt! <br /> Du kannst es noch Mal{" "}
+                      <SimpleLink onClick={() => setShow(false)}>probieren</SimpleLink> oder uns per
+                      Mail kontaktieren.
+                    </PopUpText>
+                  </>
+                )}
               </PopUpContent>
             </PopUpBackground>
-          )}
-        />
+          </>
+        )}
       </Form>
     </ContentWrapper>
   );
