@@ -70,9 +70,9 @@ export default function Registration() {
       <Heading>Anmeldung</Heading>
 
       <Form onSubmit={handleSubmit}>
-        <Label>Name*:</Label>
+        <Label>Name:*</Label>
         <BasicInput value={attendee.name} name="name" onChange={handleChange} />
-        <Label>Vorname*:</Label>
+        <Label>Vorname:*</Label>
         <BasicInput value={attendee.firstName} name="firstName" onChange={handleChange} />
         <Label>Geschlecht:</Label>
         <RadioBox>
@@ -108,11 +108,11 @@ export default function Registration() {
             <RadioLabel>divers</RadioLabel>
           </RadioWrapper>
         </RadioBox>
-        <Label>Adresse*:</Label>
+        <Label>Adresse:*</Label>
         <BasicInput value={attendee.address} name="address" onChange={handleChange} />
-        <Label>Ort, PLZ*:</Label>
+        <Label>Ort, PLZ:*</Label>
         <BasicInput value={attendee.location} name="location" onChange={handleChange} />
-        <Label>Email*:</Label>
+        <Label>Email:*</Label>
         <BasicInput type="email" value={attendee.email} name="email" onChange={handleChange} />
         <Label>Mobil:</Label>
         <BasicInput value={attendee.phone} name="phone" onChange={handleChange} />

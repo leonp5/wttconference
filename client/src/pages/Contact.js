@@ -67,13 +67,13 @@ export default function Contact() {
             </PageText>
 
             <ContactForm onSubmit={handleSubmit}>
-              <Label>Name*:</Label>
+              <Label>Name:*</Label>
               <BasicInput value={request.name} name="name" onChange={handleChange} />
-              <Label>Email*:</Label>
+              <Label>Email:*</Label>
               <BasicInput value={request.email} name="email" onChange={handleChange} />
               <Label>Betreff:</Label>
               <BasicInput value={request.subject} name="subject" onChange={handleChange} />
-              <Label>Deine Nachricht*:</Label>
+              <Label>Deine Nachricht:*</Label>
               <TextArea value={request.message} name="message" onChange={handleChange} />
               <Heading6>* = Pflichtfeld</Heading6>
               <TogglePopUp
