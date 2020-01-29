@@ -9,7 +9,7 @@ const MapContainer = styled(Map)`
 `;
 
 export default function ContactMap() {
-  const position = [49.50509, 8.49734];
+  const position = [49.50527, 8.49983];
 
   return (
     <MapContainer center={position} zoom={16}>
@@ -21,7 +21,7 @@ export default function ContactMap() {
       <Marker position={position}>
         <Popup>
           Adresse: <br />
-          Am Exerzierplatz 21, 68167 Mannheim
+          Zielstraße 28, 68167 Mannheim
         </Popup>
       </Marker>
     </MapContainer>

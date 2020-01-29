@@ -8,11 +8,9 @@ import { Button } from "../components/Buttons/Button";
 import { RadioButton } from "../components/Buttons/RadioButton";
 import { PopUpContent } from "../components/PopUp/PopUpContent";
 import { PopUpBackground } from "../components/PopUp/PopUpBackground";
-import TogglePopUp from "../components/PopUp/TogglePopUp";
-import { PopUpLink } from "../components/Navigation/NavLinks";
+import { PopUpLink, SimpleLink } from "../components/Navigation/NavLinks";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
 import { saveAttendee } from "../api/attendees";
-// import { notifyAttendee } from "../api/sendMails";
 import { TextArea } from "../components/Form/InputFields";
 import { Label } from "../components/Form/Labels";
 import { RadioLabel } from "../components/Form/Labels";
@@ -38,8 +36,9 @@ export default function Registration() {
     nutrition: "",
     else: ""
   });
-  const [success, setSuccess] = React.useState(null);
-  const [show, setShow] = React.useState(null);
+
+  const [success, setSuccess] = React.useState(true);
+  const [show, setShow] = React.useState(false);
 
   function notifyAttendee(attendee) {
     return fetch(`/api/confirmation`, {
@@ -50,8 +49,8 @@ export default function Registration() {
       body: JSON.stringify(attendee)
     })
       .then(response => {
-        if (response.status === 200) {
-          setSuccess(true);
+        if (response.status === 500) {
+          setSuccess(false);
         }
       })
       .then(setShow(true));
@@ -176,13 +175,16 @@ export default function Registration() {
                       Vielen Dank für deine Anmeldung! <br /> Du erhälst eine Kopie deiner Anmeldung
                       via Mail.
                     </PopUpText>
-
                     <PopUpLink to="/">Hier gehts zur Startseite</PopUpLink>
                   </>
                 )}
                 {!success && (
                   <>
-                    <PopUpText>Da hat etwas nicht geklappt!</PopUpText>
+                    <PopUpText>
+                      Das hat leider nicht geklappt! <br /> Du kannst es noch Mal{" "}
+                      <SimpleLink onClick={() => setShow(false)}>probieren</SimpleLink> oder uns per
+                      Mail kontaktieren.
+                    </PopUpText>
                   </>
                 )}
               </PopUpContent>

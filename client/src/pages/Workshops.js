@@ -5,15 +5,13 @@ import { TextWrapper, ContentWrapper } from "../components/Container/ContentWrap
 import { Form } from "../components/Form/Form";
 import { Label } from "../components/Form/Labels";
 import { BasicInput, TextArea } from "../components/Form/InputFields";
-import TogglePopUp from "../components/PopUp/TogglePopUp";
 import { Button } from "../components/Buttons/Button";
 import { PopUpContent } from "../components/PopUp/PopUpContent";
 import { CenterButton } from "../components/Buttons/CenterButton";
 import { PopUpBackground } from "../components/PopUp/PopUpBackground";
-import { PopUpLink } from "../components/Navigation/NavLinks";
-import { sendWorkshop } from "../api/sendMails";
+import { PopUpLink, SimpleLink } from "../components/Navigation/NavLinks";
 
-function Workshops() {
+export default function Workshops() {
   const [workshop, setWorkshop] = React.useState({
     name: "",
     firstName: "",
@@ -22,6 +20,25 @@ function Workshops() {
     workshopDescription: "",
     message: ""
   });
+
+  const [success, setSuccess] = React.useState(true);
+  const [show, setShow] = React.useState(false);
+
+  function sendWorkshop(workshop) {
+    return fetch(`/api/workshop`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(workshop)
+    })
+      .then(response => {
+        if (response.status === 500) {
+          setSuccess(false);
+        }
+      })
+      .then(setShow(true));
+  }
 
   function handleChange(event) {
     const value = event.target.value;
@@ -86,36 +103,41 @@ function Workshops() {
         <Label>Deine Nachricht an uns:</Label>
         <TextArea value={workshop.message} name="message" onChange={handleChange} />
         <Heading6>* = Pflichtfeld</Heading6>
-
-        <TogglePopUp
-          toggle={show => (
-            <CenterButton>
-              <Button
-                disabled={
-                  !workshop.name || !workshop.firstName || !workshop.email || !workshop.workshopName
-                }
-                onClick={show}
-              >
-                Abschicken
-              </Button>
-            </CenterButton>
-          )}
-          content={hide => (
+        <CenterButton>
+          <Button
+            disabled={
+              !workshop.name || !workshop.firstName || !workshop.email || !workshop.workshopName
+            }
+          >
+            Abschicken
+          </Button>
+        </CenterButton>
+        {show && (
+          <>
             <PopUpBackground>
               <PopUpContent>
-                <PopUpText>
-                  Vielen Dank für dein Workshop-Angebot! <br /> Du erhälst eine Kopie via Mail.
-                </PopUpText>
-                <PopUpLink to="/" onClick={hide}>
-                  Hier gehts zur Startseite
-                </PopUpLink>
+                {success && (
+                  <>
+                    <PopUpText>
+                      Vielen Dank für dein Workshop-Angebot! <br /> Du erhälst eine Kopie via Mail.
+                    </PopUpText>
+                    <PopUpLink to="/">Hier gehts zur Startseite</PopUpLink>
+                  </>
+                )}
+                {!success && (
+                  <>
+                    <PopUpText>
+                      Das hat leider nicht geklappt! <br /> Du kannst es noch Mal{" "}
+                      <SimpleLink onClick={() => setShow(false)}>probieren</SimpleLink> oder uns per
+                      Mail kontaktieren.
+                    </PopUpText>
+                  </>
+                )}
               </PopUpContent>
             </PopUpBackground>
-          )}
-        />
+          </>
+        )}
       </Form>
     </ContentWrapper>
   );
 }
-
-export default Workshops;

@@ -9,11 +9,9 @@ import { BasicInput } from "../components/Form/InputFields";
 import { Label } from "../components/Form/Labels";
 import { TextArea } from "../components/Form/InputFields";
 import { Button } from "../components/Buttons/Button";
-import { sendRequest } from "../api/sendMails";
-import TogglePopUp from "../components/PopUp/TogglePopUp";
 import { PopUpBackground } from "../components/PopUp/PopUpBackground";
 import { PopUpContent } from "../components/PopUp/PopUpContent";
-import { PopUpLink } from "../components/Navigation/NavLinks";
+import { PopUpLink, SimpleLink } from "../components/Navigation/NavLinks";
 
 import { FlexibleContainer } from "../components/Container/FlexibleContainer";
 import ContactMap from "../components/ContactMap";
@@ -30,6 +28,25 @@ export default function Contact() {
     subject: "",
     message: ""
   });
+
+  const [success, setSuccess] = React.useState(true);
+  const [show, setShow] = React.useState(false);
+
+  function sendRequest(request) {
+    return fetch(`/api/request`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(request)
+    })
+      .then(response => {
+        if (response.status === 500) {
+          setSuccess(false);
+        }
+      })
+      .then(setShow(true));
+  }
 
   function handleChange(event) {
     const value = event.target.value;
@@ -76,28 +93,35 @@ export default function Contact() {
               <Label>Deine Nachricht:*</Label>
               <TextArea value={request.message} name="message" onChange={handleChange} />
               <Heading6>* = Pflichtfeld</Heading6>
-              <TogglePopUp
-                toggle={show => (
-                  <CenterButton>
-                    <Button
-                      disabled={!request.name || !request.email || !request.message}
-                      onClick={show}
-                    >
-                      Abschicken
-                    </Button>
-                  </CenterButton>
-                )}
-                content={hide => (
+
+              <CenterButton>
+                <Button disabled={!request.name || !request.email || !request.message}>
+                  Abschicken
+                </Button>
+              </CenterButton>
+              {show && (
+                <>
                   <PopUpBackground>
                     <PopUpContent>
-                      <PopUpText>Vielen Dank für deine Nachricht!</PopUpText>
-                      <PopUpLink to="/" onClick={hide}>
-                        Hier gehts zur Startseite
-                      </PopUpLink>
+                      {success && (
+                        <>
+                          <PopUpText>Vielen Dank für deine Nachricht!</PopUpText>
+                          <PopUpLink to="/">Hier gehts zur Startseite</PopUpLink>{" "}
+                        </>
+                      )}
+                      {!success && (
+                        <>
+                          <PopUpText>
+                            Das hat leider nicht geklappt! <br /> Du kannst es noch Mal{" "}
+                            <SimpleLink onClick={() => setShow(false)}>probieren</SimpleLink> oder
+                            uns per Mail kontaktieren.
+                          </PopUpText>
+                        </>
+                      )}
                     </PopUpContent>
                   </PopUpBackground>
-                )}
-              />
+                </>
+              )}
             </ContactForm>
           </FlexibleContainer>
           <FlexibleContainer>
@@ -105,7 +129,7 @@ export default function Contact() {
             <PageText>
               Alanus Hochschule – Institut für Waldorfpädagogik, Inklusion und Interkulturalität{" "}
               <br />
-              Am Exerzierplatz 21
+              Zielstraße 28,
               <br /> D-68167 Mannheim
             </PageText>
             <ContactMap />

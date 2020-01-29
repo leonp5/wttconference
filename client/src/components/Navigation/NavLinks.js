@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 
 import { mq } from "../MediaQueries";
 
+// React Router Links
+
 export const BasicLink = styled(NavLink)`
   color: ${props => props.theme.colors.secondary};
   transition: color 0.3s linear;
@@ -15,7 +17,7 @@ export const BasicLink = styled(NavLink)`
 `;
 
 export const InlineLink = styled(BasicLink)`
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: ${props => props.theme.colors.action};
   &:hover {
     background: ${props => props.theme.colors.action};
@@ -64,4 +66,16 @@ export const FooterLink = styled(BasicLink)`
 export const BottomLink = styled(FooterLink)`
   font-size: 0.8rem;
   padding: 5px;
+`;
+
+// Anchortag
+
+export const SimpleLink = styled.a`
+  font-size: 1rem;
+  color: ${props => props.theme.colors.action};
+  &:hover {
+    background: ${props => props.theme.colors.action};
+    color: ${props => props.theme.colors.secondary};
+    cursor: pointer;
+  }
 `;
