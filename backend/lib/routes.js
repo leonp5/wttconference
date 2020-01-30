@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 // Database
 const { addAttendee, getAttendees } = require("./attendees");
@@ -103,8 +103,18 @@ router.post("/register", async (request, response) => {
     const newUser = { name: user.name, email: user.email, password: hashedPW };
 
     addUser(newUser);
+    const savedUser = await findUser(newUser);
 
-    response.send("Nutzer eingetragen :)").end();
+    const webtoken = {
+      user: {
+        id: savedUser._id
+      }
+    };
+
+    jwt.sign(webtoken, process.env.JWT, { expiresIn: 36000 }, (err, token) => {
+      if (err) throw err;
+      response.json({ token });
+    });
   } catch (error) {
     console.error(error);
     response.end();
