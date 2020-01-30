@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const bcrypt = require("bcrypt");
 
 // Database
 const { addAttendee, getAttendees } = require("./attendees");
@@ -13,7 +14,8 @@ const workshopNotification = require("../sendEmails/workshopNotification");
 
 // Login
 const findUser = require("../login/findUser");
-const { getUser } = require("./user");
+const { addUser } = require("../lib/user");
+const hashPassword = require("../login/hashPassword");
 
 router.get("/attendees", async (request, response) => {
   try {
@@ -88,31 +90,35 @@ router.post("/register", async (request, response) => {
   try {
     const user = request.body;
 
-    // if (!user.name || !user.email || !user.password) {
-    //   return response.status(400).json("Bitte trage Benutzername, Email und Passwort ein!");
-    // }
+    if (!user.name || !user.email || !user.password)
+      return response.status(400).json("Bitte trage Benutzername, Email und Passwort ein!");
 
     console.log(user);
 
     let foundUser = await findUser(user);
-    if (foundUser) {
-      return response.status(400).json("Gibts schon!");
-    }
-    response.send("Hello").end();
+    if (foundUser)
+      return response.status(400).json("Für diese Emailadresse existiert bereits ein User!");
+
+    const hashedPW = await hashPassword(user.password);
+    const newUser = { name: user.name, email: user.email, password: hashedPW };
+
+    addUser(newUser);
+
+    response.send("Nutzer eingetragen :)").end();
   } catch (error) {
     console.error(error);
     response.end();
   }
 });
 
-router.get("/register", async (request, response) => {
-  try {
-    const user = await getUser();
-    response.json(user);
-  } catch (error) {
-    console.error(error);
-    response.status(500).end();
-  }
-});
+// router.get("/register", async (request, response) => {
+//   try {
+//     const user = await getUser();
+//     response.json(user);
+//   } catch (error) {
+//     console.error(error);
+//     response.status(500).end();
+//   }
+// });
 
 module.exports = router;
