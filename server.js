@@ -3,8 +3,8 @@ dotenv.config();
 const express = require("express");
 const path = require("path");
 
-const { initDb } = require("./lib/database");
-const router = require("./lib/routes");
+const { initDb } = require("./backend/lib/database");
+const router = require("./backend/lib/routes");
 
 const app = express();
 
