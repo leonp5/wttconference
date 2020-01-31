@@ -4,7 +4,9 @@ const jwt = require("jsonwebtoken");
 
 const { addUser } = require("../lib/user");
 
-const findUser = require("../login/findUser");
+const auth = require("../middleware/auth");
+
+const { findUserById, findUser } = require("../login/findUser");
 const hashPassword = require("../login/hashPassword");
 const validatePassword = require("../login/validatePassword");
 
@@ -59,6 +61,28 @@ loginRouter.post("/auth", async (request, response) => {
     const matchedPW = await validatePassword(user, foundUser);
     if (!matchedPW)
       response.status(400).json("Das Passwort ist nicht korrekt. Probier es noch einmal!");
+
+    const webtoken = {
+      user: {
+        id: foundUser._id
+      }
+    };
+
+    jwt.sign(webtoken, process.env.JWT, { expiresIn: 600 }, (err, token) => {
+      if (err) throw err;
+      response.json({ token });
+    });
+  } catch (error) {
+    console.error(error);
+    response.end();
+  }
+});
+
+loginRouter.get("/user", auth, async (request, response) => {
+  try {
+    console.log(request.user.user.id);
+    const foundUser = await findUserById(request.user.user.id);
+    response.json(` ${foundUser.name}, ${foundUser.email}`);
   } catch (error) {
     console.error(error);
     response.end();

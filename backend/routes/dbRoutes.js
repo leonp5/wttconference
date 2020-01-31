@@ -1,10 +1,10 @@
 const express = require("express");
 const dbRoutes = express.Router();
 
-// Database Imports
+const auth = require("../middleware/auth");
 const { addAttendee, getAttendees } = require("../lib/attendees");
 
-dbRoutes.get("/attendees", async (request, response) => {
+dbRoutes.get("/attendees", auth, async (request, response) => {
   try {
     const attendees = await getAttendees();
     const filteredAttendees = attendees.map(attendee => {
