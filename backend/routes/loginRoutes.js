@@ -2,11 +2,11 @@ const express = require("express");
 const loginRouter = express.Router();
 const jwt = require("jsonwebtoken");
 
-// Database Imports
 const { addUser } = require("../lib/user");
 
 const findUser = require("../login/findUser");
 const hashPassword = require("../login/hashPassword");
+const validatePassword = require("../login/validatePassword");
 
 loginRouter.post("/register", async (request, response) => {
   try {
@@ -17,7 +17,7 @@ loginRouter.post("/register", async (request, response) => {
 
     console.log(user);
 
-    let foundUser = await findUser(user);
+    const foundUser = await findUser(user);
     if (foundUser)
       return response.status(400).json("Für diese Emailadresse existiert bereits ein User!");
 
@@ -52,9 +52,13 @@ loginRouter.post("/auth", async (request, response) => {
 
     console.log(user);
 
-    let foundUser = await findUser(user);
+    const foundUser = await findUser(user);
     if (!foundUser)
       return response.status(400).json(`Für ${user.email} gibt es noch keinen Benutzer!`);
+
+    const matchedPW = await validatePassword(user, foundUser);
+    if (!matchedPW)
+      response.status(400).json("Das Passwort ist nicht korrekt. Probier es noch einmal!");
   } catch (error) {
     console.error(error);
     response.end();
