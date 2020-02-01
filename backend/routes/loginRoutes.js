@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 
 const { addUser } = require("../lib/user");
 
-const auth = require("../middleware/auth");
+const verifyToken = require("../middleware/verifyToken");
 
 const { findUserById, findUser } = require("../login/findUser");
 const hashPassword = require("../login/hashPassword");
@@ -27,13 +27,13 @@ loginRouter.post("/register", async (request, response) => {
     addUser(newUser);
     const savedUser = await findUser(newUser);
 
-    const webtoken = {
+    const payload = {
       user: {
         id: savedUser._id
       }
     };
 
-    jwt.sign(webtoken, process.env.JWT, { expiresIn: 600 }, (err, token) => {
+    jwt.sign(payload, process.env.JWT, { expiresIn: 600 }, (err, token) => {
       if (err) throw err;
       response.json({ token });
     });
@@ -48,7 +48,7 @@ loginRouter.post("/auth", async (request, response) => {
     const user = request.body;
 
     if (!user.email || !user.password)
-      return response.status(400).json("Bitte trage Benutzername, Email und Passwort ein!");
+      return response.status(400).json("Bitte trage Email und Passwort ein!");
 
     console.log(user);
 
@@ -60,13 +60,13 @@ loginRouter.post("/auth", async (request, response) => {
     if (!matchedPW)
       response.status(400).json("Das Passwort ist nicht korrekt. Probier es noch einmal!");
 
-    const webtoken = {
+    const payload = {
       user: {
         id: foundUser._id
       }
     };
 
-    jwt.sign(webtoken, process.env.JWT, { expiresIn: 600 }, (err, token) => {
+    jwt.sign(payload, process.env.JWT, { expiresIn: 600 }, (err, token) => {
       if (err) throw err;
       response.json({ token });
     });
@@ -76,7 +76,7 @@ loginRouter.post("/auth", async (request, response) => {
   }
 });
 
-loginRouter.get("/user", auth, async (request, response) => {
+loginRouter.get("/user", verifyToken, async (request, response) => {
   try {
     const foundUser = await findUserById(request.user.user.id);
     response.json(foundUser);
