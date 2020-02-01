@@ -2,6 +2,9 @@ import React from "react";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 import { FooterContainer } from "../Container/FooterContainer";
+import { BottomLink } from "./NavLinks";
+import PopUp from "../PopUp/PopUp";
+import LoginModal from "../PopUp/LoginModal";
 
 const Footer = styled.footer`
   display: flex;
@@ -15,13 +18,19 @@ const Footer = styled.footer`
 `;
 
 export default function FooterNav({ children }) {
+  const [open, setOpen] = React.useState(false);
   return (
     <Footer>
       <FooterContainer>
         {children[0]}
         {children[1]}
       </FooterContainer>
-      {children[2]}
+      <BottomLink onClick={() => setOpen(true)}>Orga-Login</BottomLink>
+      {open && (
+        <LoginModal>
+          <button onClick={() => setOpen(false)}>Close</button>
+        </LoginModal>
+      )}
     </Footer>
   );
 }

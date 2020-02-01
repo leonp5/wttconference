@@ -63,12 +63,7 @@ export const FooterLink = styled(BasicLink)`
   }
 `;
 
-export const BottomLink = styled(FooterLink)`
-  font-size: 0.8rem;
-  padding: 5px;
-`;
-
-// Anchortag
+// Anchortags
 
 export const SimpleLink = styled.a`
   font-size: 1rem;
@@ -77,5 +72,15 @@ export const SimpleLink = styled.a`
     background: ${props => props.theme.colors.action};
     color: ${props => props.theme.colors.secondary};
     cursor: pointer;
+  }
+`;
+
+export const BottomLink = styled(SimpleLink)`
+  font-size: 0.8rem;
+  padding: 5px;
+  color: ${props => props.theme.colors.secondary};
+  &:hover {
+    background: ${props => props.theme.colors.secondary};
+    color: ${props => props.theme.colors.primary};
   }
 `;

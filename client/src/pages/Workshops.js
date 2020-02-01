@@ -6,10 +6,9 @@ import { Form } from "../components/Form/Form";
 import { Label } from "../components/Form/Labels";
 import { BasicInput, TextArea } from "../components/Form/InputFields";
 import { Button } from "../components/Buttons/Button";
-import { PopUpContent } from "../components/PopUp/PopUpContent";
 import { CenterButton } from "../components/Buttons/CenterButton";
-import { PopUpBackground } from "../components/PopUp/PopUpBackground";
 import { PopUpLink, SimpleLink } from "../components/Navigation/NavLinks";
+import PopUp from "../components/PopUp/PopUp";
 
 export default function Workshops() {
   const [workshop, setWorkshop] = React.useState({
@@ -114,27 +113,25 @@ export default function Workshops() {
         </CenterButton>
         {show && (
           <>
-            <PopUpBackground>
-              <PopUpContent>
-                {success && (
-                  <>
-                    <PopUpText>
-                      Vielen Dank für dein Workshop-Angebot! <br /> Du erhälst eine Kopie via Mail.
-                    </PopUpText>
-                    <PopUpLink to="/">Hier gehts zur Startseite</PopUpLink>
-                  </>
-                )}
-                {!success && (
-                  <>
-                    <PopUpText>
-                      Das hat leider nicht geklappt! <br /> Du kannst es noch Mal{" "}
-                      <SimpleLink onClick={() => setShow(false)}>probieren</SimpleLink> oder uns per
-                      Mail kontaktieren.
-                    </PopUpText>
-                  </>
-                )}
-              </PopUpContent>
-            </PopUpBackground>
+            <PopUp>
+              {success && (
+                <>
+                  <PopUpText>
+                    Vielen Dank für dein Workshop-Angebot! <br /> Du erhälst eine Kopie via Mail.
+                  </PopUpText>
+                  <PopUpLink to="/">Hier gehts zur Startseite</PopUpLink>
+                </>
+              )}
+              {!success && (
+                <>
+                  <PopUpText>
+                    Das hat leider nicht geklappt! <br /> Du kannst es noch Mal{" "}
+                    <SimpleLink onClick={() => setShow(false)}>probieren</SimpleLink> oder uns per
+                    Mail kontaktieren.
+                  </PopUpText>
+                </>
+              )}
+            </PopUp>
           </>
         )}
       </Form>
