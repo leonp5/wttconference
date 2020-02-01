@@ -5,9 +5,11 @@ import { PopUpBackground } from "./PopUpBackground";
 import { PopUpContent } from "./PopUpContent";
 import { Label } from "../Form/Labels";
 import { BasicInput } from "../Form/InputFields";
+import { CenterButton } from "../Buttons/CenterButton";
 import { Button } from "../Buttons/Button";
 import { PropTypes } from "prop-types";
 import { AlertText } from "../Text";
+import { Form } from "../Form/Form";
 
 const ModalBackground = styled(PopUpBackground)`
   animation: fadein 0.3s;
@@ -72,7 +74,7 @@ export default function LoginModal({ children }) {
     });
   }
 
-  function handleClick(event) {
+  function handleSubmit(event) {
     event.preventDefault();
     login(user.email, user.password);
   }
@@ -81,16 +83,20 @@ export default function LoginModal({ children }) {
     <ModalBackground>
       <ModalContent>
         {displayMessage && <AlertText>{errorMessage}</AlertText>}
-        <Label>Email:</Label>
-        <BasicInput name="email" value={user.email} onChange={handleChange}></BasicInput>
-        <Label>Passwort:</Label>
-        <BasicInput
-          name="password"
-          type="password"
-          value={user.password}
-          onChange={handleChange}
-        ></BasicInput>
-        <Button onClick={handleClick}>Einloggen</Button>
+        <Form onSubmit={handleSubmit}>
+          <Label>Email:</Label>
+          <BasicInput name="email" value={user.email} onChange={handleChange}></BasicInput>
+          <Label>Passwort:</Label>
+          <BasicInput
+            name="password"
+            type="password"
+            value={user.password}
+            onChange={handleChange}
+          ></BasicInput>
+          <CenterButton>
+            <Button>Einloggen</Button>
+          </CenterButton>
+        </Form>
         {children}
       </ModalContent>
     </ModalBackground>

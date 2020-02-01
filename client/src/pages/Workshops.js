@@ -23,20 +23,19 @@ export default function Workshops() {
   const [success, setSuccess] = React.useState(true);
   const [show, setShow] = React.useState(false);
 
-  function sendWorkshop(workshop) {
-    return fetch(`/api/workshop`, {
+  async function sendWorkshop(workshop) {
+    const response = await fetch(`/api/workshop`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(workshop)
-    })
-      .then(response => {
-        if (response.status === 500) {
-          setSuccess(false);
-        }
-      })
-      .then(setShow(true));
+    });
+
+    if (response.status !== 200) {
+      setSuccess(false);
+    }
+    setShow(true);
   }
 
   function handleChange(event) {
