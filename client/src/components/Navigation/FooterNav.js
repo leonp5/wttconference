@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 import { FooterContainer } from "../Container/FooterContainer";
 import { BottomLink } from "./NavLinks";
-import PopUp from "../PopUp/PopUp";
 import LoginModal from "../PopUp/LoginModal";
 
 const Footer = styled.footer`

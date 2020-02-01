@@ -7,6 +7,7 @@ import { Label } from "../Form/Labels";
 import { BasicInput } from "../Form/InputFields";
 import { Button } from "../Buttons/Button";
 import { PropTypes } from "prop-types";
+import { AlertText } from "../Text";
 
 const ModalBackground = styled(PopUpBackground)`
   animation: fadein 0.3s;
@@ -35,14 +36,61 @@ const ModalContent = styled(PopUpContent)`
 `;
 
 export default function LoginModal({ children }) {
+  const [user, setUser] = React.useState({
+    email: "",
+    password: ""
+  });
+
+  const [displayMessage, setDisplayMessage] = React.useState(false);
+  const [errorMessage, setErrorMessage] = React.useState();
+
+  async function login(email, password) {
+    const response = await fetch("/api/auth", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ email, password })
+    });
+
+    const data = await response.json();
+
+    if (response.status !== 200) {
+      setErrorMessage(data);
+      setDisplayMessage(true);
+    } else {
+      setDisplayMessage(false);
+      localStorage.setItem("Token:", data.token);
+    }
+  }
+
+  function handleChange(event) {
+    const value = event.target.value;
+    setUser({
+      ...user,
+      [event.target.name]: value
+    });
+  }
+
+  function handleClick(event) {
+    event.preventDefault();
+    login(user.email, user.password);
+  }
+
   return (
     <ModalBackground>
       <ModalContent>
+        {displayMessage && <AlertText>{errorMessage}</AlertText>}
         <Label>Email:</Label>
-        <BasicInput></BasicInput>
+        <BasicInput name="email" value={user.email} onChange={handleChange}></BasicInput>
         <Label>Passwort:</Label>
-        <BasicInput></BasicInput>
-        <Button>Einloggen</Button>
+        <BasicInput
+          name="password"
+          type="password"
+          value={user.password}
+          onChange={handleChange}
+        ></BasicInput>
+        <Button onClick={handleClick}>Einloggen</Button>
         {children}
       </ModalContent>
     </ModalBackground>
@@ -50,5 +98,5 @@ export default function LoginModal({ children }) {
 }
 
 LoginModal.propTypes = {
-  children: PropTypes.array
+  children: PropTypes.object
 };

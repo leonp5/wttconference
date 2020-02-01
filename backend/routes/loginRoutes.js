@@ -44,11 +44,10 @@ loginRouter.post("/register", async (request, response) => {
 });
 
 loginRouter.post("/auth", async (request, response) => {
+  const user = request.body;
   try {
-    const user = request.body;
-
     if (!user.email || !user.password)
-      return response.status(400).json("Bitte trage Email und Passwort ein!");
+      return response.status(401).json("Bitte trage Email und Passwort ein!");
 
     console.log(user);
 
