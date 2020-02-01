@@ -62,7 +62,7 @@ export default function LoginModal({ children }) {
       setDisplayMessage(true);
     } else {
       setDisplayMessage(false);
-      localStorage.setItem("Token:", data.token);
+      localStorage.setItem("token:", data.token);
     }
   }
 
