@@ -17,8 +17,6 @@ loginRouter.post("/register", async (request, response) => {
     if (!user.name || !user.email || !user.password)
       return response.status(400).json("Bitte trage Benutzername, Email und Passwort ein!");
 
-    console.log(user);
-
     const foundUser = await findUser(user);
     if (foundUser)
       return response.status(400).json("Für diese Emailadresse existiert bereits ein User!");
@@ -80,9 +78,8 @@ loginRouter.post("/auth", async (request, response) => {
 
 loginRouter.get("/user", auth, async (request, response) => {
   try {
-    console.log(request.user.user.id);
     const foundUser = await findUserById(request.user.user.id);
-    response.json(` ${foundUser.name}, ${foundUser.email}`);
+    response.json(foundUser);
   } catch (error) {
     console.error(error);
     response.end();

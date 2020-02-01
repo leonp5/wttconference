@@ -13,9 +13,8 @@ async function findUser({ email }) {
 async function findUserById(userID) {
   const id = new ObjectID(userID);
   const collection = await getCollection("user");
-  const result = await collection.findOne({ _id: id });
+  const result = await collection.findOne({ _id: id }, { projection: { password: 0 } });
 
-  console.log(result);
   return result;
 }
 

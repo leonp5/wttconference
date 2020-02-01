@@ -1,19 +1,14 @@
 const express = require("express");
 const dbRoutes = express.Router();
 
-const auth = require("../middleware/auth");
+// const auth = require("../middleware/auth");
 const { addAttendee, getAttendees } = require("../lib/attendees");
 
-dbRoutes.get("/attendees", auth, async (request, response) => {
+dbRoutes.get("/attendees", async (request, response) => {
   try {
     const attendees = await getAttendees();
-    const filteredAttendees = attendees.map(attendee => {
-      const newAttendee = { ...attendee };
-      delete newAttendee._id;
-      return newAttendee;
-    });
 
-    response.json(filteredAttendees);
+    response.json(attendees);
   } catch (error) {
     console.error(error);
     response.status(500).end();

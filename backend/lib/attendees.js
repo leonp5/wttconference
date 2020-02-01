@@ -6,7 +6,7 @@ function getAttendeeCollection() {
 
 function getAttendees() {
   const collection = getAttendeeCollection();
-  return collection.find({}).toArray();
+  return collection.find({}, { projection: { _id: 0 } }).toArray();
 }
 
 function addAttendee(attendee) {
