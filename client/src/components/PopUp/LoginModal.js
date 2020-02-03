@@ -26,6 +26,7 @@ const ModalBackground = styled(PopUpBackground)`
 `;
 
 const ModalContent = styled(PopUpContent)`
+  position: relative;
   animation: fadein 0.3s;
 
   @keyframes fadein {

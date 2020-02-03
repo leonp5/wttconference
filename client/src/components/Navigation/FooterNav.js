@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import { FooterContainer } from "../Container/FooterContainer";
 import { BottomLink } from "./NavLinks";
 import LoginModal from "../PopUp/LoginModal";
+import { CloseButton } from "../Buttons/CloseButton";
 
 const Footer = styled.footer`
   display: flex;
@@ -21,7 +22,7 @@ const Footer = styled.footer`
 export default function FooterNav({ children }) {
   const history = useHistory();
   const [open, setOpen] = React.useState(false);
-  const [show, setShow] = React.useState();
+  const [show, setShow] = React.useState(true);
 
   function handleOpen() {
     setOpen(true);
@@ -57,7 +58,7 @@ export default function FooterNav({ children }) {
       {!show && <BottomLink onClick={logout}>Ausloggen</BottomLink>}
       {open && (
         <LoginModal handleClose={handleClose}>
-          <button onClick={handleClose}>Close</button>
+          <CloseButton onClick={handleClose}></CloseButton>
         </LoginModal>
       )}
     </Footer>
