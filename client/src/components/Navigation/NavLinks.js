@@ -63,6 +63,16 @@ export const FooterLink = styled(BasicLink)`
   }
 `;
 
+export const BottomNavLink = styled(BasicLink)`
+  font-size: 0.8rem;
+  padding: 5px;
+  color: ${props => props.theme.colors.secondary};
+  &:hover {
+    background: ${props => props.theme.colors.secondary};
+    color: ${props => props.theme.colors.primary};
+  }
+`;
+
 // Anchortags
 
 export const SimpleLink = styled.a`

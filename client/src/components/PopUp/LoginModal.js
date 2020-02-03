@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { PropTypes } from "prop-types";
 
 import { PopUpBackground } from "./PopUpBackground";
 import { PopUpContent } from "./PopUpContent";
@@ -8,7 +9,6 @@ import { Label } from "../Form/Labels";
 import { BasicInput } from "../Form/InputFields";
 import { CenterButton } from "../Buttons/CenterButton";
 import { Button } from "../Buttons/Button";
-import { PropTypes } from "prop-types";
 import { AlertText } from "../Text";
 import { Form } from "../Form/Form";
 
@@ -100,7 +100,7 @@ export default function LoginModal({ handleClose, children }) {
             onChange={handleChange}
           ></BasicInput>
           <CenterButton>
-            <Button>Einloggen</Button>
+            <Button disabled={!user.password || !user.email}>Einloggen</Button>
           </CenterButton>
         </Form>
         {children}

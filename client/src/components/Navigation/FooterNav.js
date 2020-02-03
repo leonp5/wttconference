@@ -32,8 +32,10 @@ export default function FooterNav({ children }) {
     setOpen(false);
   }
 
-  const token = sessionStorage.getItem("token:");
+  // Auth function is still missing
 
+  const token = sessionStorage.getItem("token:");
+  console.log(token);
   function logout() {
     sessionStorage.removeItem("token:");
     history.push("/");
@@ -54,8 +56,14 @@ export default function FooterNav({ children }) {
         {children[0]}
         {children[1]}
       </FooterContainer>
+
       {show && <BottomLink onClick={handleOpen}>Orga-Login</BottomLink>}
-      {!show && <BottomLink onClick={logout}>Ausloggen</BottomLink>}
+      {!show && (
+        <>
+          <BottomLink onClick={logout}>Ausloggen</BottomLink>
+          {children[2]}{" "}
+        </>
+      )}
       {open && (
         <LoginModal handleClose={handleClose}>
           <CloseButton onClick={handleClose}></CloseButton>
