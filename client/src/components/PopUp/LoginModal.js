@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 import { PopUpBackground } from "./PopUpBackground";
 import { PopUpContent } from "./PopUpContent";
@@ -37,7 +38,9 @@ const ModalContent = styled(PopUpContent)`
   }
 `;
 
-export default function LoginModal({ children }) {
+export default function LoginModal({ handleClose, children }) {
+  const history = useHistory();
+
   const [user, setUser] = React.useState({
     email: "",
     password: ""
@@ -62,7 +65,9 @@ export default function LoginModal({ children }) {
       setDisplayMessage(true);
     } else {
       setDisplayMessage(false);
-      localStorage.setItem("token:", data.token);
+      sessionStorage.setItem("token:", data.token);
+      handleClose();
+      history.push("/attendees");
     }
   }
 
@@ -104,5 +109,6 @@ export default function LoginModal({ children }) {
 }
 
 LoginModal.propTypes = {
-  children: PropTypes.object
+  children: PropTypes.object,
+  handleClose: PropTypes.func
 };
