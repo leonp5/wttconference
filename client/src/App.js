@@ -6,7 +6,7 @@ import GlobalStyles from "./GlobalStyles";
 import { theme } from "./themes/theme";
 import AppBar from "./components/Navigation/AppBar";
 import FooterNav from "./components/Navigation/FooterNav";
-import { MenuLink, BottomLink, FooterLink } from "./components/Navigation/NavLinks";
+import { MenuLink, FooterLink, BottomNavLink } from "./components/Navigation/NavLinks";
 import Registration from "./pages/Registration";
 import Program from "./pages/Program";
 import Home from "./pages/Home";
@@ -14,19 +14,20 @@ import Workshops from "./pages/Workshops";
 import Contact from "./pages/Contact";
 import Impressum from "./pages/Impressum";
 import Privacy from "./pages/Privacy";
-import Attendees from "./pages/Attendees";
+import Organization from "./pages/Organization";
 import ConferenceFee from "./pages/ConferenceFee";
 import { Main } from "./components/Container/Main";
 import { PageContainer } from "./components/Container/PageContainer";
 import HeaderImage from "./components/Images";
-import ScrollToTop from "./components/ScrollToTop";
+import ProtectedRoute from "./components/ProtectedRoute";
+// import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <PageContainer>
         <Router>
-          <ScrollToTop />
+          {/* <ScrollToTop /> */}
           <GlobalStyles />
           <AppBar>
             <MenuLink to="/" exact={true}>
@@ -67,15 +68,13 @@ function App() {
               <Route path="/privacy">
                 <Privacy />
               </Route>
-              <Route path="/attendees">
-                <Attendees />
-              </Route>
+              <ProtectedRoute path="/organization" component={Organization} />
             </Main>
           </Switch>
           <FooterNav>
             <FooterLink to="/impressum">Impressum</FooterLink>
             <FooterLink to="/privacy">Datenschutz</FooterLink>
-            <BottomLink to="/attendees">Orga-Login</BottomLink>
+            <BottomNavLink to="organization">Teilnehmer & Workshops</BottomNavLink>
           </FooterNav>
         </Router>
       </PageContainer>
