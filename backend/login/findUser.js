@@ -1,10 +1,10 @@
 const { getCollection } = require("../lib/database");
 const { ObjectID } = require("mongodb");
 
-async function findUser({ email }) {
+async function findUser({ name }) {
   const collection = await getCollection("user");
   const result = await collection.findOne({
-    email
+    name
   });
 
   return result;

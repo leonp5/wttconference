@@ -43,20 +43,20 @@ export default function LoginModal({ handleClose, children }) {
   const history = useHistory();
 
   const [user, setUser] = React.useState({
-    email: "",
+    name: "",
     password: ""
   });
 
   const [displayMessage, setDisplayMessage] = React.useState(false);
   const [errorMessage, setErrorMessage] = React.useState();
 
-  async function login(email, password) {
+  async function login(name, password) {
     const response = await fetch("/api/auth", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ email, password })
+      body: JSON.stringify({ name, password })
     });
 
     const data = await response.json();
@@ -68,7 +68,7 @@ export default function LoginModal({ handleClose, children }) {
       setDisplayMessage(false);
       sessionStorage.setItem("token:", data.token);
       handleClose();
-      history.push("/attendees");
+      history.push("/organization");
     }
   }
 
@@ -82,7 +82,7 @@ export default function LoginModal({ handleClose, children }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    login(user.email, user.password);
+    login(user.name, user.password);
   }
 
   return (
@@ -90,8 +90,8 @@ export default function LoginModal({ handleClose, children }) {
       <ModalContent>
         {displayMessage && <AlertText>{errorMessage}</AlertText>}
         <Form onSubmit={handleSubmit}>
-          <Label>Email:</Label>
-          <BasicInput name="email" value={user.email} onChange={handleChange}></BasicInput>
+          <Label>Name:</Label>
+          <BasicInput name="name" value={user.name} onChange={handleChange}></BasicInput>
           <Label>Passwort:</Label>
           <BasicInput
             name="password"
@@ -100,7 +100,7 @@ export default function LoginModal({ handleClose, children }) {
             onChange={handleChange}
           ></BasicInput>
           <CenterButton>
-            <Button disabled={!user.password || !user.email}>Einloggen</Button>
+            <Button disabled={!user.password || !user.name}>Einloggen</Button>
           </CenterButton>
         </Form>
         {children}

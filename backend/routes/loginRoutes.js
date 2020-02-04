@@ -46,12 +46,12 @@ loginRouter.post("/register", async (request, response) => {
 loginRouter.post("/auth", async (request, response) => {
   const user = request.body;
   try {
-    if (!user.email || !user.password)
+    if (!user.name || !user.password)
       return response.status(401).json("Bitte trage Email und Passwort ein!");
 
     const foundUser = await findUser(user);
     if (!foundUser)
-      return response.status(400).json(`Für ${user.email} gibt es noch keinen Benutzer!`);
+      return response.status(400).json(`Für ${user.name} gibt es noch keinen Benutzer!`);
 
     const matchedPW = await validatePassword(user, foundUser);
     if (!matchedPW)
