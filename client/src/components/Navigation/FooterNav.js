@@ -7,6 +7,7 @@ import { FooterContainer } from "../Container/FooterContainer";
 import { BottomLink } from "./NavLinks";
 import LoginModal from "../PopUp/LoginModal";
 import { CloseButton } from "../Buttons/CloseButton";
+import useCheckToken from "../../hooks/useCheckToken";
 
 const Footer = styled.footer`
   display: flex;
@@ -34,8 +35,8 @@ export default function FooterNav({ children }) {
 
   // Auth function is still missing
 
-  const token = sessionStorage.getItem("token:");
-  console.log(token);
+  const token = useCheckToken();
+
   function logout() {
     sessionStorage.removeItem("token:");
     history.push("/");

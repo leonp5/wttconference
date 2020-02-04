@@ -1,10 +1,12 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { PropTypes } from "prop-types";
+import useCheckToken from "../hooks/useCheckToken";
 
 // Auth function is still missing
 
 export default function ProtectedRoute({ component: Component, ...rest }) {
+  useCheckToken();
   return (
     <Route
       {...rest}

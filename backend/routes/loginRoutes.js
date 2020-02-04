@@ -33,7 +33,7 @@ loginRouter.post("/register", async (request, response) => {
       }
     };
 
-    jwt.sign(payload, process.env.JWT, { expiresIn: 600 }, (err, token) => {
+    jwt.sign(payload, process.env.JWT, { expiresIn: "10m" }, (err, token) => {
       if (err) throw err;
       response.json({ token });
     });
@@ -63,10 +63,19 @@ loginRouter.post("/auth", async (request, response) => {
       }
     };
 
-    jwt.sign(payload, process.env.JWT, { expiresIn: 600 }, (err, token) => {
+    jwt.sign(payload, process.env.JWT, { expiresIn: "1m" }, (err, token) => {
       if (err) throw err;
       response.json({ token });
     });
+  } catch (error) {
+    console.error(error);
+    response.end();
+  }
+});
+
+loginRouter.get("/verify", verifyToken, async (request, response) => {
+  try {
+    response.status(200).end();
   } catch (error) {
     console.error(error);
     response.end();
