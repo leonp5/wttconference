@@ -6,8 +6,6 @@ import { Form } from "../components/Form/Form";
 import { BasicInput } from "../components/Form/InputFields";
 import { Button } from "../components/Buttons/Button";
 import { RadioButton } from "../components/Buttons/RadioButton";
-import { PopUpContent } from "../components/PopUp/PopUpContent";
-import { PopUpBackground } from "../components/PopUp/PopUpBackground";
 import { PopUpLink, SimpleLink } from "../components/Navigation/NavLinks";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
 import { saveAttendee } from "../api/attendees";
@@ -16,6 +14,7 @@ import { Label } from "../components/Form/Labels";
 import { RadioLabel } from "../components/Form/Labels";
 import { RadioWrapper } from "../components/Container/RadioWrapper";
 import { CenterButton } from "../components/Buttons/CenterButton";
+import PopUp from "../components/PopUp/PopUp";
 
 const RadioBox = styled.div`
   display: flex;
@@ -167,28 +166,26 @@ export default function Registration() {
         </CenterButton>
         {show && (
           <>
-            <PopUpBackground>
-              <PopUpContent>
-                {success && (
-                  <>
-                    <PopUpText>
-                      Vielen Dank für deine Anmeldung! <br /> Du erhälst eine Kopie deiner Anmeldung
-                      via Mail.
-                    </PopUpText>
-                    <PopUpLink to="/">Hier gehts zur Startseite</PopUpLink>
-                  </>
-                )}
-                {!success && (
-                  <>
-                    <PopUpText>
-                      Das hat leider nicht geklappt! <br /> Du kannst es noch Mal{" "}
-                      <SimpleLink onClick={() => setShow(false)}>probieren</SimpleLink> oder uns per
-                      Mail kontaktieren.
-                    </PopUpText>
-                  </>
-                )}
-              </PopUpContent>
-            </PopUpBackground>
+            <PopUp>
+              {success && (
+                <>
+                  <PopUpText>
+                    Vielen Dank für deine Anmeldung! <br /> Du erhälst eine Kopie deiner Anmeldung
+                    via Mail.
+                  </PopUpText>
+                  <PopUpLink to="/">Hier gehts zur Startseite</PopUpLink>
+                </>
+              )}
+              {!success && (
+                <>
+                  <PopUpText>
+                    Das hat leider nicht geklappt! <br /> Du kannst es noch Mal{" "}
+                    <SimpleLink onClick={() => setShow(false)}>probieren</SimpleLink> oder uns per
+                    Mail kontaktieren.
+                  </PopUpText>
+                </>
+              )}
+            </PopUp>
           </>
         )}
       </Form>

@@ -1,7 +1,13 @@
 import React from "react";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
+import { useHistory } from "react-router-dom";
+
 import { FooterContainer } from "../Container/FooterContainer";
+import { BottomLink } from "./NavLinks";
+import LoginModal from "../PopUp/LoginModal";
+import { CloseButton } from "../Buttons/CloseButton";
+import useCheckToken from "../../hooks/useCheckToken";
 
 const Footer = styled.footer`
   display: flex;
@@ -15,13 +21,55 @@ const Footer = styled.footer`
 `;
 
 export default function FooterNav({ children }) {
+  const history = useHistory();
+  const [open, setOpen] = React.useState(false);
+  const [show, setShow] = React.useState(true);
+
+  function handleOpen() {
+    setOpen(true);
+  }
+
+  function handleClose() {
+    setOpen(false);
+  }
+
+  // Auth function is still missing
+
+  const token = useCheckToken();
+
+  function logout() {
+    sessionStorage.removeItem("token:");
+    history.push("/");
+  }
+
+  React.useEffect(() => {
+    if (!token) {
+      setShow(true);
+    }
+    if (token) {
+      setShow(false);
+    }
+  }, [token]);
+
   return (
     <Footer>
       <FooterContainer>
         {children[0]}
         {children[1]}
       </FooterContainer>
-      {children[2]}
+
+      {show && <BottomLink onClick={handleOpen}>Orga-Login</BottomLink>}
+      {!show && (
+        <>
+          <BottomLink onClick={logout}>Ausloggen</BottomLink>
+          {children[2]}{" "}
+        </>
+      )}
+      {open && (
+        <LoginModal handleClose={handleClose}>
+          <CloseButton onClick={handleClose}></CloseButton>
+        </LoginModal>
+      )}
     </Footer>
   );
 }

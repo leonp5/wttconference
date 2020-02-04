@@ -9,10 +9,8 @@ import { BasicInput } from "../components/Form/InputFields";
 import { Label } from "../components/Form/Labels";
 import { TextArea } from "../components/Form/InputFields";
 import { Button } from "../components/Buttons/Button";
-import { PopUpBackground } from "../components/PopUp/PopUpBackground";
-import { PopUpContent } from "../components/PopUp/PopUpContent";
 import { PopUpLink, SimpleLink } from "../components/Navigation/NavLinks";
-
+import PopUp from "../components/PopUp/PopUp";
 import { FlexibleContainer } from "../components/Container/FlexibleContainer";
 import ContactMap from "../components/ContactMap";
 import { CenterButton } from "../components/Buttons/CenterButton";
@@ -101,25 +99,23 @@ export default function Contact() {
               </CenterButton>
               {show && (
                 <>
-                  <PopUpBackground>
-                    <PopUpContent>
-                      {success && (
-                        <>
-                          <PopUpText>Vielen Dank für deine Nachricht!</PopUpText>
-                          <PopUpLink to="/">Hier gehts zur Startseite</PopUpLink>{" "}
-                        </>
-                      )}
-                      {!success && (
-                        <>
-                          <PopUpText>
-                            Das hat leider nicht geklappt! <br /> Du kannst es noch Mal{" "}
-                            <SimpleLink onClick={() => setShow(false)}>probieren</SimpleLink> oder
-                            uns per Mail kontaktieren.
-                          </PopUpText>
-                        </>
-                      )}
-                    </PopUpContent>
-                  </PopUpBackground>
+                  <PopUp>
+                    {success && (
+                      <>
+                        <PopUpText>Vielen Dank für deine Nachricht!</PopUpText>
+                        <PopUpLink to="/">Hier gehts zur Startseite</PopUpLink>{" "}
+                      </>
+                    )}
+                    {!success && (
+                      <>
+                        <PopUpText>
+                          Das hat leider nicht geklappt! <br /> Du kannst es noch Mal{" "}
+                          <SimpleLink onClick={() => setShow(false)}>probieren</SimpleLink> oder uns
+                          per Mail kontaktieren.
+                        </PopUpText>
+                      </>
+                    )}
+                  </PopUp>
                 </>
               )}
             </ContactForm>

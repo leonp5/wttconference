@@ -3,8 +3,10 @@ dotenv.config();
 const express = require("express");
 const path = require("path");
 
-const { initDb } = require("./lib/database");
-const router = require("./lib/routes");
+const { initDb } = require("./backend/lib/database");
+const dbRoutes = require("./backend/routes/dbRoutes");
+const loginRoutes = require("./backend/routes/loginRoutes");
+const mailRoutes = require("./backend/routes/mailRoutes");
 
 const app = express();
 
@@ -13,7 +15,7 @@ const PORT = process.env.PORT || 8080;
 app.use(express.json({ extended: false }));
 app.use(express.urlencoded({ extended: false }));
 
-app.use("/api", router);
+app.use("/api", dbRoutes, loginRoutes, mailRoutes);
 
 // Serve any static files
 app.use(express.static(path.join(__dirname, "client/build")));

@@ -2,7 +2,7 @@
   "name": "wttconference",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "engines": {
     "node": "12.x"
   },
@@ -21,14 +21,16 @@
   },
   "keywords": [],
   "author": "leonp5",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/leonp5/wttconference/issues"
   },
   "homepage": "https://github.com/leonp5/wttconference#readme",
   "dependencies": {
+    "bcrypt": "^3.0.7",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.5.2",
     "nodemailer": "^6.4.2"
   },

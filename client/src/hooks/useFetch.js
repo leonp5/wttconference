@@ -5,11 +5,18 @@ export default function useFetch(url) {
 
   React.useEffect(() => {
     async function fetchData() {
-      const response = await fetch(url);
+      const token = sessionStorage.getItem("token:");
+      const response = await fetch(url, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "x-auth-token": token
+        }
+      });
+
       const newData = await response.json();
       setData(newData);
     }
-
     fetchData();
   }, [url]);
 

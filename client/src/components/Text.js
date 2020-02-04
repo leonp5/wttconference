@@ -45,3 +45,8 @@ export const PopUpText = styled.p`
   text-align: center;
   color: ${props => props.theme.colors.font};
 `;
+
+export const AlertText = styled.p`
+  text-align: center;
+  color: ${props => props.theme.colors.action};
+`;
