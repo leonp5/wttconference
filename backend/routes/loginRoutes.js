@@ -63,7 +63,7 @@ loginRouter.post("/auth", async (request, response) => {
       }
     };
 
-    jwt.sign(payload, process.env.JWT, { expiresIn: "1m" }, (err, token) => {
+    jwt.sign(payload, process.env.JWT, { expiresIn: "10m" }, (err, token) => {
       if (err) throw err;
       response.json({ token });
     });
