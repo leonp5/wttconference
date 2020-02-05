@@ -6,12 +6,14 @@ import AttendeeTable from "../components/Tables/AttendeeTable/AttendeeTable";
 import useFetch from "../hooks/useFetch";
 import { ToggleButton } from "../components/Buttons/ToggleButton";
 import { ButtonWrapper } from "../components/Buttons/ButtonWrapper";
+import WorkshopTable from "../components/Tables/WorkshopTable/WorkshopTable";
 
 export default function Organization() {
   const [showAttendees, setShowAttendees] = React.useState(false);
   const [showWorkshops, setShowWorkshops] = React.useState(false);
 
   const attendees = useFetch("/api/attendees");
+  const workshops = useFetch("/api/workshops");
 
   function toggleAttendees() {
     setShowAttendees(!showAttendees);
@@ -31,7 +33,7 @@ export default function Organization() {
         <ToggleButton onClick={toggleWorkshops}>Workshops</ToggleButton>
       </ButtonWrapper>
       {showAttendees ? <AttendeeTable attendees={attendees} /> : null}
-      {showWorkshops ? <p>Workshops</p> : null}
+      {showWorkshops ? <WorkshopTable workshops={workshops} /> : null}
     </ContentWrapper>
   );
 }
