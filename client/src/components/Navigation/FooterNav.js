@@ -33,8 +33,6 @@ export default function FooterNav({ children }) {
     setOpen(false);
   }
 
-  // Auth function is still missing
-
   const token = useCheckToken();
 
   function logout() {
@@ -67,7 +65,7 @@ export default function FooterNav({ children }) {
       )}
       {open && (
         <LoginModal handleClose={handleClose}>
-          <CloseButton onClick={handleClose}></CloseButton>
+          <CloseButton onClick={handleClose} />
         </LoginModal>
       )}
     </Footer>

@@ -47,7 +47,7 @@ loginRouter.post("/auth", async (request, response) => {
   const user = request.body;
   try {
     if (!user.name || !user.password)
-      return response.status(401).json("Bitte trage Email und Passwort ein!");
+      return response.status(401).json("Bitte trage Name und Passwort ein!");
 
     const foundUser = await findUser(user);
     if (!foundUser)

@@ -9,6 +9,7 @@ import { Button } from "../components/Buttons/Button";
 import { CenterButton } from "../components/Buttons/CenterButton";
 import { PopUpLink, SimpleLink } from "../components/Navigation/NavLinks";
 import PopUp from "../components/PopUp/PopUp";
+import saveData from "../api/saveData";
 
 export default function Workshops() {
   const [workshop, setWorkshop] = React.useState({
@@ -48,6 +49,7 @@ export default function Workshops() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    saveData("/api/workshops", workshop);
     sendWorkshop(workshop);
     setWorkshop({
       name: "",

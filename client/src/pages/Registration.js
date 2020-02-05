@@ -8,13 +8,13 @@ import { Button } from "../components/Buttons/Button";
 import { RadioButton } from "../components/Buttons/RadioButton";
 import { PopUpLink, SimpleLink } from "../components/Navigation/NavLinks";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
-import { saveAttendee } from "../api/attendees";
 import { TextArea } from "../components/Form/InputFields";
 import { Label } from "../components/Form/Labels";
 import { RadioLabel } from "../components/Form/Labels";
 import { RadioWrapper } from "../components/Container/RadioWrapper";
 import { CenterButton } from "../components/Buttons/CenterButton";
 import PopUp from "../components/PopUp/PopUp";
+import saveData from "../api/saveData";
 
 const RadioBox = styled.div`
   display: flex;
@@ -65,7 +65,7 @@ export default function Registration() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    saveAttendee(attendee);
+    saveData("/api/attendees", attendee);
     notifyAttendee(attendee);
     setAttendee({
       name: "",

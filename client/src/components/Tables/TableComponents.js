@@ -1,17 +1,28 @@
 import styled from "@emotion/styled";
 
-import { mq } from "../../MediaQueries";
+import { mq } from "../MediaQueries";
 
 export const Table = styled.table`
   table-layout: fixed;
   width: 100%;
   max-width: 1200px;
   border-collapse: collapse;
+
+  animation: fadein 0.9s;
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;
 
 export const TableHeader = styled.th`
   position: sticky;
-  top: 0;
+  top: 65px;
   padding: 10px;
   border-bottom: 1px solid ${props => props.theme.colors.tertiary};
   background: ${props => props.theme.colors.secondary};
