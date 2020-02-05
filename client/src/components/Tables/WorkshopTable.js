@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Table, TableRow, TableData, TableHeaderRow, TableHeader } from "./TableComponents";
+import { Table, TableRow, TableHeaderRow, TableHeader } from "./TableComponents";
+import { WorkshopTD } from "./WorkshopTD";
 
 export default function WorkshopTable({ ...props }) {
   const ContentTH = ["Name", "Vorname", "Email", "Workshop", "Workshop Beschreibung", "Nachricht"];
@@ -9,7 +10,7 @@ export default function WorkshopTable({ ...props }) {
   const Rows = props.workshops.map((workshop, name) => (
     <TableRow key={name}>
       {Object.values(workshop).map((workshopData, name) => (
-        <TableData key={name}>{workshopData}</TableData>
+        <WorkshopTD key={name}>{workshopData}</WorkshopTD>
       ))}
     </TableRow>
   ));

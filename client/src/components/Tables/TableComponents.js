@@ -1,12 +1,23 @@
 import styled from "@emotion/styled";
 
-import { mq } from "../../MediaQueries";
+import { mq } from "../MediaQueries";
 
 export const Table = styled.table`
   table-layout: fixed;
   width: 100%;
   max-width: 1200px;
   border-collapse: collapse;
+
+  animation: fadein 0.9s;
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;
 
 export const TableHeader = styled.th`
@@ -32,7 +43,6 @@ export const TableHeaderRow = styled.tr`
 `;
 
 export const TableRow = styled.tr`
-  width: 100%;
   :nth-of-type(odd) {
     background: ${props => props.theme.colors.transparentBackgroundLight};
   }
@@ -74,18 +84,28 @@ export const TableData = styled.td`
       content: "Vorname";
     }
     :nth-of-type(3):before {
-      content: "Email";
+      content: "Adresse";
     }
     :nth-of-type(4):before {
-      content: "Workshop";
+      content: "Wohnort";
     }
     :nth-of-type(5):before {
-      content: "Workshop Beschreibung";
+      content: "Email";
     }
     :nth-of-type(6):before {
-      content: "Nachricht";
+      content: "Telefon";
+    }
+    :nth-of-type(7):before {
+      content: "Hochschule";
+    }
+    :nth-of-type(8):before {
+      content: "Geschlecht";
+    }
+    :nth-of-type(9):before {
+      content: "Ernährung";
+    }
+    :nth-of-type(10):before {
+      content: "Sonstiges";
     }
   }
 `;
-
-export const TableDataLarge = styled(TableData)``;

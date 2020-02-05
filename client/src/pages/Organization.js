@@ -2,11 +2,11 @@ import React from "react";
 
 import { Heading } from "../components/Text";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
-import AttendeeTable from "../components/Tables/AttendeeTable/AttendeeTable";
+import AttendeeTable from "../components/Tables/AttendeeTable";
 import useFetch from "../hooks/useFetch";
 import { ToggleButton } from "../components/Buttons/ToggleButton";
 import { ButtonWrapper } from "../components/Buttons/ButtonWrapper";
-import WorkshopTable from "../components/Tables/WorkshopTable/WorkshopTable";
+import WorkshopTable from "../components/Tables/WorkshopTable";
 
 export default function Organization() {
   const [showAttendees, setShowAttendees] = React.useState(false);
