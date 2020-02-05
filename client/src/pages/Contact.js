@@ -5,7 +5,7 @@ import { Heading, PageText, Heading2, Heading6, PopUpText } from "../components/
 import { ContentWrapper, ContentContainer } from "../components/Container/ContentWrapper";
 import { StyledPicture, FallbackImage } from "../components/Images";
 import { Form } from "../components/Form/Form";
-import { BasicInput } from "../components/Form/InputFields";
+import { BasicInput, CheckBox } from "../components/Form/InputFields";
 import { Label } from "../components/Form/Labels";
 import { TextArea } from "../components/Form/InputFields";
 import { Button } from "../components/Buttons/Button";
@@ -20,15 +20,15 @@ const ContactForm = styled(Form)`
 `;
 
 export default function Contact() {
+  const [isChecked, setIsChecked] = React.useState();
+  const [success, setSuccess] = React.useState(true);
+  const [show, setShow] = React.useState(false);
   const [request, setRequest] = React.useState({
     name: "",
     email: "",
     subject: "",
     message: ""
   });
-
-  const [success, setSuccess] = React.useState(true);
-  const [show, setShow] = React.useState(false);
 
   function sendRequest(request) {
     return fetch(`/api/request`, {
@@ -54,11 +54,16 @@ export default function Contact() {
     });
   }
 
+  function handleCheck() {
+    setIsChecked(!isChecked);
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
     sendRequest(request);
     setRequest({ name: "", email: "", subject: "", message: "" });
   }
+  console.log(isChecked);
 
   return (
     <>
@@ -91,9 +96,13 @@ export default function Contact() {
               <Label>Deine Nachricht:*</Label>
               <TextArea value={request.message} name="message" onChange={handleChange} />
               <Heading6>* = Pflichtfeld</Heading6>
-
+              <CheckBox type="checkbox" defaultChecked={isChecked} onChange={handleCheck} />
               <CenterButton>
-                <Button disabled={!request.name || !request.email || !request.message}>
+                <Button
+                  disabled={
+                    !request.name || !request.email || !request.message || isChecked !== true
+                  }
+                >
                   Abschicken
                 </Button>
               </CenterButton>

@@ -24,8 +24,10 @@ export const TableHeading = styled.h3`
 export const Time = styled.p`
   font-style: italic;
   text-align: center;
+  margin-bottom: 5px;
 `;
 
 export const Content = styled.p`
   text-align: center;
+  margin-top: 0px;
 `;
