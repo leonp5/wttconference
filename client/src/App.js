@@ -44,30 +44,23 @@ function App() {
           <Switch>
             <Main>
               <HeaderImage />
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route path="/registration">
-                <Registration />
-              </Route>
-              <Route path="/conferencefee">
-                <ConferenceFee />
-              </Route>
-              <Route path="/program">
-                <Program />
-              </Route>
-              <Route path="/workshops">
-                <Workshops />
-              </Route>
-              <Route path="/contact">
-                <Contact />
-              </Route>
-              <Route path="/impressum">
-                <Impressum />
-              </Route>
-              <Route path="/privacy">
-                <Privacy />
-              </Route>
+
+              <Route exact path="/" component={Home} />
+
+              <Route path="/registration" component={Registration} />
+
+              <Route path="/conferencefee" component={ConferenceFee} />
+
+              <Route path="/program" component={Program} />
+
+              <Route path="/workshops" component={Workshops} />
+
+              <Route path="/contact" component={Contact} />
+
+              <Route path="/impressum" component={Impressum} />
+
+              <Route path="/privacy" component={Privacy} />
+
               <ProtectedRoute path="/organization" component={Organization} />
             </Main>
           </Switch>
