@@ -11,7 +11,7 @@ export const Table = styled.table`
 
 export const TableHeader = styled.th`
   position: sticky;
-  top: 0;
+  top: 65px;
   padding: 10px;
   border-bottom: 1px solid ${props => props.theme.colors.tertiary};
   background: ${props => props.theme.colors.secondary};
