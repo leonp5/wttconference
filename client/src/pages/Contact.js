@@ -14,6 +14,7 @@ import PopUp from "../components/PopUp/PopUp";
 import { FlexibleContainer } from "../components/Container/FlexibleContainer";
 import ContactMap from "../components/ContactMap";
 import { CenterButton } from "../components/Buttons/CenterButton";
+import useSessionStorage from "../hooks/useSessionStorage";
 
 const ContactForm = styled(Form)`
   align-items: start;
@@ -23,12 +24,16 @@ export default function Contact() {
   const [isChecked, setIsChecked] = React.useState();
   const [success, setSuccess] = React.useState(true);
   const [show, setShow] = React.useState(false);
+  const storageData = sessionStorage.getItem("request");
+  console.log("vorher", storageData);
   const [request, setRequest] = React.useState({
     name: "",
     email: "",
     subject: "",
     message: ""
   });
+
+  if (storageData === true) setRequest(storageData);
 
   function sendRequest(request) {
     return fetch(`/api/request`, {
@@ -53,17 +58,14 @@ export default function Contact() {
       [event.target.name]: value
     });
   }
-
-  function handleCheck() {
-    setIsChecked(!isChecked);
-  }
+  useSessionStorage("request", request);
 
   function handleSubmit(event) {
     event.preventDefault();
     sendRequest(request);
     setRequest({ name: "", email: "", subject: "", message: "" });
+    sessionStorage.removeItem("request", request);
   }
-  console.log(isChecked);
 
   return (
     <>
@@ -96,7 +98,11 @@ export default function Contact() {
               <Label>Deine Nachricht:*</Label>
               <TextArea value={request.message} name="message" onChange={handleChange} />
               <Heading6>* = Pflichtfeld</Heading6>
-              <CheckBox type="checkbox" defaultChecked={isChecked} onChange={handleCheck} />
+              <CheckBox
+                type="checkbox"
+                defaultChecked={isChecked}
+                onChange={() => setIsChecked(!isChecked)}
+              />
               <CenterButton>
                 <Button
                   disabled={
