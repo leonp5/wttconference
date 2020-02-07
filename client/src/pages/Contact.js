@@ -24,16 +24,13 @@ export default function Contact() {
   const [isChecked, setIsChecked] = React.useState();
   const [success, setSuccess] = React.useState(true);
   const [show, setShow] = React.useState(false);
-  const storageData = sessionStorage.getItem("request");
-  console.log("vorher", storageData);
-  const [request, setRequest] = React.useState({
+
+  const [request, setRequest] = useSessionStorage("request", {
     name: "",
     email: "",
     subject: "",
     message: ""
   });
-
-  if (storageData === true) setRequest(storageData);
 
   function sendRequest(request) {
     return fetch(`/api/request`, {
@@ -58,13 +55,12 @@ export default function Contact() {
       [event.target.name]: value
     });
   }
-  useSessionStorage("request", request);
 
   function handleSubmit(event) {
     event.preventDefault();
     sendRequest(request);
     setRequest({ name: "", email: "", subject: "", message: "" });
-    sessionStorage.removeItem("request", request);
+    sessionStorage.removeItem("request");
   }
 
   return (

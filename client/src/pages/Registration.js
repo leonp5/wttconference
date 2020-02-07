@@ -15,6 +15,7 @@ import { RadioWrapper } from "../components/Container/RadioWrapper";
 import { CenterButton } from "../components/Buttons/CenterButton";
 import PopUp from "../components/PopUp/PopUp";
 import saveData from "../api/saveData";
+import useSessionStorage from "../hooks/useSessionStorage";
 
 const RadioBox = styled.div`
   display: flex;
@@ -23,7 +24,7 @@ const RadioBox = styled.div`
 `;
 
 export default function Registration() {
-  const [attendee, setAttendee] = React.useState({
+  const [attendee, setAttendee] = useSessionStorage("attendee", {
     name: "",
     firstName: "",
     address: "",
@@ -79,6 +80,7 @@ export default function Registration() {
       nutrition: "",
       else: ""
     });
+    sessionStorage.removeItem("attendee");
   }
 
   return (

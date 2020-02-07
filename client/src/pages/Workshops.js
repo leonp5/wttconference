@@ -10,9 +10,10 @@ import { CenterButton } from "../components/Buttons/CenterButton";
 import { PopUpLink, SimpleLink } from "../components/Navigation/NavLinks";
 import PopUp from "../components/PopUp/PopUp";
 import saveData from "../api/saveData";
+import useSessionStorage from "../hooks/useSessionStorage";
 
 export default function Workshops() {
-  const [workshop, setWorkshop] = React.useState({
+  const [workshop, setWorkshop] = useSessionStorage("workshop", {
     name: "",
     firstName: "",
     email: "",
@@ -59,6 +60,7 @@ export default function Workshops() {
       workshopDescription: "",
       message: ""
     });
+    sessionStorage.removeItem("workshop");
   }
 
   return (
