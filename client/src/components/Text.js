@@ -50,3 +50,8 @@ export const AlertText = styled.p`
   text-align: center;
   color: ${props => props.theme.colors.action};
 `;
+
+export const CheckBoxText = styled.p`
+  text-align: center;
+  font-size: 0.9rem;
+`;
