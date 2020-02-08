@@ -2,46 +2,48 @@ const express = require("express");
 const loginRouter = express.Router();
 const jwt = require("jsonwebtoken");
 
-const { addUser } = require("../lib/user");
+// const { addUser } = require("../lib/user");
 
 const verifyToken = require("../middleware/verifyToken");
 
-const { findUserById, findUser } = require("../login/findUser");
-const hashPassword = require("../login/hashPassword");
+const { findUser } = require("../login/findUser");
+// const hashPassword = require("../login/hashPassword");
 const validatePassword = require("../login/validatePassword");
 
-loginRouter.post("/register", async (request, response) => {
-  try {
-    const user = request.body;
+// Deactivated because it isn't really needed
 
-    if (!user.name || !user.email || !user.password)
-      return response.status(400).json("Bitte trage Benutzername, Email und Passwort ein!");
+// loginRouter.post("/register", async (request, response) => {
+//   try {
+//     const user = request.body;
 
-    const foundUser = await findUser(user);
-    if (foundUser)
-      return response.status(400).json("Für diese Emailadresse existiert bereits ein User!");
+//     if (!user.name || !user.email || !user.password)
+//       return response.status(400).json("Bitte trage Benutzername, Email und Passwort ein!");
 
-    const hashedPW = await hashPassword(user.password);
-    const newUser = { name: user.name, email: user.email, password: hashedPW };
+//     const foundUser = await findUser(user);
+//     if (foundUser)
+//       return response.status(400).json("Für diese Emailadresse existiert bereits ein User!");
 
-    addUser(newUser);
-    const savedUser = await findUser(newUser);
+//     const hashedPW = await hashPassword(user.password);
+//     const newUser = { name: user.name, email: user.email, password: hashedPW };
 
-    const payload = {
-      user: {
-        id: savedUser._id
-      }
-    };
+//     addUser(newUser);
+//     const savedUser = await findUser(newUser);
 
-    jwt.sign(payload, process.env.JWT, { expiresIn: "10m" }, (err, token) => {
-      if (err) throw err;
-      response.json({ token });
-    });
-  } catch (error) {
-    console.error(error);
-    response.end();
-  }
-});
+//     const payload = {
+//       user: {
+//         id: savedUser._id
+//       }
+//     };
+
+//     jwt.sign(payload, process.env.JWT, { expiresIn: "10m" }, (err, token) => {
+//       if (err) throw err;
+//       response.json({ token });
+//     });
+//   } catch (error) {
+//     console.error(error);
+//     response.end();
+//   }
+// });
 
 loginRouter.post("/auth", async (request, response) => {
   const user = request.body;
@@ -82,14 +84,14 @@ loginRouter.get("/verify", verifyToken, async (request, response) => {
   }
 });
 
-loginRouter.get("/user", verifyToken, async (request, response) => {
-  try {
-    const foundUser = await findUserById(request.user.user.id);
-    response.json(foundUser);
-  } catch (error) {
-    console.error(error);
-    response.end();
-  }
-});
+// loginRouter.get("/user", verifyToken, async (request, response) => {
+//   try {
+//     const foundUser = await findUserById(request.user.user.id);
+//     response.json(foundUser);
+//   } catch (error) {
+//     console.error(error);
+//     response.end();
+//   }
+// });
 
 module.exports = loginRouter;

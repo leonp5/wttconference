@@ -1,20 +1,20 @@
 import React from "react";
 
-import { Heading, PageText, Heading2, Heading6, PopUpText, CheckBoxText } from "../components/Text";
+import { Heading, PageText, Heading2, Heading6, PopUpText } from "../components/Text";
 import { ContentWrapper, ContentContainer } from "../components/Container/ContentWrapper";
 import { StyledPicture, FallbackImage } from "../components/Images";
 import { Form } from "../components/Form/Form";
-import { BasicInput, CheckBox } from "../components/Form/InputFields";
+import { BasicInput } from "../components/Form/InputFields";
 import { Label } from "../components/Form/Labels";
 import { TextArea } from "../components/Form/InputFields";
 import { Button } from "../components/Buttons/Button";
-import { PopUpLink, SimpleLink, SmallInlineLink } from "../components/Navigation/NavLinks";
+import { PopUpLink, SimpleLink } from "../components/Navigation/NavLinks";
 import PopUp from "../components/PopUp/PopUp";
 import { FlexibleContainer } from "../components/Container/FlexibleContainer";
 import ContactMap from "../components/ContactMap";
 import { CenterButton } from "../components/Buttons/CenterButton";
 import useSessionStorage from "../hooks/useSessionStorage";
-import { CheckBoxContainer } from "../components/Container/CheckBoxContainer";
+import CheckBoxContainer from "../components/Container/CheckBoxContainer";
 
 export default function Contact() {
   const [isChecked, setIsChecked] = React.useState();
@@ -59,11 +59,6 @@ export default function Contact() {
     sessionStorage.removeItem("request");
   }
 
-  function handleCheck() {
-    setIsChecked(!isChecked);
-  }
-  console.log(isChecked);
-  console.log(handleCheck);
   return (
     <>
       <ContentWrapper>
@@ -78,7 +73,9 @@ export default function Contact() {
             <Heading2>Ansprechpartnerinnen:</Heading2>
             <PageText>
               Katharina Wiesand und Carolin Kreinfeldt <br /> E-Mail:{" "}
-              <a href="mailto:info@beispiel.de">info@beispiel.de</a>
+              <a href="mailto:info@waldorf-heute-fuer-morgen.de">
+                info@waldorf-heute-fuer-morgen.de
+              </a>
             </PageText>
             <PageText>
               Komm bei sämtlichen Fragen gerne auf uns zu oder schreib uns direkt über das
@@ -95,15 +92,9 @@ export default function Contact() {
               <Label>Deine Nachricht:*</Label>
               <TextArea value={request.message} name="message" onChange={handleChange} />
               <Heading6>* = Pflichtfeld</Heading6>
-              <CheckBoxContainer>
-                <CheckBox type="checkbox" defaultChecked={isChecked} onChange={handleCheck} />{" "}
-                <CheckBoxText>
-                  Ich habe die{" "}
-                  <SmallInlineLink to="/privacy">Datenschutzbestimmungen</SmallInlineLink> zur
-                  Kenntnis genommen.
-                </CheckBoxText>
-              </CheckBoxContainer>
-              {/* <CheckBoxContainer checked={isChecked} handleCheck={handleCheck} /> */}
+
+              {CheckBoxContainer(isChecked, () => setIsChecked(!isChecked))}
+
               <CenterButton>
                 <Button
                   disabled={

@@ -16,6 +16,7 @@ import Impressum from "./pages/Impressum";
 import Privacy from "./pages/Privacy";
 import Organization from "./pages/Organization";
 import ConferenceFee from "./pages/ConferenceFee";
+import ErrorPage from "./pages/ErrorPage";
 import { Main } from "./components/Container/Main";
 import { PageContainer } from "./components/Container/PageContainer";
 import HeaderImage from "./components/Images";
@@ -42,30 +43,31 @@ function App() {
             <MenuLink to="/impressum">Impressum</MenuLink>
             <MenuLink to="/Privacy">Datenschutz</MenuLink>
           </AppBar>
-          <Switch>
-            <Main>
-              <HeaderImage />
-
+          <Main>
+            <HeaderImage />
+            <Switch>
               <Route exact path="/" component={Home} />
 
-              <Route path="/registration" component={Registration} />
+              <Route exact path="/registration" component={Registration} />
 
-              <Route path="/conferencefee" component={ConferenceFee} />
+              <Route exact path="/conferencefee" component={ConferenceFee} />
 
-              <Route path="/program" component={Program} />
+              <Route exact path="/program" component={Program} />
 
-              <Route path="/workshops" component={Workshops} />
+              <Route exact path="/workshops" component={Workshops} />
 
-              <Route path="/contact" component={Contact} />
+              <Route exact path="/contact" component={Contact} />
 
-              <Route path="/impressum" component={Impressum} />
+              <Route exact path="/impressum" component={Impressum} />
 
-              <Route path="/privacy" component={Privacy} />
+              <Route exact path="/privacy" component={Privacy} />
 
               <ProtectedRoute path="/organization" component={Organization} />
-              <BackToTopButton />
-            </Main>
-          </Switch>
+
+              <Route path="*" component={ErrorPage} />
+            </Switch>
+            <BackToTopButton />
+          </Main>
           <FooterNav>
             <FooterLink to="/impressum">Impressum</FooterLink>
             <FooterLink to="/privacy">Datenschutz</FooterLink>

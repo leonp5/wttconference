@@ -1,25 +1,17 @@
 import React from "react";
 
-import {
-  Heading,
-  Heading3,
-  Heading6,
-  Text,
-  PopUpText,
-  PageText,
-  CheckBoxText
-} from "../components/Text";
+import { Heading, Heading3, Heading6, Text, PopUpText, PageText } from "../components/Text";
 import { TextWrapper, ContentWrapper } from "../components/Container/ContentWrapper";
 import { Form } from "../components/Form/Form";
 import { Label } from "../components/Form/Labels";
-import { BasicInput, TextArea, CheckBox } from "../components/Form/InputFields";
+import { BasicInput, TextArea } from "../components/Form/InputFields";
 import { Button } from "../components/Buttons/Button";
 import { CenterButton } from "../components/Buttons/CenterButton";
-import { PopUpLink, SimpleLink, SmallInlineLink } from "../components/Navigation/NavLinks";
+import { PopUpLink, SimpleLink } from "../components/Navigation/NavLinks";
 import PopUp from "../components/PopUp/PopUp";
 import saveData from "../api/saveData";
 import useSessionStorage from "../hooks/useSessionStorage";
-import { CheckBoxContainer } from "../components/Container/CheckBoxContainer";
+import CheckBoxContainer from "../components/Container/CheckBoxContainer";
 
 export default function Workshops() {
   const [isChecked, setIsChecked] = React.useState();
@@ -72,10 +64,6 @@ export default function Workshops() {
     sessionStorage.removeItem("workshop");
   }
 
-  function handleCheck() {
-    setIsChecked(!isChecked);
-  }
-
   return (
     <ContentWrapper>
       <TextWrapper>
@@ -91,7 +79,10 @@ export default function Workshops() {
           haben könnt, dann melde dich gerne bei uns!
         </Text>
         <Text>
-          <b>Ansprechpartnerinnen</b>: Sofia Abedi und Imra Henseleit
+          <b>Ansprechpartnerinnen</b>: Sofia Abedi und Imra Henseleit <br /> Email:{" "}
+          <a href="mailto:workshops@waldorf-heute-fuer-morgen.de">
+            workshops@waldorf-heute-fuer-morgen.de
+          </a>
         </Text>
         <PageText>
           Bedenke bitte deine benötigten Materialien zu besorgen, oder informiere uns, was du
@@ -119,13 +110,7 @@ export default function Workshops() {
         <TextArea value={workshop.message} name="message" onChange={handleChange} />
         <Heading6>* = Pflichtfeld</Heading6>
 
-        <CheckBoxContainer>
-          <CheckBox type="checkbox" defaultChecked={isChecked} onChange={handleCheck} />{" "}
-          <CheckBoxText>
-            Ich habe die <SmallInlineLink to="/privacy">Datenschutzbestimmungen</SmallInlineLink>{" "}
-            zur Kenntnis genommen.
-          </CheckBoxText>
-        </CheckBoxContainer>
+        {CheckBoxContainer(isChecked, () => setIsChecked(!isChecked))}
 
         <CenterButton>
           <Button
