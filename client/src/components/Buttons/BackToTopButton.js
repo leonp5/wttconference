@@ -11,6 +11,7 @@ const StyledButton = styled.button`
   height: 35px;
   width: 35px;
   border: none;
+  z-index: 2;
   border-radius: 50%;
   background: ${props => props.theme.colors.action};
   cursor: pointer;

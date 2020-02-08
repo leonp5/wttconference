@@ -13,7 +13,7 @@ const Header = styled.div`
   align-items: center;
   position: sticky;
   top: 0px;
-  z-index: 1;
+  z-index: 2;
   height: 70px;
   width: 100%;
   background: ${props => props.theme.colors.primary};
