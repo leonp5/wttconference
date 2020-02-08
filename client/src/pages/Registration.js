@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import { Heading, Heading6, PopUpText, CheckBoxText } from "../components/Text";
+import { Heading, Heading6, PopUpText } from "../components/Text";
 import { Form } from "../components/Form/Form";
-import { BasicInput, CheckBox } from "../components/Form/InputFields";
+import { BasicInput } from "../components/Form/InputFields";
 import { Button } from "../components/Buttons/Button";
 import { RadioButton } from "../components/Buttons/RadioButton";
-import { PopUpLink, SimpleLink, SmallInlineLink } from "../components/Navigation/NavLinks";
+import { PopUpLink, SimpleLink } from "../components/Navigation/NavLinks";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
 import { TextArea } from "../components/Form/InputFields";
 import { Label } from "../components/Form/Labels";
@@ -16,7 +16,7 @@ import { CenterButton } from "../components/Buttons/CenterButton";
 import PopUp from "../components/PopUp/PopUp";
 import saveData from "../api/saveData";
 import useSessionStorage from "../hooks/useSessionStorage";
-import { CheckBoxContainer } from "../components/Container/CheckBoxContainer";
+import CheckBoxContainer from "../components/Container/CheckBoxContainer";
 
 const RadioBox = styled.div`
   display: flex;
@@ -82,10 +82,6 @@ export default function Registration() {
       else: ""
     });
     sessionStorage.removeItem("attendee");
-  }
-
-  function handleCheck() {
-    setIsChecked(!isChecked);
   }
 
   return (
@@ -156,13 +152,7 @@ export default function Registration() {
           placeholder="Deine Nachricht, Anmerkung, etc."
         />
         <Heading6>* = Pflichtfeld</Heading6>
-        <CheckBoxContainer>
-          <CheckBox type="checkbox" defaultChecked={isChecked} onChange={handleCheck} />{" "}
-          <CheckBoxText>
-            Ich habe die <SmallInlineLink to="/privacy">Datenschutzbestimmungen</SmallInlineLink>{" "}
-            zur Kenntnis genommen.
-          </CheckBoxText>
-        </CheckBoxContainer>
+        {CheckBoxContainer(isChecked, () => setIsChecked(!isChecked))}
         <CenterButton>
           <Button
             disabled={

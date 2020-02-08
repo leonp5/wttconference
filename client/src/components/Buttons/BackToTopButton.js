@@ -24,6 +24,17 @@ const StyledButton = styled.button`
     padding: 4px;
     transform: rotate(-135deg);
   }
+
+  animation: fadein 0.2s;
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;
 
 export default function BackToTopButton() {
