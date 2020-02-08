@@ -1,9 +1,10 @@
 const express = require("express");
 const mailRoutes = express.Router();
 
-const sendEmail = require("../sendEmails/sendMail");
+const { sendInfoEmail, sendWorkshopEmail } = require("../sendEmails/sendMail");
 const requestMail = require("../sendEmails/requestMail");
 const registrationConfirmation = require("../sendEmails/registrationConfirmation");
+const registrationNotification = require("../sendEmails/registrationNotification");
 const workshopConfirmation = require("../sendEmails/workshopConfirmation");
 const workshopNotification = require("../sendEmails/workshopNotification");
 
@@ -11,8 +12,10 @@ mailRoutes.post("/confirmation", async (request, response) => {
   try {
     const attendee = request.body;
 
-    const Mail = registrationConfirmation(attendee);
-    await sendEmail(Mail);
+    const confirmationMail = registrationConfirmation(attendee);
+    const notificationMail = registrationNotification(attendee);
+    await sendInfoEmail(confirmationMail);
+    await sendInfoEmail(notificationMail);
     response.end();
   } catch (error) {
     console.error(error);
@@ -25,7 +28,7 @@ mailRoutes.post("/request", async (request, response) => {
     const message = request.body;
 
     const Mail = requestMail(message);
-    await sendEmail(Mail);
+    await sendInfoEmail(Mail);
     response.end();
   } catch (error) {
     console.error(error);
@@ -39,8 +42,8 @@ mailRoutes.post("/workshop", async (request, response) => {
 
     const confirmationMail = workshopConfirmation(workshop);
     const notificationMail = workshopNotification(workshop);
-    await sendEmail(confirmationMail);
-    await sendEmail(notificationMail);
+    await sendWorkshopEmail(confirmationMail);
+    await sendWorkshopEmail(notificationMail);
 
     response.end();
   } catch (error) {
