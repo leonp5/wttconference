@@ -79,7 +79,10 @@ export default function Workshops() {
           haben könnt, dann melde dich gerne bei uns!
         </Text>
         <Text>
-          <b>Ansprechpartnerinnen</b>: Sofia Abedi und Imra Henseleit
+          <b>Ansprechpartnerinnen</b>: Sofia Abedi und Imra Henseleit <br /> Email:{" "}
+          <a href="mailto:workshops@waldorf-heute-fuer-morgen.de">
+            workshops@waldorf-heute-fuer-morgen.de
+          </a>
         </Text>
         <PageText>
           Bedenke bitte deine benötigten Materialien zu besorgen, oder informiere uns, was du

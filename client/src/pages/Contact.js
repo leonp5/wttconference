@@ -73,7 +73,9 @@ export default function Contact() {
             <Heading2>Ansprechpartnerinnen:</Heading2>
             <PageText>
               Katharina Wiesand und Carolin Kreinfeldt <br /> E-Mail:{" "}
-              <a href="mailto:info@beispiel.de">info@beispiel.de</a>
+              <a href="mailto:info@waldorf-heute-fuer-morgen.de">
+                info@waldorf-heute-fuer-morgen.de
+              </a>
             </PageText>
             <PageText>
               Komm bei sämtlichen Fragen gerne auf uns zu oder schreib uns direkt über das
