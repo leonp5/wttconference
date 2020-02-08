@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Label = styled.label`
-  width: 100%;
+  width: 250px;
   padding-top: 15px;
   padding-bottom: 5px;
 `;

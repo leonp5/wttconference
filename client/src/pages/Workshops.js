@@ -1,18 +1,30 @@
 import React from "react";
 
-import { Heading, Heading3, Heading6, Text, PopUpText, PageText } from "../components/Text";
+import {
+  Heading,
+  Heading3,
+  Heading6,
+  Text,
+  PopUpText,
+  PageText,
+  CheckBoxText
+} from "../components/Text";
 import { TextWrapper, ContentWrapper } from "../components/Container/ContentWrapper";
 import { Form } from "../components/Form/Form";
 import { Label } from "../components/Form/Labels";
-import { BasicInput, TextArea } from "../components/Form/InputFields";
+import { BasicInput, TextArea, CheckBox } from "../components/Form/InputFields";
 import { Button } from "../components/Buttons/Button";
 import { CenterButton } from "../components/Buttons/CenterButton";
-import { PopUpLink, SimpleLink } from "../components/Navigation/NavLinks";
+import { PopUpLink, SimpleLink, SmallInlineLink } from "../components/Navigation/NavLinks";
 import PopUp from "../components/PopUp/PopUp";
 import saveData from "../api/saveData";
 import useSessionStorage from "../hooks/useSessionStorage";
+import { CheckBoxContainer } from "../components/Container/CheckBoxContainer";
 
 export default function Workshops() {
+  const [isChecked, setIsChecked] = React.useState();
+  const [success, setSuccess] = React.useState(true);
+  const [show, setShow] = React.useState(false);
   const [workshop, setWorkshop] = useSessionStorage("workshop", {
     name: "",
     firstName: "",
@@ -21,9 +33,6 @@ export default function Workshops() {
     workshopDescription: "",
     message: ""
   });
-
-  const [success, setSuccess] = React.useState(true);
-  const [show, setShow] = React.useState(false);
 
   async function sendWorkshop(workshop) {
     const response = await fetch(`/api/workshop`, {
@@ -61,6 +70,10 @@ export default function Workshops() {
       message: ""
     });
     sessionStorage.removeItem("workshop");
+  }
+
+  function handleCheck() {
+    setIsChecked(!isChecked);
   }
 
   return (
@@ -105,10 +118,23 @@ export default function Workshops() {
         <Label>Deine Nachricht an uns:</Label>
         <TextArea value={workshop.message} name="message" onChange={handleChange} />
         <Heading6>* = Pflichtfeld</Heading6>
+
+        <CheckBoxContainer>
+          <CheckBox type="checkbox" defaultChecked={isChecked} onChange={handleCheck} />{" "}
+          <CheckBoxText>
+            Ich habe die <SmallInlineLink to="/privacy">Datenschutzbestimmungen</SmallInlineLink>{" "}
+            zur Kenntnis genommen.
+          </CheckBoxText>
+        </CheckBoxContainer>
+
         <CenterButton>
           <Button
             disabled={
-              !workshop.name || !workshop.firstName || !workshop.email || !workshop.workshopName
+              isChecked !== true ||
+              !workshop.name ||
+              !workshop.firstName ||
+              !workshop.email ||
+              !workshop.workshopName
             }
           >
             Abschicken

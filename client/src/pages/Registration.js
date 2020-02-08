@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import { Heading, Heading6, PopUpText } from "../components/Text";
+import { Heading, Heading6, PopUpText, CheckBoxText } from "../components/Text";
 import { Form } from "../components/Form/Form";
-import { BasicInput } from "../components/Form/InputFields";
+import { BasicInput, CheckBox } from "../components/Form/InputFields";
 import { Button } from "../components/Buttons/Button";
 import { RadioButton } from "../components/Buttons/RadioButton";
-import { PopUpLink, SimpleLink } from "../components/Navigation/NavLinks";
+import { PopUpLink, SimpleLink, SmallInlineLink } from "../components/Navigation/NavLinks";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
 import { TextArea } from "../components/Form/InputFields";
 import { Label } from "../components/Form/Labels";
@@ -16,14 +16,18 @@ import { CenterButton } from "../components/Buttons/CenterButton";
 import PopUp from "../components/PopUp/PopUp";
 import saveData from "../api/saveData";
 import useSessionStorage from "../hooks/useSessionStorage";
+import { CheckBoxContainer } from "../components/Container/CheckBoxContainer";
 
 const RadioBox = styled.div`
   display: flex;
   justify-content: space-around;
-  width: 100%;
+  width: 250px;
 `;
 
 export default function Registration() {
+  const [isChecked, setIsChecked] = React.useState();
+  const [success, setSuccess] = React.useState(true);
+  const [show, setShow] = React.useState(false);
   const [attendee, setAttendee] = useSessionStorage("attendee", {
     name: "",
     firstName: "",
@@ -36,9 +40,6 @@ export default function Registration() {
     nutrition: "",
     else: ""
   });
-
-  const [success, setSuccess] = React.useState(true);
-  const [show, setShow] = React.useState(false);
 
   function notifyAttendee(attendee) {
     return fetch(`/api/confirmation`, {
@@ -81,6 +82,10 @@ export default function Registration() {
       else: ""
     });
     sessionStorage.removeItem("attendee");
+  }
+
+  function handleCheck() {
+    setIsChecked(!isChecked);
   }
 
   return (
@@ -136,7 +141,6 @@ export default function Registration() {
         <BasicInput value={attendee.phone} name="phone" onChange={handleChange} />
         <Label>Hochschule:</Label>
         <BasicInput value={attendee.highschool} name="highschool" onChange={handleChange} />
-
         <Label>Essen:</Label>
         <BasicInput
           value={attendee.nutrition}
@@ -152,10 +156,17 @@ export default function Registration() {
           placeholder="Deine Nachricht, Anmerkung, etc."
         />
         <Heading6>* = Pflichtfeld</Heading6>
-
+        <CheckBoxContainer>
+          <CheckBox type="checkbox" defaultChecked={isChecked} onChange={handleCheck} />{" "}
+          <CheckBoxText>
+            Ich habe die <SmallInlineLink to="/privacy">Datenschutzbestimmungen</SmallInlineLink>{" "}
+            zur Kenntnis genommen.
+          </CheckBoxText>
+        </CheckBoxContainer>
         <CenterButton>
           <Button
             disabled={
+              isChecked !== true ||
               !attendee.name ||
               !attendee.firstName ||
               !attendee.address ||
