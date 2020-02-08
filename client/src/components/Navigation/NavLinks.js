@@ -79,7 +79,7 @@ export const BottomNavLink = styled(BasicLink)`
 
 // Anchortags
 
-export const SimpleLink = styled.a`
+export const SimpleAnchor = styled.a`
   font-size: 1rem;
   color: ${props => props.theme.colors.action};
   &:hover {
@@ -89,7 +89,7 @@ export const SimpleLink = styled.a`
   }
 `;
 
-export const BottomLink = styled(SimpleLink)`
+export const BottomAnchor = styled(SimpleAnchor)`
   font-size: 0.8rem;
   padding: 5px;
   color: ${props => props.theme.colors.secondary};
@@ -97,4 +97,8 @@ export const BottomLink = styled(SimpleLink)`
     background: ${props => props.theme.colors.secondary};
     color: ${props => props.theme.colors.primary};
   }
+`;
+
+export const SmallInlineAnchor = styled(SimpleAnchor)`
+  font-size: 0.9rem;
 `;

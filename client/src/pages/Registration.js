@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import { Heading, Heading6, PopUpText } from "../components/Text";
+// import { Heading, PageText } from "../components/Text";
+import { Heading, Heading6, PopUpText, CheckBoxText } from "../components/Text";
 import { Form } from "../components/Form/Form";
 import { BasicInput } from "../components/Form/InputFields";
 import { Button } from "../components/Buttons/Button";
 import { RadioButton } from "../components/Buttons/RadioButton";
-import { PopUpLink, SimpleLink } from "../components/Navigation/NavLinks";
+import { PopUpLink, SimpleAnchor, SmallInlineAnchor } from "../components/Navigation/NavLinks";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
 import { TextArea } from "../components/Form/InputFields";
 import { Label } from "../components/Form/Labels";
@@ -87,6 +88,7 @@ export default function Registration() {
   return (
     <ContentWrapper>
       <Heading>Anmeldung</Heading>
+      {/* <PageText>Die Anmeldung öffnet am 30.03.2020</PageText> */}
 
       <Form onSubmit={handleSubmit}>
         <Label>Name:*</Label>
@@ -152,6 +154,16 @@ export default function Registration() {
           placeholder="Deine Nachricht, Anmerkung, etc."
         />
         <Heading6>* = Pflichtfeld</Heading6>
+        <CheckBoxText>
+          Die gesamte Tagung ist Drogen- und Alkoholfrei! Weitere Informationen findest du in der{" "}
+          <SmallInlineAnchor
+            href="/files/2019_01_Hausordnung_Trägergesell.f.geisteswiss. Bildung.pdf"
+            download
+          >
+            Hausordnung
+          </SmallInlineAnchor>
+          .
+        </CheckBoxText>
         {CheckBoxContainer(isChecked, () => setIsChecked(!isChecked))}
         <CenterButton>
           <Button
@@ -183,8 +195,8 @@ export default function Registration() {
                 <>
                   <PopUpText>
                     Das hat leider nicht geklappt! <br /> Du kannst es noch Mal{" "}
-                    <SimpleLink onClick={() => setShow(false)}>probieren</SimpleLink> oder uns per
-                    Mail kontaktieren.
+                    <SimpleAnchor onClick={() => setShow(false)}>probieren</SimpleAnchor> oder uns
+                    per Mail kontaktieren.
                   </PopUpText>
                 </>
               )}

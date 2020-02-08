@@ -8,7 +8,7 @@ import { BasicInput } from "../components/Form/InputFields";
 import { Label } from "../components/Form/Labels";
 import { TextArea } from "../components/Form/InputFields";
 import { Button } from "../components/Buttons/Button";
-import { PopUpLink, SimpleLink } from "../components/Navigation/NavLinks";
+import { PopUpLink, SimpleAnchor } from "../components/Navigation/NavLinks";
 import PopUp from "../components/PopUp/PopUp";
 import { FlexibleContainer } from "../components/Container/FlexibleContainer";
 import ContactMap from "../components/ContactMap";
@@ -117,8 +117,8 @@ export default function Contact() {
                       <>
                         <PopUpText>
                           Das hat leider nicht geklappt! <br /> Du kannst es noch Mal{" "}
-                          <SimpleLink onClick={() => setShow(false)}>probieren</SimpleLink> oder uns
-                          per Mail kontaktieren.
+                          <SimpleAnchor onClick={() => setShow(false)}>probieren</SimpleAnchor> oder
+                          uns per Mail kontaktieren.
                         </PopUpText>
                       </>
                     )}

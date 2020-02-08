@@ -7,7 +7,7 @@ import { Label } from "../components/Form/Labels";
 import { BasicInput, TextArea } from "../components/Form/InputFields";
 import { Button } from "../components/Buttons/Button";
 import { CenterButton } from "../components/Buttons/CenterButton";
-import { PopUpLink, SimpleLink } from "../components/Navigation/NavLinks";
+import { PopUpLink, SimpleAnchor } from "../components/Navigation/NavLinks";
 import PopUp from "../components/PopUp/PopUp";
 import saveData from "../api/saveData";
 import useSessionStorage from "../hooks/useSessionStorage";
@@ -140,8 +140,8 @@ export default function Workshops() {
                 <>
                   <PopUpText>
                     Das hat leider nicht geklappt! <br /> Du kannst es noch Mal{" "}
-                    <SimpleLink onClick={() => setShow(false)}>probieren</SimpleLink> oder uns per
-                    Mail kontaktieren.
+                    <SimpleAnchor onClick={() => setShow(false)}>probieren</SimpleAnchor> oder uns
+                    per Mail kontaktieren.
                   </PopUpText>
                 </>
               )}
