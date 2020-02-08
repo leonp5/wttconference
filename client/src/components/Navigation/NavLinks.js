@@ -25,6 +25,10 @@ export const InlineLink = styled(BasicLink)`
   }
 `;
 
+export const SmallInlineLink = styled(InlineLink)`
+  font-size: 0.9rem;
+`;
+
 export const MenuLink = styled(BasicLink)`
   ${mq[0]} {
     padding-left: 10px;

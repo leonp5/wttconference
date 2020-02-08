@@ -20,6 +20,7 @@ import { Main } from "./components/Container/Main";
 import { PageContainer } from "./components/Container/PageContainer";
 import HeaderImage from "./components/Images";
 import ProtectedRoute from "./components/ProtectedRoute";
+import BackToTopButton from "./components/Buttons/BackToTopButton";
 // import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
@@ -62,6 +63,7 @@ function App() {
               <Route path="/privacy" component={Privacy} />
 
               <ProtectedRoute path="/organization" component={Organization} />
+              <BackToTopButton />
             </Main>
           </Switch>
           <FooterNav>

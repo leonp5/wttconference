@@ -14,6 +14,7 @@ const Footer = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
+  z-index: 1;
   height: 60px;
   width: 100%;
   background: ${props => props.theme.colors.primary};

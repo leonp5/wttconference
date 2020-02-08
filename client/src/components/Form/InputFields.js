@@ -16,3 +16,7 @@ export const TextArea = styled.textarea`
   padding: 10px;
   box-shadow: inset 0 2px 4px 0 hsla(0, 0%, 0%, 0.08);
 `;
+
+export const CheckBox = styled.input`
+  margin-right: 10px;
+`;
