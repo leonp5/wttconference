@@ -10,3 +10,17 @@ export const FooterContainer = styled.div`
     display: none;
   }
 `;
+export const FooterColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const MobileFooterColumn = styled(FooterColumn)`
+  display: none;
+  ${mq[0]} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`;

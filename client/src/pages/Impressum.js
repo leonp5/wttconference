@@ -28,6 +28,13 @@ export default function Impressum() {
         <br />
         E-Mail: <a href="mailto:bund@waldorfschule.de">bund@waldorfschule.de</a>
       </Text>
+      <Heading2>Website</Heading2>
+      <Text>
+        Leon Pelzer <br />
+        E-Mail: leonpe[at].web.de <br />
+        GitHub: <a href="https://github.com/leonp5">https://github.com/leonp5</a>
+      </Text>
+
       <Heading2>EU-Streitschlichtung</Heading2>
       <Text>
         Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{" "}
