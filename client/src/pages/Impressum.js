@@ -13,7 +13,7 @@ export default function Impressum() {
         70184 Stuttgart
       </Text>
       <Text>
-        <b>Vertreten durch:</b> <br />
+        <strong>Vertreten durch:</strong> <br />
         <br /> Vorstände des BdFWS: <br />
         <br />
         Nele Auschra, Stefan Grosse, Hans-Georg Hutzel, Henning Kullak-Ublick, Thomas

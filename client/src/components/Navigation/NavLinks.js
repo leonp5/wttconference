@@ -43,9 +43,9 @@ export const MenuLink = styled(BasicLink)`
   }
   font-size: 1.2rem;
   padding: 8px;
+  border-bottom: 3px solid transparent;
   &:hover,
   &.active {
-    padding: 7px;
     border-bottom: 3px solid ${props => props.theme.colors.secondary};
   }
 `;
