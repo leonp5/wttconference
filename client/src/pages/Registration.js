@@ -137,7 +137,7 @@ export default function Registration() {
         <BasicInput type="email" value={attendee.email} name="email" onChange={handleChange} />
         <Label>Mobil:</Label>
         <BasicInput value={attendee.phone} name="phone" onChange={handleChange} />
-        <Label>Hochschule:</Label>
+        <Label>Hochschule:*</Label>
         <BasicInput value={attendee.highschool} name="highschool" onChange={handleChange} />
         <Label>Essen:</Label>
         <BasicInput
@@ -156,10 +156,7 @@ export default function Registration() {
         <Heading6>* = Pflichtfeld</Heading6>
         <CheckBoxText>
           Die gesamte Tagung ist Drogen- und Alkoholfrei! Weitere Informationen findest du in der{" "}
-          <SmallInlineAnchor
-            href="/files/2019_01_Hausordnung_Trägergesell.f.geisteswiss. Bildung.pdf"
-            download
-          >
+          <SmallInlineAnchor href="/files/2019_01_Hausordnung_Trägergesell.f.geisteswiss. Bildung.pdf">
             Hausordnung
           </SmallInlineAnchor>
           .
@@ -169,6 +166,7 @@ export default function Registration() {
           <Button
             disabled={
               isChecked !== true ||
+              !attendee.highschool ||
               !attendee.name ||
               !attendee.firstName ||
               !attendee.address ||

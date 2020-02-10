@@ -78,16 +78,16 @@ export default function Workshops() {
           Themen kommen könnt, die euch am Herzen liegen oder wie ihr einfach nur gemeinsam Spaß
           haben könnt, dann melde dich gerne bei uns!
         </Text>
+        <PageText>
+          Bedenke bitte deine benötigten Materialien zu besorgen, oder informiere uns, was du
+          benötigst.
+        </PageText>
         <Text>
           <b>Ansprechpartnerinnen</b>: Sofia Abedi und Imra Henseleit <br /> Email:{" "}
           <a href="mailto:workshops@waldorf-heute-fuer-morgen.de">
             workshops@waldorf-heute-fuer-morgen.de
           </a>
         </Text>
-        <PageText>
-          Bedenke bitte deine benötigten Materialien zu besorgen, oder informiere uns, was du
-          benötigst.
-        </PageText>
       </TextWrapper>
       <Heading3>Workshopanmeldung</Heading3>
 
@@ -100,7 +100,7 @@ export default function Workshops() {
         <BasicInput value={workshop.email} name="email" onChange={handleChange} />
         <Label>Workshop:*</Label>
         <BasicInput value={workshop.workshopName} name="workshopName" onChange={handleChange} />
-        <Label>Workshop Beschreibung:</Label>
+        <Label>Workshop Beschreibung:*</Label>
         <TextArea
           value={workshop.workshopDescription}
           name="workshopDescription"
@@ -116,6 +116,7 @@ export default function Workshops() {
           <Button
             disabled={
               isChecked !== true ||
+              !workshop.workshopDescription ||
               !workshop.name ||
               !workshop.firstName ||
               !workshop.email ||
