@@ -44,10 +44,10 @@ function Home() {
             </b>
             <br />
             Fragen, die eine kleine Gruppe von Wittener, Stuttgarter und Mannheimer Student*innen
-            beschäftigt und Dich als Waldorfstudent*in vielleicht auch?
+            beschäftigt und dich als Waldorfstudent*in vielleicht auch?
             <br />
             <br />
-            <b>Wir möchten Dich zur Tagung, zu diesen Themen einladen.</b> Die Idee und Ziel dieser
+            <b>Wir möchten dich zur Tagung, zu diesen Themen einladen.</b> Die Idee und Ziel dieser
             Tagung ist es, uns gegenseitig kennenzulernen und zu vernetzen. Weiterführend wollen wir
             als Lehrer*innen der Zukunft, wissen, wie wir die Herausforderungen im Unterrichten
             annehmen und wie wir uns gemeinsam daraufhin ausrichten können.

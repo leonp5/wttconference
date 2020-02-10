@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { useHistory } from "react-router-dom";
 
 import { FooterContainer } from "../Container/FooterContainer";
-import { BottomLink } from "./NavLinks";
+import { BottomAnchor } from "./NavLinks";
 import LoginModal from "../PopUp/LoginModal";
 import { CloseButton } from "../Buttons/CloseButton";
 import useCheckToken from "../../hooks/useCheckToken";
@@ -57,10 +57,10 @@ export default function FooterNav({ children }) {
         {children[1]}
       </FooterContainer>
 
-      {show && <BottomLink onClick={handleOpen}>Orga-Login</BottomLink>}
+      {show && <BottomAnchor onClick={handleOpen}>Orga-Login</BottomAnchor>}
       {!show && (
         <>
-          <BottomLink onClick={logout}>Ausloggen</BottomLink>
+          <BottomAnchor onClick={logout}>Ausloggen</BottomAnchor>
           {children[2]}{" "}
         </>
       )}
