@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 import { useHistory } from "react-router-dom";
 
-import { FooterContainer } from "../Container/FooterContainer";
+import { FooterContainer, FooterColumn, MobileFooterColumn } from "../Container/FooterContainer";
 import { BottomAnchor } from "./NavLinks";
 import LoginModal from "../PopUp/LoginModal";
 import { CloseButton } from "../Buttons/CloseButton";
@@ -52,16 +52,28 @@ export default function FooterNav({ children }) {
 
   return (
     <Footer>
-      <FooterContainer>
-        {children[0]}
-        {children[1]}
-      </FooterContainer>
+      {show && (
+        <FooterContainer>
+          {children[0]}
+          {children[1]}
+        </FooterContainer>
+      )}
 
       {show && <BottomAnchor onClick={handleOpen}>Orga-Login</BottomAnchor>}
       {!show && (
         <>
-          <BottomAnchor onClick={logout}>Ausloggen</BottomAnchor>
-          {children[2]}{" "}
+          <FooterContainer>
+            {children[0]}
+            <FooterColumn>
+              <BottomAnchor onClick={logout}>Ausloggen</BottomAnchor>
+              {children[2]}{" "}
+            </FooterColumn>
+            {children[1]}
+          </FooterContainer>
+          <MobileFooterColumn>
+            <BottomAnchor onClick={logout}>Ausloggen</BottomAnchor>
+            {children[2]}
+          </MobileFooterColumn>
         </>
       )}
       {open && (
