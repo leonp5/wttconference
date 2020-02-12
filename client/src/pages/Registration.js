@@ -43,22 +43,6 @@ export default function Registration() {
     else: ""
   });
 
-  // function notifyAttendee(attendee) {
-  //   return fetch(`/api/confirmation`, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json"
-  //     },
-  //     body: JSON.stringify(attendee)
-  //   })
-  //     .then(response => {
-  //       if (response.status === 500) {
-  //         setSuccess(false);
-  //       }
-  //     })
-  //     .then(setShow(true));
-  // }
-
   function handleChange(event) {
     const value = event.target.value;
     setAttendee({
