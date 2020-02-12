@@ -60,7 +60,7 @@ export const PopUpLink = styled(BasicLink)`
 
 export const FooterLink = styled(BasicLink)`
   font-size: 1.1rem;
-  padding: 7px;
+  padding: 6px;
   &:hover {
     background: ${props => props.theme.colors.secondary};
     color: ${props => props.theme.colors.primary};
