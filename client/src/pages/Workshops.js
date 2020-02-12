@@ -12,6 +12,7 @@ import PopUp from "../components/PopUp/PopUp";
 import saveData from "../api/saveData";
 import useSessionStorage from "../hooks/useSessionStorage";
 import CheckBoxContainer from "../components/Container/CheckBoxContainer";
+import { sendMail } from "../api/sendMail";
 
 export default function Workshops() {
   const [isChecked, setIsChecked] = React.useState();
@@ -26,21 +27,6 @@ export default function Workshops() {
     message: ""
   });
 
-  async function sendWorkshop(workshop) {
-    const response = await fetch(`/api/workshop`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(workshop)
-    });
-
-    if (response.status !== 200) {
-      setSuccess(false);
-    }
-    setShow(true);
-  }
-
   function handleChange(event) {
     const value = event.target.value;
     setWorkshop({
@@ -52,7 +38,7 @@ export default function Workshops() {
   function handleSubmit(event) {
     event.preventDefault();
     saveData("/api/workshops", workshop);
-    sendWorkshop(workshop);
+    sendMail("/api/workshop", workshop, setShow, setSuccess);
     setWorkshop({
       name: "",
       firstName: "",

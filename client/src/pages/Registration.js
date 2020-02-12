@@ -1,96 +1,82 @@
 import React from "react";
-import styled from "@emotion/styled";
+// import styled from "@emotion/styled";
 
-// import { Heading, PageText } from "../components/Text";
-import { Heading, Heading6, PopUpText, CheckBoxText } from "../components/Text";
-import { Form } from "../components/Form/Form";
-import { BasicInput } from "../components/Form/InputFields";
-import { Button } from "../components/Buttons/Button";
-import { RadioButton } from "../components/Buttons/RadioButton";
-import { PopUpLink, SimpleAnchor, SmallInlineAnchor } from "../components/Navigation/NavLinks";
+import { Heading, PageText } from "../components/Text";
+// import { Heading, Heading6, PopUpText, CheckBoxText } from "../components/Text";
+// import { Form } from "../components/Form/Form";
+// import { BasicInput } from "../components/Form/InputFields";
+// import { Button } from "../components/Buttons/Button";
+// import { RadioButton } from "../components/Buttons/RadioButton";
+// import { PopUpLink, SimpleAnchor, SmallInlineAnchor } from "../components/Navigation/NavLinks";
 import { ContentWrapper } from "../components/Container/ContentWrapper";
-import { TextArea } from "../components/Form/InputFields";
-import { Label } from "../components/Form/Labels";
-import { RadioLabel } from "../components/Form/Labels";
-import { RadioWrapper } from "../components/Container/RadioWrapper";
-import { CenterButton } from "../components/Buttons/CenterButton";
-import PopUp from "../components/PopUp/PopUp";
-import saveData from "../api/saveData";
-import useSessionStorage from "../hooks/useSessionStorage";
-import CheckBoxContainer from "../components/Container/CheckBoxContainer";
+// import { TextArea } from "../components/Form/InputFields";
+// import { Label } from "../components/Form/Labels";
+// import { RadioLabel } from "../components/Form/Labels";
+// import { RadioWrapper } from "../components/Container/RadioWrapper";
+// import { CenterButton } from "../components/Buttons/CenterButton";
+// import PopUp from "../components/PopUp/PopUp";
+// import saveData from "../api/saveData";
+// import useSessionStorage from "../hooks/useSessionStorage";
+// import CheckBoxContainer from "../components/Container/CheckBoxContainer";
+// import { sendMail } from "../api/sendMail";
 
-const RadioBox = styled.div`
-  display: flex;
-  justify-content: space-around;
-  width: 250px;
-`;
+// const RadioBox = styled.div`
+//   display: flex;
+//   justify-content: space-around;
+//   width: 250px;
+// `;
 
 export default function Registration() {
-  const [isChecked, setIsChecked] = React.useState();
-  const [success, setSuccess] = React.useState(true);
-  const [show, setShow] = React.useState(false);
-  const [attendee, setAttendee] = useSessionStorage("attendee", {
-    name: "",
-    firstName: "",
-    address: "",
-    location: "",
-    email: "",
-    phone: "",
-    highschool: "",
-    gender: "",
-    nutrition: "",
-    else: ""
-  });
+  // const [isChecked, setIsChecked] = React.useState();
+  // const [success, setSuccess] = React.useState(true);
+  // const [show, setShow] = React.useState(false);
+  // const [attendee, setAttendee] = useSessionStorage("attendee", {
+  //   name: "",
+  //   firstName: "",
+  //   address: "",
+  //   location: "",
+  //   email: "",
+  //   phone: "",
+  //   highschool: "",
+  //   gender: "",
+  //   nutrition: "",
+  //   else: ""
+  // });
 
-  function notifyAttendee(attendee) {
-    return fetch(`/api/confirmation`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(attendee)
-    })
-      .then(response => {
-        if (response.status === 500) {
-          setSuccess(false);
-        }
-      })
-      .then(setShow(true));
-  }
+  // function handleChange(event) {
+  //   const value = event.target.value;
+  //   setAttendee({
+  //     ...attendee,
+  //     [event.target.name]: value
+  //   });
+  // }
 
-  function handleChange(event) {
-    const value = event.target.value;
-    setAttendee({
-      ...attendee,
-      [event.target.name]: value
-    });
-  }
+  // function handleSubmit(event) {
+  //   event.preventDefault();
+  //   saveData("/api/attendees", attendee);
+  //   sendMail("/api/confirmation", attendee, setShow, setSuccess);
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    saveData("/api/attendees", attendee);
-    notifyAttendee(attendee);
-    setAttendee({
-      name: "",
-      firstName: "",
-      address: "",
-      location: "",
-      email: "",
-      phone: "",
-      highschool: "",
-      gender: "",
-      nutrition: "",
-      else: ""
-    });
-    sessionStorage.removeItem("attendee");
-  }
+  //   setAttendee({
+  //     name: "",
+  //     firstName: "",
+  //     address: "",
+  //     location: "",
+  //     email: "",
+  //     phone: "",
+  //     highschool: "",
+  //     gender: "",
+  //     nutrition: "",
+  //     else: ""
+  //   });
+  //   sessionStorage.removeItem("attendee");
+  // }
 
   return (
     <ContentWrapper>
       <Heading>Anmeldung</Heading>
-      {/* <PageText>Die Anmeldung öffnet am 30.03.2020</PageText> */}
+      <PageText>Die Anmeldung öffnet am 30.03.2020</PageText>
 
-      <Form onSubmit={handleSubmit}>
+      {/* <Form onSubmit={handleSubmit}>
         <Label>Name:*</Label>
         <BasicInput value={attendee.name} name="name" onChange={handleChange} />
         <Label>Vorname:*</Label>
@@ -201,7 +187,7 @@ export default function Registration() {
             </PopUp>
           </>
         )}
-      </Form>
+      </Form> */}
     </ContentWrapper>
   );
 }
