@@ -18,6 +18,7 @@ import PopUp from "../components/PopUp/PopUp";
 import saveData from "../api/saveData";
 import useSessionStorage from "../hooks/useSessionStorage";
 import CheckBoxContainer from "../components/Container/CheckBoxContainer";
+import { sendMail } from "../api/sendMail";
 
 const RadioBox = styled.div`
   display: flex;
@@ -42,21 +43,21 @@ export default function Registration() {
     else: ""
   });
 
-  function notifyAttendee(attendee) {
-    return fetch(`/api/confirmation`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(attendee)
-    })
-      .then(response => {
-        if (response.status === 500) {
-          setSuccess(false);
-        }
-      })
-      .then(setShow(true));
-  }
+  // function notifyAttendee(attendee) {
+  //   return fetch(`/api/confirmation`, {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     },
+  //     body: JSON.stringify(attendee)
+  //   })
+  //     .then(response => {
+  //       if (response.status === 500) {
+  //         setSuccess(false);
+  //       }
+  //     })
+  //     .then(setShow(true));
+  // }
 
   function handleChange(event) {
     const value = event.target.value;
@@ -69,7 +70,8 @@ export default function Registration() {
   function handleSubmit(event) {
     event.preventDefault();
     saveData("/api/attendees", attendee);
-    notifyAttendee(attendee);
+    sendMail("/api/confirmation", attendee, setShow, setSuccess);
+
     setAttendee({
       name: "",
       firstName: "",

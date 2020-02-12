@@ -15,6 +15,7 @@ import ContactMap from "../components/ContactMap";
 import { CenterButton } from "../components/Buttons/CenterButton";
 import useSessionStorage from "../hooks/useSessionStorage";
 import CheckBoxContainer from "../components/Container/CheckBoxContainer";
+import { sendMail } from "../api/sendMail";
 
 export default function Contact() {
   const [isChecked, setIsChecked] = React.useState();
@@ -28,22 +29,6 @@ export default function Contact() {
     message: ""
   });
 
-  function sendRequest(request) {
-    return fetch(`/api/request`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(request)
-    })
-      .then(response => {
-        if (response.status === 500) {
-          setSuccess(false);
-        }
-      })
-      .then(setShow(true));
-  }
-
   function handleChange(event) {
     const value = event.target.value;
     setRequest({
@@ -54,7 +39,7 @@ export default function Contact() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    sendRequest(request);
+    sendMail(`/api/request`, request, setShow, setSuccess);
     setRequest({ name: "", email: "", subject: "", message: "" });
     sessionStorage.removeItem("request");
   }

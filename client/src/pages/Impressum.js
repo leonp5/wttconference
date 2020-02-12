@@ -31,7 +31,7 @@ export default function Impressum() {
       <Heading2>Website</Heading2>
       <Text>
         Leon Pelzer <br />
-        E-Mail: leonpe[at].web.de <br />
+        E-Mail: <a href="mailto:leonpe@web.de">leonpe@web.de</a> <br />
         GitHub: <a href="https://github.com/leonp5">https://github.com/leonp5</a>
       </Text>
 
