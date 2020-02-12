@@ -10,7 +10,7 @@ export default function Privacy() {
       <Text>
         Siehe Datenschutzerklärung des Bund der Freien Waldorfschulen e.V. <br /> <br />
         <a href="https://www.waldorfschule.de/datenschutzerklaerungen/#main-content">
-          https://www.waldorfschule.de/datenschutzerklaerungen/#main-content
+          Hier klicken
         </a>
       </Text>
     </TextWrapper>

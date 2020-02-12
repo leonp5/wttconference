@@ -9,9 +9,7 @@ export default function Impressum() {
       <Heading>Impressum</Heading>
       <Text>
         Siehe Impressum des Bund der Freien Waldorfschulen e.V. <br /> <br />
-        <a href="https://www.waldorfschule.de/impressum/#main-content">
-          https://www.waldorfschule.de/impressum/#main-content
-        </a>
+        <a href="https://www.waldorfschule.de/impressum/#main-content">Hier klicken</a>
       </Text>
       <Text>
         Technische Umsetzung der Website: <br />
