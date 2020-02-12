@@ -1,11 +1,11 @@
 import React from "react";
 
 import { Heading, Text } from "../components/Text";
-import { ContentLeft } from "../components/Container/ContentLeft";
+import { TextWrapper } from "../components/Container/ContentWrapper";
 
 export default function Impressum() {
   return (
-    <ContentLeft>
+    <TextWrapper>
       <Heading>Impressum</Heading>
       <Text>
         Siehe Impressum des Bund der Freien Waldorfschulen e.V. <br /> <br />
@@ -19,6 +19,6 @@ export default function Impressum() {
         E-Mail: <a href="mailto:leonpe@web.de">leonpe@web.de</a> <br />
         GitHub: <a href="https://github.com/leonp5">https://github.com/leonp5</a>
       </Text>
-    </ContentLeft>
+    </TextWrapper>
   );
 }

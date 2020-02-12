@@ -1,11 +1,11 @@
 import React from "react";
 
 import { Heading, Text } from "../components/Text";
-import { ContentLeft } from "../components/Container/ContentLeft";
+import { TextWrapper } from "../components/Container/ContentWrapper";
 
 export default function Privacy() {
   return (
-    <ContentLeft>
+    <TextWrapper>
       <Heading>Datenschutz</Heading>
       <Text>
         Siehe Datenschutzerklärung des Bund der Freien Waldorfschulen e.V. <br /> <br />
@@ -13,6 +13,6 @@ export default function Privacy() {
           https://www.waldorfschule.de/datenschutzerklaerungen/#main-content
         </a>
       </Text>
-    </ContentLeft>
+    </TextWrapper>
   );
 }
