@@ -27,6 +27,6 @@ app.get("*", function(req, res) {
 
 initDb(process.env.MONGO_URL, process.env.DB_NAME).then(() => {
   app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Server running on Port:${PORT}`);
   });
 });
