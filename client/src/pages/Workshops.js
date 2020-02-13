@@ -62,7 +62,7 @@ export default function Workshops() {
           anderen Teilnehmer*innen teilen möchtest. Wenn Du eine Idee hast, wie Du mit einer kleinen
           Gruppe anderer Studierender gemeinsam aktiv werden kannst, wie ihr in einen Austausch über
           Themen kommen könnt, die euch am Herzen liegen oder wie ihr einfach nur gemeinsam Spaß
-          haben könnt, dann melde dich gerne bei uns!
+          haben könnt, dann melde dich bis zum 15. März 2020 gerne bei uns!
         </Text>
         <PageText>
           Bedenke bitte deine benötigten Materialien zu besorgen, oder informiere uns, was du
