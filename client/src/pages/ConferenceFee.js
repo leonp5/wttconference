@@ -14,7 +14,10 @@ export default function Contact() {
         Teilnehmer*in höher sind. Grundsätzlich soll die Teilnahme aber keinem*r Teilnehmer*in durch
         den finanziellen Beitrag verwehrt bleiben. Kontaktiert daher bei finanziellen Fragen bitte
         vertrauensvoll das <InlineLink to="/contact">Tagungsbüro</InlineLink>, damit wir uns auf
-        eine Ermäßigung einigen können.
+        eine Ermäßigung einigen können. <br /> <br /> Wir haben das Glück, dass Spenden uns den
+        Rücken stärken. Daher möchten wir diejenigen, die das Tagungsprogramm mit ihrem Workshop
+        bereichern, einladen, ohne den Beitrag an der Tagung teilzunehmen. Durch die Bereitstellung
+        eines Workshops, seid ihr also automatisch bei der Tagung angemeldet.
       </Text>
       <Headline>Konto:</Headline>
       <Text>
