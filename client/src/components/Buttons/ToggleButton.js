@@ -10,6 +10,10 @@ export const ToggleButton = styled.button`
   padding: 10px;
   cursor: pointer;
 
+  ::-moz-focus-inner {
+    border: 0;
+  }
+
   :active {
     background: ${props => props.theme.colors.action};
     color: ${props => props.theme.colors.secondary};

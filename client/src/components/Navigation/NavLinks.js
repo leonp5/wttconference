@@ -14,10 +14,17 @@ export const BasicLink = styled(NavLink)`
   &:hover {
     cursor: pointer;
   }
+  :focus {
+    outline: none;
+  }
+  ::-moz-focus-inner {
+    border: 0;
+  }
 `;
 
 export const InlineLink = styled(BasicLink)`
   font-size: 1rem;
+  font-weight: bold;
   color: ${props => props.theme.colors.action};
   &:hover {
     background: ${props => props.theme.colors.action};
@@ -59,8 +66,11 @@ export const PopUpLink = styled(BasicLink)`
 `;
 
 export const FooterLink = styled(BasicLink)`
-  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  height: 33px;
   padding: 6px;
+  font-size: 1.1rem;
   &:hover {
     background: ${props => props.theme.colors.secondary};
     color: ${props => props.theme.colors.primary};
@@ -86,6 +96,12 @@ export const SimpleAnchor = styled.a`
     background: ${props => props.theme.colors.action};
     color: ${props => props.theme.colors.secondary};
     cursor: pointer;
+  }
+  :focus {
+    outline: none;
+  }
+  ::-moz-focus-inner {
+    border: 0;
   }
 `;
 

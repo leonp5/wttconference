@@ -16,6 +16,12 @@ const StyledButton = styled.button`
   background: ${props => props.theme.colors.action};
   cursor: pointer;
   opacity: 0.9;
+  :focus {
+    outline: none;
+  }
+  ::-moz-focus-inner {
+    border: 0;
+  }
 
   i {
     border: solid ${props => props.theme.colors.secondary};

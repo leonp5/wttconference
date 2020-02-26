@@ -21,8 +21,8 @@ const StyledBurger = styled.button`
     padding: 0;
     z-index: 2;
 
-    :focus {
-      outline: none;
+    ::-moz-focus-inner {
+      border: 0;
     }
 
     div {
