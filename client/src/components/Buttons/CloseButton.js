@@ -8,6 +8,10 @@ export const CloseButton = styled.a`
   height: 20px;
   opacity: 0.4;
 
+  ::-moz-focus-inner {
+    border: 0;
+  }
+
   :hover {
     cursor: pointer;
     opacity: 1;
