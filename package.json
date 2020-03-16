@@ -31,12 +31,12 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "mongodb": "^3.5.2",
-    "nodemailer": "^6.4.2"
+    "mongodb": "^3.5.5",
+    "nodemailer": "^6.4.5"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
-    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react": "^7.19.0",
     "nodemon": "^2.0.2",
     "prettier": "1.19.1"
   }
