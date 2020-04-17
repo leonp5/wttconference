@@ -26,7 +26,16 @@ function Home() {
       <Wrapper>
         <TextWrapper>
           <Heading>Tagung für angehende Pädagog*innen</Heading>
-          <Heading>26.-28. Juni 2020</Heading>
+          {/* <Heading>26.-28. Juni 2020</Heading> */}
+          <Heading>Wichtig!</Heading>
+          <Text>
+            Liebe Studierende, anlässlich des Beschlusses des Bunds und der Länder vom 15.04.20,
+            welcher Veranstaltungen bis zum 31. August diesen Jahres untersagt, müssen auch wir
+            unsere Tagung für dieses Jahr leider absagen. Doch wie sagt man so schön: Aufgehoben ist
+            nur aufgeschoben. Oder wie war das noch gleich..? Unsere Tagung wird deswegen um ein
+            Jahr verschoben und 2021 stattfinden. Ein genaues Datum werdet ihr hier, oder in eurer
+            Hochschule erfahren sobald wir wieder planen können. Bleibt gesund! Euer Tagungsteam
+          </Text>
           <Text>
             Liebe/r Waldorfpädagogik Studenten*in, liebe/r Seminarist*in, <br />
             <br />

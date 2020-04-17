@@ -74,7 +74,10 @@ export default function Registration() {
   return (
     <ContentWrapper>
       <Heading>Anmeldung</Heading>
-      <PageText>Die Anmeldung öffnet am 30.03.2020</PageText>
+      <PageText>
+        Sobald es einen neuen Termin für die Tagung im Jahr 2021 gibt, geben wir hier den Zeitpunkt
+        der Anmeldungsöffnung bekannt.
+      </PageText>
 
       {/* <Form onSubmit={handleSubmit}>
         <Label>Name:*</Label>
