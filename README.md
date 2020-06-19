@@ -1,6 +1,8 @@
+## moved the project to GitLab: https://gitlab.com/leonp5/whfm
+
 ## WTT Conference
 
-"wttConference" is a responsive website for conference of teacher trainees (22-06-2020 - 28-06-2020).
+"wttConference" is a responsive website for conference of teacher trainees.
 It shows the conference information, makes a online registration possible and gives the promoters of the conference the possibility to see how many persons have registered.
 
 ---
